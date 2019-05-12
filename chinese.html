@@ -968,7 +968,7 @@ function listen() {
  var msg1 = document.getElementById("char").value;
   var msg = new SpeechSynthesisUtterance(msg1);
   var voices = window.speechSynthesis.getVoices();
-  msg.voice = voices[18];
+  msg.voice = voices[48];
   window.speechSynthesis.speak(msg);
 
 }
@@ -977,7 +977,7 @@ function speak(msg1) {
  
   var msg = new SpeechSynthesisUtterance(msg1);
   var voices = window.speechSynthesis.getVoices();
-  msg.voice = voices[0];
+  msg.voice = voices[17];
   window.speechSynthesis.speak(msg);
 
 }
@@ -1065,7 +1065,7 @@ document.getElementById("hide0").style.display = "inline";
   var msg1 = document.getElementById("char").value
   var msg = new SpeechSynthesisUtterance(msg1);
   var voices = window.speechSynthesis.getVoices();
-  msg.voice = voices[18];
+  msg.voice = voices[48];
   window.speechSynthesis.speak(msg);
   
   //document.getElementById("answer").innerHTML = msg1
