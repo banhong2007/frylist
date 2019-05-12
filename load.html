@@ -20,7 +20,7 @@
 		
 		<span id=text onclick="test('text')" >test</span>
 		<P><select id="voiceSelect"></select>
-
+<span id=text2 ></span>
 </div>
 </body>
 </html>
@@ -28,6 +28,7 @@
 
 function test(id) {
 
+ document.getElementById("text2").innerHTML = navigator.userAgent;
 
  var voiceid = document.getElementById("voiceSelect").value;
   var msg1 = document.getElementById("char").value
