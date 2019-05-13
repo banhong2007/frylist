@@ -85,8 +85,10 @@ html {
 </head>
 
 <body>
-<P align=left><A href=frylist2.html><strong>Level 2</strong></P></A>&nbsp;
-<A href=chinese.html><strong>Chinese</strong></P></A>
+<P align=left><A href=english.html><strong>Level 1</strong></P></A>
+<P align=left><A href=english2.html><strong>Level 2</strong></P></A>
+<P align=left><A href=chinese1.html><strong>Level 1</strong></P></A>
+<P align=left><A href=chinese5.html><strong>Level 5</strong></P></A>
 <center>
 	<P>Click on the <b>Play</b> button to start</P>
 	<div>
@@ -223,7 +225,7 @@ document.getElementById("pause").style.display = "none";
             if(!flag){
                 flag = true;
                 utterance = new SpeechSynthesisUtterance(document.querySelector('article').textContent);
-                utterance.voice = getVoices()[14];
+                utterance.voice = getVoices()[3];
                 utterance.onend = function(){
                     flag = false; playEle.className = pauseEle.className = ''; stopEle.className = 'stopped';
                 };
