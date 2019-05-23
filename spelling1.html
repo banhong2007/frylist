@@ -15,7 +15,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     background-color: #eee;
     border: #999 1px solid ;
     width: 280px;
-    height: 200px;
+    height: 100px;
     padding: 8px;
     font-size: 19px;
   }
@@ -103,8 +103,10 @@ window.onload = function () {
      var object = document.createElement("TD");
          object.id = "object" + i;
 		 object.class ="objects";
-		 object.draggable = "true";
-		 object.innerHTML = "object " + i
+		 
+		   object.style = "display: inline-block; background-color: #FFF3CC; border: #DFBC6A 1px solid; width: 50px; height: 50px;  margin: 10px; padding: 8px; font-size: 18px;  text-align: center; box-shadow: 2px 2px 2px #999;  cursor: move;"
+		   object.draggable = "true";
+		   object.innerHTML = "object " + i
 var element = document.getElementById("TR1");
 element.appendChild(object);
   
