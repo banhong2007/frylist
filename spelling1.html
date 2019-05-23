@@ -1,297 +1,204 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
+
 <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Drag and Drop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+	
 <style>
-TD, span {
-  width: 10px;
-  height: 20px;
-  padding: 2px;
-  border: 0;
-  font-size:25pt;
-  font-weight:bold;
- 
-}
+html, body {margin: 0; height: 100%; overflow: hidden}
 
-button {
-  background: none;
-font-size:25pt;
-order-radius: 12px;
-
-
-}
-
-
-</style>
-<script>
-var txt = "";
-
-	
-function listen() {
- 
- var msg1 = document.getElementById("char").value;
-  var msg = new SpeechSynthesisUtterance(msg1);
-  var voices = window.speechSynthesis.getVoices();
-  msg.voice = voices[17];
-  var platform = navigator.platform ;
-	if ( platform == "Win32") {
-	 msg.voice = voices[2];
-	}
-  	
-  window.speechSynthesis.speak(msg);
-
-}
-
-
-function allowDrop(ev) {
-  ev.preventDefault();
-}
-
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-}
-
-	
-function speak(msg1) {
- 
- 
-  var msg = new SpeechSynthesisUtterance(msg1);
-  var voices = window.speechSynthesis.getVoices();
-  msg.voice = voices[0];
-  window.speechSynthesis.speak(msg);
-
-}
-
-function myFunction() {
-  
-
- 
- var str = document.getElementById("char").value ; 
-  txt = "";
- for (i = 0; i < str.length; i++) { 
-   var element = "div2" + i;
-   txt = txt + document.getElementById(element).innerHTML; 
-}
-
-document.getElementById("demo").innerHTML = txt; 
-
-var answer = document.getElementById("demo").innerHTML;
-
-
-  if (document.getElementById("char").value ==  answer )
-  {
-     document.getElementById("message").innerHTML =  "correct" ;
-	  speak("Correct");
-	document.getElementById("count").innerHTML = document.getElementById("count").innerHTML + 1;
-	document.getElementById("countNum").innerHTML = document.getElementById("count").innerHTML.length;
-	start();
-
-	}
-     else
-     {
-     document.getElementById("message").innerHTML =  "Wrong! Try again!" ;
-	 document.getElementById("count2").innerHTML = document.getElementById("count2").innerHTML + 1;
-	 document.getElementById("countNum2").innerHTML = document.getElementById("count2").innerHTML.length;
-	  speak("wrong");
+#drop_zone1,#drop_zone2,#drop_zone3 {
+    background-color: #eee;
+    border: #999 1px solid ;
+    width: 280px;
+    height: 200px;
+    padding: 8px;
+    font-size: 19px;
   }
-  
-
-
-
-}
-
-function start() {
-
-
-
-
-document.getElementById("dd").style.display = "inline";  
-
- 
-document.getElementById("demo").innerHTML =""
-var list = document.getElementById("TR1");
-
-// As long as <ul> has a child node, remove it
-while (list.hasChildNodes()) {   
-  list.removeChild(list.firstChild);
-}
-  
-var list = document.getElementById("TR2");
-
-// As long as <ul> has a child node, remove it
-while (list.hasChildNodes()) {   
-  list.removeChild(list.firstChild);
-} 
-
-
-
-var ranNum;
-ranNum = Math.floor(Math.random() * 13); 
-
-document.getElementById("char").selectedIndex = ranNum;
-
-answer =  document.getElementById("char")[ranNum].value ; 
-
- 
- var str = answer
-var fruits = [];     
- for (i = 0; i < str.length; i++) { 
-
-  
-    var text = str.charAt(i);
-	fruits.push(text);
-   
- 
-}
-
-fruits.sort();
 
 
   
-for (i = 0; i < str.length; i++) { 
-
-  
-  
-    var text = fruits[i];
-   
-  
- var image = document.createElement("TD");
-   
-      image.id = "img1" + i;
- image.innerHTML = text;	  
- 	  image.draggable = "true";
-      
-var element = document.getElementById("TR1");
-element.appendChild(image);   
-   
-document.addEventListener("dragstart", function(event) {
-  event.dataTransfer.setData("Text", event.target.id);
-  
-});
-
-
- var image1 = document.createElement("TD");
-
-      image1.id = "div2" + i;
-	  image1.style = "border: 1px solid #aaaaaa;  width: 30px;  height: 40px; box-shadow: 5px 5px 5px #888888;padding:10px;align:center";
-
-
-var element = document.getElementById("TR2");
-element.appendChild(image1); 
-      
-document.addEventListener("dragover", function(event) {
-  event.preventDefault();
-});
-
-document.addEventListener("drop", function(event) {
-  event.preventDefault();
-    var data = event.dataTransfer.getData("Text");
-    event.target.appendChild(document.getElementById(data));
-});
-
- } 
-  
-  listen();
-
-
-}
-
-function allowDrop(ev) {
-  ev.preventDefault();
-}
-
-
-
-</script>
-</script>
+  .objects {
+    display: inline-block;
+    background-color: #FFF3CC;
+    border: #DFBC6A 1px solid;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    padding: 8px;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 2px 2px 2px #999;
+    cursor: move;
+  }
+</style>  
+	
 </head>
+
 <body>
-
-<p id="demo"></p>
-<P><select type=text id=char style="display:none">
-<<option name=c1 value="whose">whose</option>
-<option name=c2 value="put">put</option>
-<option name=c3 value="everyone">everyone</option>
-<option name=c4 value="survive">survive</option>
-<option name=c5 value="live">live</option>
-<option name=c6 value="along">along</option>
-<option name=c7 value="pollute">pollute</option>
-<option name=c8 value="think">think</option>
-<option name=c9 value="creatures">creatures</option>
-<option name=c10 value="great">great</option>
-<option name=c11 value="where">where</option>
-<option name=c12 value="came">came</option>
-<option name=c13 value="before">before</option>
-
-
-</select>
-<center>
-<P><button id="click" onclick="start()" >
-<svg height="120" width="200">
-  <defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"
-      style="stop-color:rgb(255,255,0);stop-opacity:1" />
-      <stop offset="100%"
-      style="stop-color:rgb(255,0,0);stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <ellipse cx="100" cy="60" rx="85" ry="50" fill="url(#grad1)" />
-  <text fill="#ffffff" font-size="45" font-family="Verdana"
-  x="50" y="75">Start</text>
-
-
-</button>	
-<div id=dd  style="display:none">
-<P >Number of Correct Attempts : <span id=count style="display:none"></span><span id=countNum></span>
-<BR >Number of Wrong Attempts : <span id=count2 style="display:none"></span><span id=countNum2></span>
-
-<p>Drag the character to the box</p>
-
-<button id=text2 onclick="listen()">Listen Again</button></P>
-
-<TABLE id=TH1>
-<TR id=TR1>
-
-</TR>
-</Table id=TH2>
-<br>
-
-<TABLE>
-<TR id=TR2>
-</TR>
-</Table>
-
-<P><button id="click" onclick="myFunction()" >
-
-<svg height="120" width="200">
-  <defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"
-      style="stop-color:rgb(255,255,0);stop-opacity:1" />
-      <stop offset="100%"
-      style="stop-color:rgb(255,0,0);stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <ellipse cx="100" cy="60" rx="100" ry="50" fill="url(#grad1)" />
-  <text fill="#ffffff" font-size="45" font-family="Verdana"
-  x="30" y="75">Submit</text>
-</svg>
-</button>
-
-
-	<P>
-		<span id=answer></span>
-		</P>
-		<P>
-		<span id=message></span>
-		</P>
+    <h2 id="app_status">Drag status: </h2>
+    <h1>Drop Zone</h1>
+	
+	
+    <div id="drop_zone1" ondragover="return false"></div>
+    <div id="drop_zone2" ondragover="return false"></div>
+	<div id="drop_zone3" ondragover="return false"></div>
+	
 		
-</div>
+	<table>
+	<TR id=TR1>
+	</TR>
+	</table>
 </body>
+
 </html>
+
+<script>
+function _(id) {
+    return document.getElementById(id);
+}
+
+var droppedIn = false;
+
+window.onload = function () {
+    // Drag zone functionality
+  
+    function handleDragEnter(e) {
+        _('app_status').innerHTML = "You are dragging over the " + e
+            .target
+            .getAttribute('id');
+    }
+
+    function handleDragLeave(e) {
+        _('app_status').innerHTML = "You left the " + e
+            .target
+            .getAttribute('id');
+    }
+
+    function handleDragDrop(e) {
+        e.preventDefault();
+        var element_id = e
+            .dataTransfer
+            .getData("text");
+        e
+            .target
+            .appendChild(_(element_id));
+        _(element_id).removeAttribute("draggable")
+        _(element_id).style.cursor = "default";
+        droppedIn = true;
+        _('app_status').innerHTML = "You droped " + element_id + " into drop zone";
+    }
+
+ 
+ var str = "test"
+
+
+
+ for (i = 1; i < str.length; i++) { 
+
+     var object = document.createElement("TD");
+         object.id = "object" + i;
+		 object.class ="objects";
+		 object.draggable = "true";
+		 object.innerHTML = "object " + i
+var element = document.getElementById("TR1");
+element.appendChild(object);
+  
+  var activeEvent = '';
+    var originalX = '';
+    var originalY = '';
+ 
+    object.addEventListener('dragstart', handleDragStart, false);
+    object.addEventListener('dragend', handleDragEnd, false);
+    object.addEventListener('touchstart', handleTouchStart, false);
+    object.addEventListener('touchmove', handleTouchMove, false);
+    object.addEventListener('touchend', handleTouchEnd, false);
+  
+ 
+   var dropZone = _('drop_zone' + i);
+
+    dropZone.addEventListener('dragenter', handleDragEnter, false);
+    dropZone.addEventListener('dragleave', handleDragLeave, false);
+    dropZone.addEventListener('drop', handleDragDrop, false);
+
+ 
+}
+
+    
+    function handleDragStart(e) {
+        _('app_status').innerHTML = "Dragging the element " + e
+            .target
+            .getAttribute('id');
+        e.dataTransfer.dropEffect = "move";
+        e
+            .dataTransfer
+            .setData("text", e.target.getAttribute('id'));
+    }
+
+    function handleDragEnd(e) {
+        if (droppedIn == false) {
+            _('app_status').innerHTML = "You let the " + e
+                .target
+                .getAttribute('id') + " go.";
+        }
+        droppedIn = false;
+    }
+
+    function handleTouchStart(e) {
+        _('app_status').innerHTML = "Touch start with element " + e
+            .target
+            .getAttribute('id');
+        originalX = (e.target.offsetLeft - 10) + "px";
+        originalY = (e.target.offsetTop - 10) + "px";
+        activeEvent = 'start';
+    }
+
+    function handleTouchMove(e) {
+        var touchLocation = e.targetTouches[0];
+        var pageX = (touchLocation.pageX - 50) + "px";
+        var pageY = (touchLocation.pageY - 50) + "px";
+        _('app_status').innerHTML = "Touch x " + pageX + " Touch y " + pageY;
+        e.target.style.position = "absolute";
+        e.target.style.left = pageX;
+        e.target.style.top = pageY;
+        activeEvent = 'move';
+    }
+
+    function handleTouchEnd(e) {
+        e.preventDefault();
+        if (activeEvent === 'move') {
+            var pageX = (parseInt(e.target.style.left) - 50);
+            var pageY = (parseInt(e.target.style.top) - 50);
+
+            if (detectTouchEnd(dropZone.offsetLeft, dropZone.offsetTop, pageX, pageY, dropZone.offsetWidth, dropZone.offsetHeight)) {
+                dropZone.appendChild(e.target);
+                e.target.style.position = "initial";
+                droppedIn = true;
+                _('app_status').innerHTML = "You droped " + e
+                    .target
+                    .getAttribute('id') + " into drop zone";
+            } else {
+                e.target.style.left = originalX;
+                e.target.style.top = originalY;
+                _('app_status').innerHTML = "You let the " + e
+                    .target
+                    .getAttribute('id') + " go.";
+            }
+        }
+    }
+
+    function detectTouchEnd(x1, y1, x2, y2, w, h) {
+        //Very simple detection here
+        if (x2 - x1 > w) 
+            return false;
+        if (y2 - y1 > h) 
+            return false;
+        return true;
+    }
+}
+
+</script>
