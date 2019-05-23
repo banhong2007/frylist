@@ -11,7 +11,7 @@
 <style>
 html, body {margin: 0; height: 100%; overflow: hidden}
 
-#drop_zone1,#drop_zone2,#drop_zone3 {
+#drop_zone {
     background-color: #eee;
     border: #999 1px solid ;
     width: 580px;
@@ -44,10 +44,8 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     <h1>Drop Zone</h1>
 	
 	
-    <div id="drop_zone1" ondragover="return false"></div>
-    <div id="drop_zone2" ondragover="return false"></div>
-	<div id="drop_zone3" ondragover="return false"></div>
-	
+    <div id="drop_zone" ondragover="return false"></div>
+
 		
 	<table>
 	<TR id=TR1>
@@ -96,6 +94,12 @@ window.onload = function () {
  
  var str = "test"
 
+ 
+   var dropZone = _('drop_zone');
+
+    dropZone.addEventListener('dragenter', handleDragEnter, false);
+    dropZone.addEventListener('dragleave', handleDragLeave, false);
+    dropZone.addEventListener('drop', handleDragDrop, false);
 
 
  for (i = 1; i < str.length; i++) { 
@@ -121,11 +125,6 @@ element.appendChild(object);
     object.addEventListener('touchend', handleTouchEnd, false);
   
  
-   var dropZone = _('drop_zone' + i);
-
-    dropZone.addEventListener('dragenter', handleDragEnter, false);
-    dropZone.addEventListener('dragleave', handleDragLeave, false);
-    dropZone.addEventListener('drop', handleDragDrop, false);
 
  
 }
