@@ -1,0 +1,232 @@
+<html>
+
+<head>
+
+<style>
+
+span, button, td {
+
+font-size:25pt;
+}
+
+
+</style>
+</head>
+<body>
+<P align=left><A href=index.html><strong>HOME</strong></A>
+<center>
+<P><select type=text id=char style="display:none">
+
+<option name=c1 value="2 x 4">2 x 4</option>
+<option name=c2 value="3 x 4">3 x 4</option>
+<option name=c3 value="4 x 4">4 x 4</option>
+<option name=c4 value="5 x 4">5 x 4</option>
+<option name=c5 value="6 x 4">6 x 4</option>
+<option name=c6 value="7 x 4">7 x 4</option>
+<option name=c7 value="8 x 4">8 x 4</option>
+<option name=c8 value="9 x 4">9 x 4</option>
+<option name=c9 value="10 x 4">10 x 4</option>
+<option name=c10 value="2 x 5">2 x 5</option>
+<option name=c11 value="3 x 5">3 x 5</option>
+<option name=c12 value="4 x 5">4 x 5</option>
+<option name=c13 value="5 x 5">5 x 5</option>
+<option name=c14 value="6 x 5">6 x 5</option>
+<option name=c15 value="7 x 5">7 x 5</option>
+<option name=c16 value="8 x 5">8 x 5</option>
+<option name=c17 value="9 x 5">9 x 5</option>
+<option name=c18 value="10 x 5">10 x 5</option>
+
+
+</select>
+
+<P><select type=text id=explain style="display:none">
+
+<option name=c1 value="8">8</option>
+<option name=c2 value="12">12</option>
+<option name=c3 value="16">16</option>
+<option name=c4 value="20">20</option>
+<option name=c5 value="24">24</option>
+<option name=c6 value="28">28</option>
+<option name=c7 value="32">32</option>
+<option name=c8 value="36">36</option>
+<option name=c9 value="40">40</option>
+<option name=c10 value="10">10</option>
+<option name=c11 value="15">15</option>
+<option name=c12 value="20">20</option>
+<option name=c13 value="25">25</option>
+<option name=c14 value="30">30</option>
+<option name=c15 value="35">35</option>
+<option name=c16 value="40">40</option>
+<option name=c17 value="45">45</option>
+<option name=c18 value="50">50</option>
+
+
+</select>	
+<button id=text onclick="test()" >Try</button>
+<P>
+	<Table id=hide0 border=0 style="display:none">	
+	<TR>
+<TD>Number of Correct Attempts : <span id=count style="display:none"></span><span id=countNum></span>
+<TR>
+<TD>Number of Wrong Attempts : <span id=count2 style="display:none"></span><span id=countNum2></span>
+</Table>		
+		<P>
+		<span id=answer></span>
+		</P>
+		<P>
+		<span id=message></span>
+		</P>
+		
+		
+	
+	<button id=text2 onclick="listen()" style="display:none"><img src=listen.png height=100pt width=100pt></button>
+	<P>
+	<Table id=hide border=0 width=600 height=50 cellspacing=10 style="display:none">
+	
+	<TR>
+	<TD  width=200 height=100 align=center  ><span id="a1" >Question : </TD>
+	<TD colspan=2 width=400 height=100 align=left ><span id="a2" ></TD>
+	
+	
+	
+	<TR>
+	<TD bgcolor=yellow width=200 height=100 align=center onclick="myFunction('q1')" ><span id="q1" ></TD>
+	<TD bgcolor=yellow width=200 height=100 align=center onclick="myFunction('q2')"><span id="q2" ></TD>
+	<TD bgcolor=yellow width=200 height=100 align=center onclick="myFunction('q3')"><span id="q3" ></TD>
+	<TD bgcolor=yellow width=200 height=100 align=center onclick="myFunction('q4')"><span id="q4" ></TD>		
+
+	</Table>
+    
+
+</div>
+</body>
+</html>
+<script>
+
+	
+function listen() {
+ 
+ var msg1 = document.getElementById("char").value;
+  var msg = new SpeechSynthesisUtterance(msg1);
+  var voices = window.speechSynthesis.getVoices();
+  msg.voice = voices[17];
+  var platform = navigator.platform ;
+	if ( platform == "Win32") {
+	 msg.voice = voices[18];
+	}
+  	
+  window.speechSynthesis.speak(msg);
+
+}
+	
+function speak(msg1) {
+ 
+ 
+  var msg = new SpeechSynthesisUtterance(msg1);
+  var voices = window.speechSynthesis.getVoices();
+  msg.voice = voices[17];
+  var platform = navigator.platform ;
+	if ( platform == "Win32") {
+	 msg.voice = voices[0];
+	}
+  window.speechSynthesis.speak(msg);
+
+}
+
+
+
+function myFunction(q) {
+  
+  if (document.getElementById("explain").value ==  document.getElementById(q).innerHTML)
+  {
+     document.getElementById("message").innerHTML =  "correct" ;
+	  speak("Correct");
+	document.getElementById("count").innerHTML = document.getElementById("count").innerHTML + 1;
+	document.getElementById("countNum").innerHTML = document.getElementById("count").innerHTML.length;
+	test();
+
+	}
+     else
+     {
+     document.getElementById("message").innerHTML =  "Wrong! Try again`" ;
+	 document.getElementById("count2").innerHTML = document.getElementById("count2").innerHTML + 1;
+	 	document.getElementById("countNum2").innerHTML = document.getElementById("count2").innerHTML.length;
+	  speak("wrong");
+  }
+}
+
+function test() {
+
+document.getElementById("text").innerHTML = "Next";
+
+
+var ranNum;
+var x = document.getElementById("char").childElementCount;
+
+ranNum = Math.floor(Math.random() * x); 
+
+document.getElementById("char").selectedIndex = ranNum;
+
+document.getElementById("explain").selectedIndex = ranNum;
+
+
+
+ document.getElementById("a2").innerHTML = document.getElementById("char").value;
+
+answer =  document.getElementById("explain")[ranNum].value ; 
+
+listen();
+ranNum = Math.floor(Math.random() * x); 
+
+document.getElementById("q1").innerHTML = document.getElementById("explain")[ranNum].value;
+
+
+ranNum = Math.floor(Math.random() * x); 
+
+document.getElementById("q2").innerHTML = document.getElementById("explain")[ranNum].value;
+
+
+ranNum = Math.floor(Math.random() * x); 
+
+document.getElementById("q3").innerHTML = document.getElementById("explain")[ranNum].value;
+
+
+
+ranNum = Math.floor(Math.random() * x); 
+
+document.getElementById("q4").innerHTML = document.getElementById("explain")[ranNum].value;
+
+ranNum = Math.floor(Math.random() * 4); 
+
+
+
+  var fruits = ranNum;
+  
+
+  
+  switch(fruits) {
+    case 0:
+      document.getElementById("q1").innerHTML = answer;
+    break;
+    case 1:
+      document.getElementById("q2").innerHTML = answer;
+    break;
+    case 2:
+      document.getElementById("q3").innerHTML = answer;
+    break;
+    default:
+      document.getElementById("q1").innerHTML = answer;
+  }
+
+  
+
+ document.getElementById("hide").style.display = "inline";  
+document.getElementById("hide0").style.display = "inline";  
+document.getElementById("text2").style.display = "inline";  
+
+
+
+}
+
+
+</script>
