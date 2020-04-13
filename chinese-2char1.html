@@ -1,0 +1,594 @@
+<html>
+
+<head>
+
+<style>
+
+span, button, td {
+
+font-size:25pt;
+}
+
+
+</style>
+</head>
+<body>
+<P align=left><A href=index.html><strong>HOME</strong></A>
+<center>
+<P><select type=text id=char style="display:none">
+
+<option name=c1 value="一旦">一旦</option>
+<option name=c2 value="一致">一致</option>
+<option name=c3 value="万一">万一</option>
+<option name=c4 value="上当">上当</option>
+<option name=c5 value="下载">下载</option>
+<option name=c6 value="不免">不免</option>
+<option name=c7 value="不如">不如</option>
+<option name=c8 value="不安">不安</option>
+<option name=c9 value="不必">不必</option>
+<option name=c10 value="不断">不断</option>
+<option name=c11 value="不然">不然</option>
+<option name=c12 value="不足">不足</option>
+<option name=c13 value="与其">与其</option>
+<option name=c14 value="专家">专家</option>
+<option name=c15 value="专心">专心</option>
+<option name=c16 value="业余">业余</option>
+<option name=c17 value="业务">业务</option>
+<option name=c18 value="丝毫">丝毫</option>
+<option name=c19 value="丝绸">丝绸</option>
+<option name=c20 value="严肃">严肃</option>
+<option name=c21 value="个人">个人</option>
+<option name=c22 value="个别">个别</option>
+<option name=c23 value="个性">个性</option>
+<option name=c24 value="中介">中介</option>
+<option name=c25 value="中心">中心</option>
+<option name=c26 value="中旬">中旬</option>
+<option name=c27 value="临时">临时</option>
+<option name=c28 value="主人">主人</option>
+<option name=c29 value="主席">主席</option>
+<option name=c30 value="主张">主张</option>
+<option name=c31 value="主持">主持</option>
+<option name=c32 value="主观">主观</option>
+<option name=c33 value="义务">义务</option>
+<option name=c34 value="乐观">乐观</option>
+<option name=c35 value="书架">书架</option>
+<option name=c36 value="争取">争取</option>
+<option name=c37 value="争论">争论</option>
+<option name=c38 value="事先">事先</option>
+<option name=c39 value="事实">事实</option>
+<option name=c40 value="事情">事情</option>
+<option name=c41 value="事物">事物</option>
+<option name=c42 value="交换">交换</option>
+<option name=c43 value="交际">交际</option>
+<option name=c44 value="产品">产品</option>
+<option name=c45 value="产生">产生</option>
+<option name=c46 value="享受">享受</option>
+<option name=c47 value="亲切">亲切</option>
+<option name=c48 value="亲爱">亲爱</option>
+<option name=c49 value="亲自">亲自</option>
+<option name=c50 value="人事">人事</option>
+<option name=c51 value="人口">人口</option>
+<option name=c52 value="人员">人员</option>
+<option name=c53 value="人才">人才</option>
+<option name=c54 value="人物">人物</option>
+<option name=c55 value="人生">人生</option>
+<option name=c56 value="人类">人类</option>
+<option name=c57 value="从事">从事</option>
+<option name=c58 value="从前">从前</option>
+<option name=c59 value="从此">从此</option>
+<option name=c60 value="从而">从而</option>
+<option name=c61 value="付款">付款</option>
+<option name=c62 value="以及">以及</option>
+<option name=c63 value="以来">以来</option>
+<option name=c64 value="价值">价值</option>
+<option name=c65 value="仿佛">仿佛</option>
+<option name=c66 value="企业">企业</option>
+<option name=c67 value="企图">企图</option>
+<option name=c68 value="休闲">休闲</option>
+<option name=c69 value="优势">优势</option>
+<option name=c70 value="优惠">优惠</option>
+<option name=c71 value="优美">优美</option>
+<option name=c72 value="伙伴">伙伴</option>
+<option name=c73 value="会计">会计</option>
+<option name=c74 value="伟大">伟大</option>
+<option name=c75 value="传播">传播</option>
+<option name=c76 value="传染">传染</option>
+<option name=c77 value="传统">传统</option>
+<option name=c78 value="传说">传说</option>
+<option name=c79 value="传递">传递</option>
+<option name=c80 value="似乎">似乎</option>
+<option name=c81 value="似的">似的</option>
+<option name=c82 value="位置">位置</option>
+<option name=c83 value="体会">体会</option>
+<option name=c84 value="体现">体现</option>
+<option name=c85 value="体积">体积</option>
+<option name=c86 value="体贴">体贴</option>
+<option name=c87 value="体验">体验</option>
+<option name=c88 value="何况">何况</option>
+<option name=c89 value="何必">何必</option>
+<option name=c90 value="作为">作为</option>
+<option name=c91 value="作品">作品</option>
+<option name=c92 value="作文">作文</option>
+<option name=c93 value="佩服">佩服</option>
+<option name=c94 value="依然">依然</option>
+<option name=c95 value="侵略">侵略</option>
+<option name=c96 value="促使">促使</option>
+<option name=c97 value="促进">促进</option>
+<option name=c98 value="保存">保存</option>
+<option name=c99 value="保持">保持</option>
+<option name=c100 value="保留">保留</option>
+<option name=c101 value="保险">保险</option>
+<option name=c102 value="信号">信号</option>
+<option name=c103 value="信封">信封</option>
+<option name=c104 value="信息">信息</option>
+<option name=c105 value="修改">修改</option>
+<option name=c106 value="倒霉">倒霉</option>
+<option name=c107 value="借口">借口</option>
+<option name=c108 value="假如">假如</option>
+<option name=c109 value="假装">假装</option>
+<option name=c110 value="偶然">偶然</option>
+<option name=c111 value="傍晚">傍晚</option>
+<option name=c112 value="元旦">元旦</option>
+<option name=c113 value="兄弟">兄弟</option>
+<option name=c114 value="充分">充分</option>
+<option name=c115 value="充满">充满</option>
+<option name=c116 value="光临">光临</option>
+<option name=c117 value="光明">光明</option>
+<option name=c118 value="光滑">光滑</option>
+<option name=c119 value="光盘">光盘</option>
+<option name=c120 value="光荣">光荣</option>
+<option name=c121 value="克服">克服</option>
+<option name=c122 value="兔子">兔子</option>
+<option name=c123 value="全面">全面</option>
+<option name=c124 value="公主">公主</option>
+<option name=c125 value="公元">公元</option>
+<option name=c126 value="公寓">公寓</option>
+<option name=c127 value="公布">公布</option>
+<option name=c128 value="公平">公平</option>
+<option name=c129 value="公开">公开</option>
+<option name=c130 value="关怀">关怀</option>
+<option name=c131 value="关闭">关闭</option>
+<option name=c132 value="其余">其余</option>
+<option name=c133 value="具体">具体</option>
+<option name=c134 value="具备">具备</option>
+<option name=c135 value="内科">内科</option>
+<option name=c136 value="再三">再三</option>
+<option name=c137 value="冒险">冒险</option>
+<option name=c138 value="军事">军事</option>
+<option name=c139 value="农业">农业</option>
+<option name=c140 value="农民">农民</option>
+<option name=c141 value="冠军">冠军</option>
+<option name=c142 value="决心">决心</option>
+<option name=c143 value="决赛">决赛</option>
+<option name=c144 value="凡是">凡是</option>
+<option name=c145 value="出口">出口</option>
+<option name=c146 value="出席">出席</option>
+<option name=c147 value="出版">出版</option>
+<option name=c148 value="出色">出色</option>
+<option name=c149 value="分别">分别</option>
+<option name=c150 value="分布">分布</option>
+<option name=c151 value="分析">分析</option>
+<option name=c152 value="分配">分配</option>
+<option name=c153 value="划船">划船</option>
+<option name=c154 value="创造">创造</option>
+<option name=c155 value="初级">初级</option>
+<option name=c156 value="删除">删除</option>
+<option name=c157 value="利息">利息</option>
+<option name=c158 value="利润">利润</option>
+<option name=c159 value="利用">利用</option>
+<option name=c160 value="利益">利益</option>
+<option name=c161 value="到达">到达</option>
+<option name=c162 value="制作">制作</option>
+<option name=c163 value="制定">制定</option>
+<option name=c164 value="制度">制度</option>
+<option name=c165 value="刺激">刺激</option>
+<option name=c166 value="刻苦">刻苦</option>
+<option name=c167 value="前途">前途</option>
+<option name=c168 value="剪刀">剪刀</option>
+<option name=c169 value="力量">力量</option>
+<option name=c170 value="办理">办理</option>
+<option name=c171 value="功夫">功夫</option>
+<option name=c172 value="功能">功能</option>
+<option name=c173 value="劳动">劳动</option>
+<option name=c174 value="劳驾">劳驾</option>
+<option name=c175 value="勇气">勇气</option>
+<option name=c176 value="勤劳">勤劳</option>
+<option name=c177 value="勤奋">勤奋</option>
+<option name=c178 value="勺子">勺子</option>
+<option name=c179 value="包含">包含</option>
+<option name=c180 value="包子">包子</option>
+<option name=c181 value="包裹">包裹</option>
+<option name=c182 value="匆忙">匆忙</option>
+<option name=c183 value="化学">化学</option>
+<option name=c184 value="华裔">华裔</option>
+<option name=c185 value="协调">协调</option>
+<option name=c186 value="单位">单位</option>
+<option name=c187 value="单元">单元</option>
+<option name=c188 value="单独">单独</option>
+<option name=c189 value="单纯">单纯</option>
+<option name=c190 value="单调">单调</option>
+<option name=c191 value="占线">占线</option>
+<option name=c192 value="卡车">卡车</option>
+<option name=c193 value="卧室">卧室</option>
+<option name=c194 value="危害">危害</option>
+<option name=c195 value="厕所">厕所</option>
+<option name=c196 value="厘米">厘米</option>
+<option name=c197 value="原则">原则</option>
+<option name=c198 value="原料">原料</option>
+<option name=c199 value="去世">去世</option>
+<option name=c200 value="参与">参与</option>
+
+
+
+</select>
+
+<P><select type=text id=explain style="display:none">
+
+<option name=c1 value="in case (sth happens); if; once (sth happens, then...); when; in a short time; in one day">in case (sth happens); if; once (sth happens, then...); when; in a short time; in one day</option>
+<option name=c2 value="unanimous; identical (views or opinions)">unanimous; identical (views or opinions)</option>
+<option name=c3 value="just in case; if by any chance; contingency">just in case; if by any chance; contingency</option>
+<option name=c4 value="taken in (by sb's deceit); to be fooled; to be duped">taken in (by sb's deceit); to be fooled; to be duped</option>
+<option name=c5 value="to download; also pr. xia4 zai4">to download; also pr. xia4 zai4</option>
+<option name=c6 value="unavoidable">unavoidable</option>
+<option name=c7 value="not equal to; not as good as; inferior to; it would be better to">not equal to; not as good as; inferior to; it would be better to</option>
+<option name=c8 value="unpeaceful; unstable; uneasy; disturbed; restless; worried">unpeaceful; unstable; uneasy; disturbed; restless; worried</option>
+<option name=c9 value="need not; does not have to">need not; does not have to</option>
+<option name=c10 value="unceasing; uninterrupted; continuous; constant">unceasing; uninterrupted; continuous; constant</option>
+<option name=c11 value="not so; no; or else; otherwise; if not">not so; no; or else; otherwise; if not</option>
+<option name=c12 value="insufficient; lacking; deficiency; not enough; inadequate; not worth; cannot; should not">insufficient; lacking; deficiency; not enough; inadequate; not worth; cannot; should not</option>
+<option name=c13 value="rather than...; 與其|与其 A 不如|不如 B (rather than A, better to B)">rather than...; 與其|与其 A 不如|不如 B (rather than A, better to B)</option>
+<option name=c14 value="expert; specialist; CL:個|个[ge4]">expert; specialist; CL:個|个[ge4]</option>
+<option name=c15 value="to concentrate; absorption; concentration; engrossed">to concentrate; absorption; concentration; engrossed</option>
+<option name=c16 value="spare time; amateur; extra-curricular">spare time; amateur; extra-curricular</option>
+<option name=c17 value="business; profession; CL:個|个[ge4]">business; profession; CL:個|个[ge4]</option>
+<option name=c18 value="the slightest amount or degree; a bit">the slightest amount or degree; a bit</option>
+<option name=c19 value="silk cloth; silk">silk cloth; silk</option>
+<option name=c20 value="solemn; solemnity">solemn; solemnity</option>
+<option name=c21 value="individual; personal; oneself">individual; personal; oneself</option>
+<option name=c22 value="individual; specific; respective; just one or two">individual; specific; respective; just one or two</option>
+<option name=c23 value="individuality; personality">individuality; personality</option>
+<option name=c24 value="to act as intermediary; to link; intermediate; inter-; agency; agent">to act as intermediary; to link; intermediate; inter-; agency; agent</option>
+<option name=c25 value="center; heart; core; CL:個|个[ge4]">center; heart; core; CL:個|个[ge4]</option>
+<option name=c26 value="middle third of a month">middle third of a month</option>
+<option name=c27 value="at the instant sth happens; temporary; interim; ad hoc">at the instant sth happens; temporary; interim; ad hoc</option>
+<option name=c28 value="master; host; CL:個|个[ge4]">master; host; CL:個|个[ge4]</option>
+<option name=c29 value="chairperson; premier; chairman; CL:個|个[ge4],位[wei4]">chairperson; premier; chairman; CL:個|个[ge4],位[wei4]</option>
+<option name=c30 value="to advocate; to stand for; view; position; stand; proposition; viewpoint; assertion; CL:個|个[ge4]">to advocate; to stand for; view; position; stand; proposition; viewpoint; assertion; CL:個|个[ge4]</option>
+<option name=c31 value="to take charge of; to manage or direct; to preside over; to uphold; to stand for (eg justice); to host (a TV or radio program etc)">to take charge of; to manage or direct; to preside over; to uphold; to stand for (eg justice); to host (a TV or radio program etc)</option>
+<option name=c32 value="subjective">subjective</option>
+<option name=c33 value="duty; obligation; commitment; volunteer duty; CL:項|项[xiang4]; mandatory; voluntary">duty; obligation; commitment; volunteer duty; CL:項|项[xiang4]; mandatory; voluntary</option>
+<option name=c34 value="optimistic; hopeful">optimistic; hopeful</option>
+<option name=c35 value="bookshelf; CL:個|个[ge4]">bookshelf; CL:個|个[ge4]</option>
+<option name=c36 value="to fight for; to strive for; to win over">to fight for; to strive for; to win over</option>
+<option name=c37 value="to argue; to debate; to contend; argument; contention; controversy; debate; CL:次[ci4],場|场[chang3]">to argue; to debate; to contend; argument; contention; controversy; debate; CL:次[ci4],場|场[chang3]</option>
+<option name=c38 value="in advance; before the event; beforehand; prior">in advance; before the event; beforehand; prior</option>
+<option name=c39 value="a fact; the fact that; CL:個|个[ge4]">a fact; the fact that; CL:個|个[ge4]</option>
+<option name=c40 value="affair; matter; thing; business; CL:件[jian4],樁|桩[zhuang1]">affair; matter; thing; business; CL:件[jian4],樁|桩[zhuang1]</option>
+<option name=c41 value="thing; object; CL:個|个[ge4]">thing; object; CL:個|个[ge4]</option>
+<option name=c42 value="to exchange; to swap; to switch (telecom); commutative (math); to commute">to exchange; to swap; to switch (telecom); commutative (math); to commute</option>
+<option name=c43 value="communication; social intercourse">communication; social intercourse</option>
+<option name=c44 value="goods; merchandise; product; CL:個|个[ge4]">goods; merchandise; product; CL:個|个[ge4]</option>
+<option name=c45 value="to arise; to come into being; to come about; to give rise to; to bring into being; to bring about; to produce; to engender; to generate; to appear; appearance; emergence; generation; production; yield">to arise; to come into being; to come about; to give rise to; to bring into being; to bring about; to produce; to engender; to generate; to appear; appearance; emergence; generation; production; yield</option>
+<option name=c46 value="to enjoy; to live it up; pleasure; CL:種|种[zhong3]">to enjoy; to live it up; pleasure; CL:種|种[zhong3]</option>
+<option name=c47 value="amiable; friendliness; gracious; hospitality; intimate; cordial; kind; close and dear; familiar">amiable; friendliness; gracious; hospitality; intimate; cordial; kind; close and dear; familiar</option>
+<option name=c48 value="Dear or beloved (way of starting a letter)">Dear or beloved (way of starting a letter)</option>
+<option name=c49 value="personally">personally</option>
+<option name=c50 value="human affairs; ways of the world; consciousness of the world; what is humanly possible; personnel matters; sexual awareness; sexual passion; facts of life">human affairs; ways of the world; consciousness of the world; what is humanly possible; personnel matters; sexual awareness; sexual passion; facts of life</option>
+<option name=c51 value="population">population</option>
+<option name=c52 value="staff; crew; personnel; CL:個|个[ge4]">staff; crew; personnel; CL:個|个[ge4]</option>
+<option name=c53 value="a person's talent; talented person; distinguished person; a talent (worth head-hunting); person's looks; an attractive woman; used interchangeably with 人材; CL:個|个[ge4]">a person's talent; talented person; distinguished person; a talent (worth head-hunting); person's looks; an attractive woman; used interchangeably with 人材; CL:個|个[ge4]</option>
+<option name=c54 value="a person; a character (in a play, novel etc); a protagonist; CL:個|个[ge4]">a person; a character (in a play, novel etc); a protagonist; CL:個|个[ge4]</option>
+<option name=c55 value="human life">human life</option>
+<option name=c56 value="humanity; human race; mankind">humanity; human race; mankind</option>
+<option name=c57 value="to go for; to engage in; to undertake; to deal with; to handle; to do">to go for; to engage in; to undertake; to deal with; to handle; to do</option>
+<option name=c58 value="previously; formerly; once upon a time">previously; formerly; once upon a time</option>
+<option name=c59 value="from now on; since then; henceforth">from now on; since then; henceforth</option>
+<option name=c60 value="thus; thereby">thus; thereby</option>
+<option name=c61 value="pay; payment">pay; payment</option>
+<option name=c62 value="as well as; too; and">as well as; too; and</option>
+<option name=c63 value="since (a previous event)">since (a previous event)</option>
+<option name=c64 value="value; worth; fig. values (ethical, cultural etc); CL:個|个[ge4]">value; worth; fig. values (ethical, cultural etc); CL:個|个[ge4]</option>
+<option name=c65 value="to seem; as if; alike; similar">to seem; as if; alike; similar</option>
+<option name=c66 value="company; firm; enterprise; corporation; CL:家[jia1]">company; firm; enterprise; corporation; CL:家[jia1]</option>
+<option name=c67 value="attempt; CL:種|种[zhong3]">attempt; CL:種|种[zhong3]</option>
+<option name=c68 value="leisure; relaxation; not working; idle">leisure; relaxation; not working; idle</option>
+<option name=c69 value="superiority; dominance; advantage">superiority; dominance; advantage</option>
+<option name=c70 value="preferential; favorable">preferential; favorable</option>
+<option name=c71 value="graceful; fine; elegant">graceful; fine; elegant</option>
+<option name=c72 value="partner; companion; comrade">partner; companion; comrade</option>
+<option name=c73 value="accountant; accountancy; accounting">accountant; accountancy; accounting</option>
+<option name=c74 value="great; mighty; large">great; mighty; large</option>
+<option name=c75 value="to disseminate; to propagate; to spread">to disseminate; to propagate; to spread</option>
+<option name=c76 value="to infect; contagious">to infect; contagious</option>
+<option name=c77 value="tradition; traditional; convention; conventional; CL:個|个[ge4]">tradition; traditional; convention; conventional; CL:個|个[ge4]</option>
+<option name=c78 value="legend; folklore; tradition; it is said; they say that...">legend; folklore; tradition; it is said; they say that...</option>
+<option name=c79 value="to transmit; to pass on to sb else">to transmit; to pass on to sb else</option>
+<option name=c80 value="apparently; to seem; to appear; as if; seemingly">apparently; to seem; to appear; as if; seemingly</option>
+<option name=c81 value="seems as if; rather like;">seems as if; rather like;</option>
+<option name=c82 value="position; place; seat; CL:個|个[ge4]">position; place; seat; CL:個|个[ge4]</option>
+<option name=c83 value="know (through learning or by experience); CL:個|个[ge4]">know (through learning or by experience); CL:個|个[ge4]</option>
+<option name=c84 value="to embody; to reflect; to incarnate">to embody; to reflect; to incarnate</option>
+<option name=c85 value="volume; bulk; CL:個|个[ge4]">volume; bulk; CL:個|个[ge4]</option>
+<option name=c86 value="considerate (of other people's needs)">considerate (of other people's needs)</option>
+<option name=c87 value="to experience for oneself">to experience for oneself</option>
+<option name=c88 value="much less; let alone">much less; let alone</option>
+<option name=c89 value="there is no need; why should">there is no need; why should</option>
+<option name=c90 value="one's conduct; deed; activity; accomplishment; achievement; to act as; as (in the capacity of); qua; to view as; to look upon (sth as); to take sth to be">one's conduct; deed; activity; accomplishment; achievement; to act as; as (in the capacity of); qua; to view as; to look upon (sth as); to take sth to be</option>
+<option name=c91 value="work (of art); opus; CL:部[bu4],篇[pian1]">work (of art); opus; CL:部[bu4],篇[pian1]</option>
+<option name=c92 value="to write an essay; composition (student essay); CL:篇[pian1]">to write an essay; composition (student essay); CL:篇[pian1]</option>
+<option name=c93 value="admire">admire</option>
+<option name=c94 value="still; as before">still; as before</option>
+<option name=c95 value="invasion; encroachment">invasion; encroachment</option>
+<option name=c96 value="to induce; to promote; to urge; to impel; to bring about; to provoke; to drive (sb to do sth); to catalyze; to actuate; to contribute to (some development)">to induce; to promote; to urge; to impel; to bring about; to provoke; to drive (sb to do sth); to catalyze; to actuate; to contribute to (some development)</option>
+<option name=c97 value="to promote (an idea or cause); to advance; boost">to promote (an idea or cause); to advance; boost</option>
+<option name=c98 value="to conserve; to preserve; to keep; to save (a file etc) (computing)">to conserve; to preserve; to keep; to save (a file etc) (computing)</option>
+<option name=c99 value="to keep; to maintain; to hold; to preserve">to keep; to maintain; to hold; to preserve</option>
+<option name=c100 value="to retain; to continue to have; to preserve; to maintain; to reserve; reservations; to hold back (approval or acceptance)">to retain; to continue to have; to preserve; to maintain; to reserve; reservations; to hold back (approval or acceptance)</option>
+<option name=c101 value="insurance; to insure; safe; secure; be sure; be bound to; CL:份[fen4]">insurance; to insure; safe; secure; be sure; be bound to; CL:份[fen4]</option>
+<option name=c102 value="signal">signal</option>
+<option name=c103 value="envelope; CL:個|个[ge4]">envelope; CL:個|个[ge4]</option>
+<option name=c104 value="information; news; message">information; news; message</option>
+<option name=c105 value="to amend; to alter; to modify">to amend; to alter; to modify</option>
+<option name=c106 value="have bad luck; be out of luck">have bad luck; be out of luck</option>
+<option name=c107 value="to use as an excuse; on the pretext">to use as an excuse; on the pretext</option>
+<option name=c108 value="if">if</option>
+<option name=c109 value="to feign; to pretend">to feign; to pretend</option>
+<option name=c110 value="incidentally; occasional; occasionally; by chance; randomly">incidentally; occasional; occasionally; by chance; randomly</option>
+<option name=c111 value="in the evening; when night falls; towards evening; at night fall; at dusk">in the evening; when night falls; towards evening; at night fall; at dusk</option>
+<option name=c112 value="New Year's Day">New Year's Day</option>
+<option name=c113 value="older and younger brother; brothers; brotherly; fraternal; CL:個|个[ge4]">older and younger brother; brothers; brotherly; fraternal; CL:個|个[ge4]</option>
+<option name=c114 value="full; abundant">full; abundant</option>
+<option name=c115 value="full of; brimming with; very full; permeated">full of; brimming with; very full; permeated</option>
+<option name=c116 value="(honorific) Welcome!; You honor us with your presence.; It is an honor to have you.">(honorific) Welcome!; You honor us with your presence.; It is an honor to have you.</option>
+<option name=c117 value="light; illumination; radiance (esp. glory of Buddha etc); fig. bright prospect; openhearted">light; illumination; radiance (esp. glory of Buddha etc); fig. bright prospect; openhearted</option>
+<option name=c118 value="glossy; sleek; smooth">glossy; sleek; smooth</option>
+<option name=c119 value="compact disc; CD or DVD; CD ROM; CL:片[pian4],張|张[zhang1]">compact disc; CD or DVD; CD ROM; CL:片[pian4],張|张[zhang1]</option>
+<option name=c120 value="honor and glory; CL:個|个[ge4]">honor and glory; CL:個|个[ge4]</option>
+<option name=c121 value="(try to) overcome (hardships etc); to conquer; to put up with; to endure">(try to) overcome (hardships etc); to conquer; to put up with; to endure</option>
+<option name=c122 value="hare; rabbit; CL:隻|只[zhi1]">hare; rabbit; CL:隻|只[zhi1]</option>
+<option name=c123 value="all-around; comprehensive; total; overall">all-around; comprehensive; total; overall</option>
+<option name=c124 value="princess">princess</option>
+<option name=c125 value="(year) AD; Christian era">(year) AD; Christian era</option>
+<option name=c126 value="apartment building; block of flats; CL:套|套[tao4]">apartment building; block of flats; CL:套|套[tao4]</option>
+<option name=c127 value="to announce; to make public; to publish">to announce; to make public; to publish</option>
+<option name=c128 value="fair; impartial">fair; impartial</option>
+<option name=c129 value="public; to publish; to make public">public; to publish; to make public</option>
+<option name=c130 value="care; solicitude; to show care for; concerned about; attentive to">care; solicitude; to show care for; concerned about; attentive to</option>
+<option name=c131 value="to close; to shut">to close; to shut</option>
+<option name=c132 value="the rest; the others; remaining; remainder; apart from them">the rest; the others; remaining; remainder; apart from them</option>
+<option name=c133 value="concrete; definite; specific">concrete; definite; specific</option>
+<option name=c134 value="to possess; to have; equipped with; able to fulfill (conditions or requirements)">to possess; to have; equipped with; able to fulfill (conditions or requirements)</option>
+<option name=c135 value="medicine; "internal" medicine, i.e. treatment by administering drugs, as opposed to surgical intervention 外科[wai4 ke1]; medical department">medicine; "internal" medicine, i.e. treatment by administering drugs, as opposed to surgical intervention 外科[wai4 ke1]; medical department</option>
+<option name=c136 value="over and over again; again and again">over and over again; again and again</option>
+<option name=c137 value="to take risks; to take chances; foray; adventure">to take risks; to take chances; foray; adventure</option>
+<option name=c138 value="military affairs; military matters; military">military affairs; military matters; military</option>
+<option name=c139 value="agriculture; farming">agriculture; farming</option>
+<option name=c140 value="peasant; CL:個|个[ge4]">peasant; CL:個|个[ge4]</option>
+<option name=c141 value="champion; CL:個|个[ge4]">champion; CL:個|个[ge4]</option>
+<option name=c142 value="determination; resolution; determined; firm and resolute; to make up one's mind; CL:個|个[ge4]">determination; resolution; determined; firm and resolute; to make up one's mind; CL:個|个[ge4]</option>
+<option name=c143 value="finals (of a competition)">finals (of a competition)</option>
+<option name=c144 value="every; all">every; all</option>
+<option name=c145 value="an exit; CL:個|个[ge4]; to speak; to export; (of a ship) to leave port">an exit; CL:個|个[ge4]; to speak; to export; (of a ship) to leave port</option>
+<option name=c146 value="to attend; to participate; present">to attend; to participate; present</option>
+<option name=c147 value="to publish; to come off the press; to put out">to publish; to come off the press; to put out</option>
+<option name=c148 value="remarkable; outstanding">remarkable; outstanding</option>
+<option name=c149 value="to part or leave each other; to distinguish; difference; in different ways; differently; separately or individually">to part or leave each other; to distinguish; difference; in different ways; differently; separately or individually</option>
+<option name=c150 value="distributed; to distribute">distributed; to distribute</option>
+<option name=c151 value="to analyze; analysis; CL:個|个[ge4]">to analyze; analysis; CL:個|个[ge4]</option>
+<option name=c152 value="to distribute; to assign; to allocate">to distribute; to assign; to allocate</option>
+<option name=c153 value="to row a boat; rowing boat; rowing (sport)">to row a boat; rowing boat; rowing (sport)</option>
+<option name=c154 value="to create; to bring about; to produce; CL:個|个[ge4]">to create; to bring about; to produce; CL:個|个[ge4]</option>
+<option name=c155 value="junior; primary">junior; primary</option>
+<option name=c156 value="to delete; to cancel">to delete; to cancel</option>
+<option name=c157 value="interest (on a loan); CL:筆|笔[bi3]">interest (on a loan); CL:筆|笔[bi3]</option>
+<option name=c158 value="profits">profits</option>
+<option name=c159 value="exploit; make use of; to use; to take advantage of; to utilize">exploit; make use of; to use; to take advantage of; to utilize</option>
+<option name=c160 value="benefit; (in sb's) interest; CL:個|个[ge4]">benefit; (in sb's) interest; CL:個|个[ge4]</option>
+<option name=c161 value="to reach; to arrive">to reach; to arrive</option>
+<option name=c162 value="make; manufacture">make; manufacture</option>
+<option name=c163 value="to draw up; to formulate">to draw up; to formulate</option>
+<option name=c164 value="system (e.g. political, adminstrative etc); institution; CL:個|个[ge4]">system (e.g. political, adminstrative etc); institution; CL:個|个[ge4]</option>
+<option name=c165 value="to provoke; to irritate; to upset; to stimulate; to excite; irritant">to provoke; to irritate; to upset; to stimulate; to excite; irritant</option>
+<option name=c166 value="hardworking; assiduous">hardworking; assiduous</option>
+<option name=c167 value="prospects; future outlook; journey">prospects; future outlook; journey</option>
+<option name=c168 value="scissors; CL:把[ba3]">scissors; CL:把[ba3]</option>
+<option name=c169 value="power; force; strength">power; force; strength</option>
+<option name=c170 value="to handle; to transact; to conduct">to handle; to transact; to conduct</option>
+<option name=c171 value="skill; art; kung fu; labor; effort">skill; art; kung fu; labor; effort</option>
+<option name=c172 value="function; capability">function; capability</option>
+<option name=c173 value="work; toil; physical labor; CL:次[ci4]">work; toil; physical labor; CL:次[ci4]</option>
+<option name=c174 value="excuse me">excuse me</option>
+<option name=c175 value="courage; valor">courage; valor</option>
+<option name=c176 value="hardworking; industrious; diligent">hardworking; industrious; diligent</option>
+<option name=c177 value="hardworking; diligent">hardworking; diligent</option>
+<option name=c178 value="scoop; ladle; CL:把[ba3]">scoop; ladle; CL:把[ba3]</option>
+<option name=c179 value="to contain; to embody; to include">to contain; to embody; to include</option>
+<option name=c180 value="steamed stuffed bun; CL:個|个[ge4]">steamed stuffed bun; CL:個|个[ge4]</option>
+<option name=c181 value="wrap up; bind up; bundle; parcel; package; CL:個|个[ge4]">wrap up; bind up; bundle; parcel; package; CL:個|个[ge4]</option>
+<option name=c182 value="hasty; hurried">hasty; hurried</option>
+<option name=c183 value="chemistry; chemical">chemistry; chemical</option>
+<option name=c184 value="ethnic Chinese; non-Chinese citizen of Chinese ancestry">ethnic Chinese; non-Chinese citizen of Chinese ancestry</option>
+<option name=c185 value="to coordinate; to harmonize; negotiation">to coordinate; to harmonize; negotiation</option>
+<option name=c186 value="a unit; unit (of measure); work unit (one's workplace); CL:個|个[ge4]">a unit; unit (of measure); work unit (one's workplace); CL:個|个[ge4]</option>
+<option name=c187 value="unit; entrance number; staircase (for residential buildings)">unit; entrance number; staircase (for residential buildings)</option>
+<option name=c188 value="alone; by oneself; on one's own">alone; by oneself; on one's own</option>
+<option name=c189 value="simple; pure; alone; merely">simple; pure; alone; merely</option>
+<option name=c190 value="monotonous">monotonous</option>
+<option name=c191 value="busy (telephone)">busy (telephone)</option>
+<option name=c192 value="truck; CL:輛|辆[liang4]">truck; CL:輛|辆[liang4]</option>
+<option name=c193 value="bedroom; CL:間|间[jian1]">bedroom; CL:間|间[jian1]</option>
+<option name=c194 value="to jeopardize; to harm; to endanger; CL:個|个[ge4]">to jeopardize; to harm; to endanger; CL:個|个[ge4]</option>
+<option name=c195 value="toilet; lavatory; CL:間|间[jian1],處|处[chu4]">toilet; lavatory; CL:間|间[jian1],處|处[chu4]</option>
+<option name=c196 value="centimeter">centimeter</option>
+<option name=c197 value="principle; doctrine; CL:個|个[ge4]">principle; doctrine; CL:個|个[ge4]</option>
+<option name=c198 value="raw material; CL:個|个[ge4]">raw material; CL:個|个[ge4]</option>
+<option name=c199 value="to pass away; to die">to pass away; to die</option>
+<option name=c200 value="to participate (in sth)">to participate (in sth)</option>
+
+
+</select>	
+<button id=text onclick="test()" >Try</button>
+<P>
+	<Table id=hide0 border=0 style="display:none">	
+	<TR>
+<TD>Number of Correct Attempts : <span id=count style="display:none"></span><span id=countNum></span>
+<TR>
+<TD>Number of Wrong Attempts : <span id=count2 style="display:none"></span><span id=countNum2></span>
+</Table>		
+		<P>
+		<span id=answer></span>
+		</P>
+		<P>
+		<span id=message></span>
+		</P>
+		
+		
+	
+	<button id=text2 onclick="listen()" style="display:none"><img src=listen.png height=100pt width=100pt></button>
+	<P>
+	<Table id=hide border=0 width=600 height=50 cellspacing=10 style="display:none">
+	
+	<TR>
+	<TD  width=200 height=100 align=center  ><span id="a1" >word : </TD>
+	<TD colspan=2 width=400 height=100 align=left ><span id="a2" ></TD>
+	
+	
+	
+	<TR>
+	<TD bgcolor=yellow width=200 height=100 align=center onclick="myFunction('q1')" ><span id="q1" ></TD>
+	<TD bgcolor=yellow width=200 height=100 align=center onclick="myFunction('q2')"><span id="q2" ></TD>
+	<TD bgcolor=yellow width=200 height=100 align=center onclick="myFunction('q3')"><span id="q3" ></TD>
+	
+
+	</Table>
+    
+
+</div>
+</body>
+</html>
+<script>
+
+	
+function listen() {
+ 
+ var msg1 = document.getElementById("char").value;
+  var msg = new SpeechSynthesisUtterance(msg1);
+  var voices = window.speechSynthesis.getVoices();
+  msg.voice = voices[49];
+  var platform = navigator.platform ;
+	if ( platform == "Win32") {
+	 msg.voice = voices[18];
+	}
+  	
+  window.speechSynthesis.speak(msg);
+
+}
+	
+function speak(msg1) {
+ 
+ 
+  var msg = new SpeechSynthesisUtterance(msg1);
+  var voices = window.speechSynthesis.getVoices();
+  msg.voice = voices[17];
+  var platform = navigator.platform ;
+	if ( platform == "Win32") {
+	 msg.voice = voices[0];
+	}
+  window.speechSynthesis.speak(msg);
+
+}
+
+
+
+function myFunction(q) {
+  
+  if (document.getElementById("explain").value ==  document.getElementById(q).innerHTML)
+  {
+     document.getElementById("message").innerHTML =  "correct" ;
+	  speak("Correct");
+	document.getElementById("count").innerHTML = document.getElementById("count").innerHTML + 1;
+	document.getElementById("countNum").innerHTML = document.getElementById("count").innerHTML.length;
+	test();
+
+	}
+     else
+     {
+     document.getElementById("message").innerHTML =  "Wrong! Try again`" ;
+	 document.getElementById("count2").innerHTML = document.getElementById("count2").innerHTML + 1;
+	 	document.getElementById("countNum2").innerHTML = document.getElementById("count2").innerHTML.length;
+	  speak("wrong");
+  }
+}
+
+
+function test() {
+
+document.getElementById("text").innerHTML = "Next";
+
+
+var ranNum;
+var x = document.getElementById("char").childElementCount;
+
+ranNum = Math.floor(Math.random() * x); 
+
+document.getElementById("char").selectedIndex = ranNum;
+
+document.getElementById("explain").selectedIndex = ranNum;
+
+
+
+ document.getElementById("a2").innerHTML = document.getElementById("char").value;
+
+answer =  document.getElementById("explain")[ranNum].value ; 
+
+listen();
+ranNum = Math.floor(Math.random() * x); 
+
+document.getElementById("q1").innerHTML = document.getElementById("explain")[ranNum].value;
+
+
+ranNum = Math.floor(Math.random() * x); 
+
+document.getElementById("q2").innerHTML = document.getElementById("explain")[ranNum].value;
+
+
+ranNum = Math.floor(Math.random() * x); 
+
+document.getElementById("q3").innerHTML = document.getElementById("explain")[ranNum].value;
+
+
+ranNum = Math.floor(Math.random() * 3); 
+
+
+
+  var fruits = ranNum;
+  
+
+  
+  switch(fruits) {
+    case 0:
+      document.getElementById("q1").innerHTML = answer;
+    break;
+    case 1:
+      document.getElementById("q2").innerHTML = answer;
+    break;
+    case 2:
+      document.getElementById("q3").innerHTML = answer;
+    break;
+    default:
+      document.getElementById("q1").innerHTML = answer;
+  }
+
+  
+
+ document.getElementById("hide").style.display = "inline";  
+document.getElementById("hide0").style.display = "inline";  
+document.getElementById("text2").style.display = "inline";  
+
+
+
+}
+
+
+
+</script>
