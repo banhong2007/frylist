@@ -1,0 +1,802 @@
+<html>
+
+<head>
+
+<style>
+
+span, button, td {
+
+font-size:25pt;
+}
+
+
+</style>
+</head>
+<body>
+<P align=left><A href=index.html><strong>HOME</strong></A>
+<center>
+<P><select type=text id=char style="display:none">
+
+<option name=c1 value="唉">唉</option>
+<option name=c2 value="岸">岸</option>
+<option name=c3 value="暗">暗</option>
+<option name=c4 value="摆">摆</option>
+<option name=c5 value="棒">棒</option>
+<option name=c6 value="薄">薄</option>
+<option name=c7 value="抱">抱</option>
+<option name=c8 value="倍">倍</option>
+<option name=c9 value="被">被</option>
+<option name=c10 value="笨">笨</option>
+<option name=c11 value="便">便</option>
+<option name=c12 value="遍">遍</option>
+<option name=c13 value="丙">丙</option>
+<option name=c14 value="布">布</option>
+<option name=c15 value="擦">擦</option>
+<option name=c16 value="猜">猜</option>
+<option name=c17 value="踩">踩</option>
+<option name=c18 value="册">册</option>
+<option name=c19 value="插">插</option>
+<option name=c20 value="拆">拆</option>
+<option name=c21 value="尝">尝</option>
+<option name=c22 value="抄">抄</option>
+<option name=c23 value="朝">朝</option>
+<option name=c24 value="吵">吵</option>
+<option name=c25 value="炒">炒</option>
+<option name=c26 value="趁">趁</option>
+<option name=c27 value="称">称</option>
+<option name=c28 value="乘">乘</option>
+<option name=c29 value="冲">冲</option>
+<option name=c30 value="丑">丑</option>
+<option name=c31 value="臭">臭</option>
+<option name=c32 value="除">除</option>
+<option name=c33 value="闯">闯</option>
+<option name=c34 value="吹">吹</option>
+<option name=c35 value="从">从</option>
+<option name=c36 value="醋">醋</option>
+<option name=c37 value="催">催</option>
+<option name=c38 value="存">存</option>
+<option name=c39 value="呆">呆</option>
+<option name=c40 value="戴">戴</option>
+<option name=c41 value="淡">淡</option>
+<option name=c42 value="当">当</option>
+<option name=c43 value="挡">挡</option>
+<option name=c44 value="刀">刀</option>
+<option name=c45 value="岛">岛</option>
+<option name=c46 value="倒">倒</option>
+<option name=c47 value="得">得</option>
+<option name=c48 value="等">等</option>
+<option name=c49 value="滴">滴</option>
+<option name=c50 value="底">底</option>
+<option name=c51 value="递">递</option>
+<option name=c52 value="掉">掉</option>
+<option name=c53 value="钓">钓</option>
+<option name=c54 value="丁">丁</option>
+<option name=c55 value="顶">顶</option>
+<option name=c56 value="丢">丢</option>
+<option name=c57 value="冻">冻</option>
+<option name=c58 value="洞">洞</option>
+<option name=c59 value="逗">逗</option>
+<option name=c60 value="断">断</option>
+<option name=c61 value="堆">堆</option>
+<option name=c62 value="吨">吨</option>
+<option name=c63 value="蹲">蹲</option>
+<option name=c64 value="顿">顿</option>
+<option name=c65 value="朵">朵</option>
+<option name=c66 value="而">而</option>
+<option name=c67 value="发">发</option>
+<option name=c68 value="方">方</option>
+<option name=c69 value="非">非</option>
+<option name=c70 value="肺">肺</option>
+<option name=c71 value="份">份</option>
+<option name=c72 value="幅">幅</option>
+<option name=c73 value="扶">扶</option>
+<option name=c74 value="富">富</option>
+<option name=c75 value="盖">盖</option>
+<option name=c76 value="干">干</option>
+<option name=c77 value="搞">搞</option>
+<option name=c78 value="各">各</option>
+<option name=c79 value="根">根</option>
+<option name=c80 value="更">更</option>
+<option name=c81 value="够">够</option>
+<option name=c82 value="挂">挂</option>
+<option name=c83 value="乖">乖</option>
+<option name=c84 value="官">官</option>
+<option name=c85 value="光">光</option>
+<option name=c86 value="逛">逛</option>
+<option name=c87 value="滚">滚</option>
+<option name=c88 value="锅">锅</option>
+<option name=c89 value="过">过</option>
+<option name=c90 value="哈">哈</option>
+<option name=c91 value="喊">喊</option>
+<option name=c92 value="汗">汗</option>
+<option name=c93 value="恨">恨</option>
+<option name=c94 value="横">横</option>
+<option name=c95 value="厚">厚</option>
+<option name=c96 value="壶">壶</option>
+<option name=c97 value="还">还</option>
+<option name=c98 value="挥">挥</option>
+<option name=c99 value="灰">灰</option>
+<option name=c100 value="火">火</option>
+<option name=c101 value="寄">寄</option>
+<option name=c102 value="假">假</option>
+<option name=c103 value="甲">甲</option>
+<option name=c104 value="嫁">嫁</option>
+<option name=c105 value="煎">煎</option>
+<option name=c106 value="捡">捡</option>
+<option name=c107 value="交">交</option>
+<option name=c108 value="浇">浇</option>
+<option name=c109 value="节">节</option>
+<option name=c110 value="届">届</option>
+<option name=c111 value="紧">紧</option>
+<option name=c112 value="救">救</option>
+<option name=c113 value="举">举</option>
+<option name=c114 value="捐">捐</option>
+<option name=c115 value="卷">卷</option>
+<option name=c116 value="砍">砍</option>
+<option name=c117 value="棵">棵</option>
+<option name=c118 value="颗">颗</option>
+<option name=c119 value="克">克</option>
+<option name=c120 value="苦">苦</option>
+<option name=c121 value="夸">夸</option>
+<option name=c122 value="宽">宽</option>
+<option name=c123 value="困">困</option>
+<option name=c124 value="拉">拉</option>
+<option name=c125 value="辣">辣</option>
+<option name=c126 value="拦">拦</option>
+<option name=c127 value="懒">懒</option>
+<option name=c128 value="烂">烂</option>
+<option name=c129 value="狼">狼</option>
+<option name=c130 value="雷">雷</option>
+<option name=c131 value="累">累</option>
+<option name=c132 value="类">类</option>
+<option name=c133 value="梨">梨</option>
+<option name=c134 value="粒">粒</option>
+<option name=c135 value="俩">俩</option>
+<option name=c136 value="连">连</option>
+<option name=c137 value="亮">亮</option>
+<option name=c138 value="铃">铃</option>
+<option name=c139 value="留">留</option>
+<option name=c140 value="龙">龙</option>
+<option name=c141 value="漏">漏</option>
+<option name=c142 value="露">露</option>
+<option name=c143 value="乱">乱</option>
+<option name=c144 value="骂">骂</option>
+<option name=c145 value="满">满</option>
+<option name=c146 value="毛">毛</option>
+<option name=c147 value="梦">梦</option>
+<option name=c148 value="秒">秒</option>
+<option name=c149 value="摸">摸</option>
+<option name=c150 value="某">某</option>
+<option name=c151 value="内">内</option>
+<option name=c152 value="嫩">嫩</option>
+<option name=c153 value="念">念</option>
+<option name=c154 value="浓">浓</option>
+<option name=c155 value="弄">弄</option>
+<option name=c156 value="拍">拍</option>
+<option name=c157 value="派">派</option>
+<option name=c158 value="陪">陪</option>
+<option name=c159 value="盆">盆</option>
+<option name=c160 value="批">批</option>
+<option name=c161 value="披">披</option>
+<option name=c162 value="匹">匹</option>
+<option name=c163 value="篇">篇</option>
+<option name=c164 value="片">片</option>
+<option name=c165 value="骗">骗</option>
+<option name=c166 value="飘">飘</option>
+<option name=c167 value="凭">凭</option>
+<option name=c168 value="平">平</option>
+<option name=c169 value="破">破</option>
+<option name=c170 value="牵">牵</option>
+<option name=c171 value="浅">浅</option>
+<option name=c172 value="欠">欠</option>
+<option name=c173 value="枪">枪</option>
+<option name=c174 value="墙">墙</option>
+<option name=c175 value="抢">抢</option>
+<option name=c176 value="敲">敲</option>
+<option name=c177 value="桥">桥</option>
+<option name=c178 value="瞧">瞧</option>
+<option name=c179 value="切">切</option>
+<option name=c180 value="青">青</option>
+<option name=c181 value="轻">轻</option>
+<option name=c182 value="穷">穷</option>
+<option name=c183 value="取">取</option>
+<option name=c184 value="娶">娶</option>
+<option name=c185 value="圈">圈</option>
+<option name=c186 value="劝">劝</option>
+<option name=c187 value="却">却</option>
+<option name=c188 value="群">群</option>
+<option name=c189 value="嚷">嚷</option>
+<option name=c190 value="绕">绕</option>
+<option name=c191 value="扔">扔</option>
+<option name=c192 value="软">软</option>
+<option name=c193 value="弱">弱</option>
+<option name=c194 value="洒">洒</option>
+<option name=c195 value="杀">杀</option>
+<option name=c196 value="傻">傻</option>
+<option name=c197 value="晒">晒</option>
+<option name=c198 value="上">上</option>
+<option name=c199 value="蛇">蛇</option>
+<option name=c200 value="伸">伸</option>
+<option name=c201 value="深">深</option>
+<option name=c202 value="升">升</option>
+<option name=c203 value="省">省</option>
+<option name=c204 value="剩">剩</option>
+<option name=c205 value="诗">诗</option>
+<option name=c206 value="试">试</option>
+<option name=c207 value="收">收</option>
+<option name=c208 value="输">输</option>
+<option name=c209 value="摔">摔</option>
+<option name=c210 value="甩">甩</option>
+<option name=c211 value="帅">帅</option>
+<option name=c212 value="税">税</option>
+<option name=c213 value="撕">撕</option>
+<option name=c214 value="死">死</option>
+<option name=c215 value="酸">酸</option>
+<option name=c216 value="算">算</option>
+<option name=c217 value="碎">碎</option>
+<option name=c218 value="所">所</option>
+<option name=c219 value="锁">锁</option>
+<option name=c220 value="塔">塔</option>
+<option name=c221 value="台">台</option>
+<option name=c222 value="抬">抬</option>
+<option name=c223 value="谈">谈</option>
+<option name=c224 value="汤">汤</option>
+<option name=c225 value="躺">躺</option>
+<option name=c226 value="趟">趟</option>
+<option name=c227 value="烫">烫</option>
+<option name=c228 value="桃">桃</option>
+<option name=c229 value="逃">逃</option>
+<option name=c230 value="套">套</option>
+<option name=c231 value="提">提</option>
+<option name=c232 value="挺">挺</option>
+<option name=c233 value="铜">铜</option>
+<option name=c234 value="吐">吐</option>
+<option name=c235 value="团">团</option>
+<option name=c236 value="推">推</option>
+<option name=c237 value="退">退</option>
+<option name=c238 value="脱">脱</option>
+<option name=c239 value="歪">歪</option>
+<option name=c240 value="弯">弯</option>
+<option name=c241 value="往">往</option>
+<option name=c242 value="畏">畏</option>
+<option name=c243 value="胃">胃</option>
+<option name=c244 value="闻">闻</option>
+<option name=c245 value="吻">吻</option>
+<option name=c246 value="无">无</option>
+<option name=c247 value="雾">雾</option>
+<option name=c248 value="系">系</option>
+<option name=c249 value="瞎">瞎</option>
+<option name=c250 value="吓">吓</option>
+<option name=c251 value="咸">咸</option>
+<option name=c252 value="县">县</option>
+<option name=c253 value="香">香</option>
+<option name=c254 value="响">响</option>
+<option name=c255 value="像">像</option>
+<option name=c256 value="歇">歇</option>
+<option name=c257 value="斜">斜</option>
+<option name=c258 value="行">行</option>
+<option name=c259 value="醒">醒</option>
+<option name=c260 value="胸">胸</option>
+<option name=c261 value="修">修</option>
+<option name=c262 value="血">血</option>
+<option name=c263 value="呀">呀</option>
+<option name=c264 value="盐">盐</option>
+<option name=c265 value="痒">痒</option>
+<option name=c266 value="腰">腰</option>
+<option name=c267 value="摇">摇</option>
+<option name=c268 value="咬">咬</option>
+<option name=c269 value="夜">夜</option>
+<option name=c270 value="页">页</option>
+<option name=c271 value="乙">乙</option>
+<option name=c272 value="以">以</option>
+<option name=c273 value="亿">亿</option>
+<option name=c274 value="银">银</option>
+<option name=c275 value="赢">赢</option>
+<option name=c276 value="硬">硬</option>
+<option name=c277 value="由">由</option>
+<option name=c278 value="与">与</option>
+<option name=c279 value="元">元</option>
+<option name=c280 value="晕">晕</option>
+<option name=c281 value="脏">脏</option>
+<option name=c282 value="则">则</option>
+<option name=c283 value="摘">摘</option>
+<option name=c284 value="窄">窄</option>
+<option name=c285 value="涨">涨</option>
+<option name=c286 value="阵">阵</option>
+<option name=c287 value="睁">睁</option>
+<option name=c288 value="正">正</option>
+<option name=c289 value="之">之</option>
+<option name=c290 value="支">支</option>
+<option name=c291 value="只">只</option>
+<option name=c292 value="直">直</option>
+<option name=c293 value="指">指</option>
+<option name=c294 value="钟">钟</option>
+<option name=c295 value="重">重</option>
+<option name=c296 value="猪">猪</option>
+<option name=c297 value="煮">煮</option>
+<option name=c298 value="赚">赚</option>
+<option name=c299 value="装">装</option>
+<option name=c300 value="撞">撞</option>
+<option name=c301 value="紫">紫</option>
+<option name=c302 value="租">租</option>
+<option name=c303 value="嘴">嘴</option>
+<option name=c304 value="醉">醉</option>
+<option name=c305 value="座">座</option>
+
+
+</select>
+
+<P><select type=text id=explain style="display:none">
+
+<option name=c1 value="interjection or grunt of agreement or recognition (e.g. yes, it's me!); to sigh">interjection or grunt of agreement or recognition (e.g. yes, it's me!); to sigh</option>
+<option name=c2 value="bank; shore; beach; coast; CL:個|个[ge4]">bank; shore; beach; coast; CL:個|个[ge4]</option>
+<option name=c3 value="dark; gloomy; hidden; secret; muddled; obscure; in the dark">dark; gloomy; hidden; secret; muddled; obscure; in the dark</option>
+<option name=c4 value="to arrange; to exhibit; to move to and fro; a pendulum">to arrange; to exhibit; to move to and fro; a pendulum</option>
+<option name=c5 value="a stick; club or cudgel; smart; capable; strong; wonderful; classifier for legs of a relay race">a stick; club or cudgel; smart; capable; strong; wonderful; classifier for legs of a relay race</option>
+<option name=c6 value="thin; cold in manner; indifferent; weak; light; infertile">thin; cold in manner; indifferent; weak; light; infertile</option>
+<option name=c7 value="to hold; to carry (in one's arms); to hug or embrace; surround; cherish">to hold; to carry (in one's arms); to hug or embrace; surround; cherish</option>
+<option name=c8 value="(two, three etc) -fold; times (multiplier); double; to increase or multiply">(two, three etc) -fold; times (multiplier); double; to increase or multiply</option>
+<option name=c9 value="by (indicates passive-voice sentences or clauses); quilt; to cover (literary)">by (indicates passive-voice sentences or clauses); quilt; to cover (literary)</option>
+<option name=c10 value="stupid; foolish; silly; slow-witted; clumsy">stupid; foolish; silly; slow-witted; clumsy</option>
+<option name=c11 value="ordinary; plain; convenient; as convenient; when the chance arises; handy; easy; informal; simple; so; thus; to relieve oneself; to urinate; to defecate; equivalent to 就: then; in that case; even if; soon afterwards">ordinary; plain; convenient; as convenient; when the chance arises; handy; easy; informal; simple; so; thus; to relieve oneself; to urinate; to defecate; equivalent to 就: then; in that case; even if; soon afterwards</option>
+<option name=c12 value="a time; everywhere; turn; all over; one time">a time; everywhere; turn; all over; one time</option>
+<option name=c13 value="third of 10 heavenly stems 十天干; third in order; letter "C" or roman "III" in list "A, B, C", or "I, II, III" etc; propyl">third of 10 heavenly stems 十天干; third in order; letter "C" or roman "III" in list "A, B, C", or "I, II, III" etc; propyl</option>
+<option name=c14 value="cloth; to declare; to announce; to spread; to make known">cloth; to declare; to announce; to spread; to make known</option>
+<option name=c15 value="to wipe; to erase; rubbing (brush stroke in painting); to clean; to polish">to wipe; to erase; rubbing (brush stroke in painting); to clean; to polish</option>
+<option name=c16 value="to guess">to guess</option>
+<option name=c17 value="to step on; to tread; to stamp; to press a pedal; to pedal (a bike)">to step on; to tread; to stamp; to press a pedal; to pedal (a bike)</option>
+<option name=c18 value="book; booklet; classifier for books">book; booklet; classifier for books</option>
+<option name=c19 value="to insert; stick in; pierce; to take part in; to interfere; to interpose">to insert; stick in; pierce; to take part in; to interfere; to interpose</option>
+<option name=c20 value="to tear open; to tear down; to tear apart; to open">to tear open; to tear down; to tear apart; to open</option>
+<option name=c21 value="to taste; flavor; (past tense marker); already; formerly; ever; once; test">to taste; flavor; (past tense marker); already; formerly; ever; once; test</option>
+<option name=c22 value="to copy; to plagiarize; to search and seize; to go; to transcribe; to take a shortcut; to search and confiscate">to copy; to plagiarize; to search and seize; to go; to transcribe; to take a shortcut; to search and confiscate</option>
+<option name=c23 value="imperial or royal court; government; dynasty; reign of a sovereign or emperor; court or assembly held by a sovereign or emperor; to make a pilgrimage to; facing; towards">imperial or royal court; government; dynasty; reign of a sovereign or emperor; court or assembly held by a sovereign or emperor; to make a pilgrimage to; facing; towards</option>
+<option name=c24 value="to quarrel; to make a noise; noisy; to disturb by making a noise">to quarrel; to make a noise; noisy; to disturb by making a noise</option>
+<option name=c25 value="saute; pan-fry; to fry; fried">saute; pan-fry; to fry; fried</option>
+<option name=c26 value="to avail oneself of; to take advantage of">to avail oneself of; to take advantage of</option>
+<option name=c27 value="to weigh; to state; to name; name; appellation; to praise">to weigh; to state; to name; name; appellation; to praise</option>
+<option name=c28 value="to ride; to mount; to make use of; to avail oneself of; to take advantage of; to multiply (mathematics); Buddhist sect or creed">to ride; to mount; to make use of; to avail oneself of; to take advantage of; to multiply (mathematics); Buddhist sect or creed</option>
+<option name=c29 value="(of water) to dash against; to mix with water; to infuse; to rinse; to flush; to develop (a film); to rise in the air; to clash; to collide with">(of water) to dash against; to mix with water; to infuse; to rinse; to flush; to develop (a film); to rise in the air; to clash; to collide with</option>
+<option name=c30 value="clown; surname Chou; 2nd earthly branch: 1-3 a.m., 12th solar month (6th January to 3rd February), year of the Ox">clown; surname Chou; 2nd earthly branch: 1-3 a.m., 12th solar month (6th January to 3rd February), year of the Ox</option>
+<option name=c31 value="stench; stink; smelly; to smell (bad)">stench; stink; smelly; to smell (bad)</option>
+<option name=c32 value="to get rid of; to remove; to exclude; to eliminate; to wipe out; to divide; except; not including">to get rid of; to remove; to exclude; to eliminate; to wipe out; to divide; except; not including</option>
+<option name=c33 value="to rush; to charge; to dash; to break through; to temper oneself (through battling hardships)">to rush; to charge; to dash; to break through; to temper oneself (through battling hardships)</option>
+<option name=c34 value="to blow; to play a wind instrument; to blast; to puff; to boast; to brag; to end in failure; to fall through">to blow; to play a wind instrument; to blast; to puff; to boast; to brag; to end in failure; to fall through</option>
+<option name=c35 value="from; via; passing through; through">from; via; passing through; through</option>
+<option name=c36 value="vinegar">vinegar</option>
+<option name=c37 value="to urge; to press; to prompt; to rush sb; to hasten sth; to expedite">to urge; to press; to prompt; to rush sb; to hasten sth; to expedite</option>
+<option name=c38 value="exist; deposit; store; keep; survive">exist; deposit; store; keep; survive</option>
+<option name=c39 value="foolish; stupid; expressionless; blank; to stay">foolish; stupid; expressionless; blank; to stay</option>
+<option name=c40 value="to put on or wear (glasses, hat, gloves etc); to respect; to bear; to support">to put on or wear (glasses, hat, gloves etc); to respect; to bear; to support</option>
+<option name=c41 value="insipid; diluted; weak; mild; light in color; tasteless; fresh; indifferent; nitrogen">insipid; diluted; weak; mild; light in color; tasteless; fresh; indifferent; nitrogen</option>
+<option name=c42 value="to be; to act as; manage; withstand; when; during; ought; should; match equally; equal; same; obstruct; just at (a time or place); on the spot; right; just at">to be; to act as; manage; withstand; when; during; ought; should; match equally; equal; same; obstruct; just at (a time or place); on the spot; right; just at</option>
+<option name=c43 value="to resist; to obstruct; to hinder; to keep off; to block (a blow); to get in the way of; cover; gear">to resist; to obstruct; to hinder; to keep off; to block (a blow); to get in the way of; cover; gear</option>
+<option name=c44 value="knife; CL:把[ba3]">knife; CL:把[ba3]</option>
+<option name=c45 value="island; CL:個|个[ge4],座[zuo4]">island; CL:個|个[ge4],座[zuo4]</option>
+<option name=c46 value="to move backwards; converse">to move backwards; converse</option>
+<option name=c47 value="to have to; must; ought to; to need to">to have to; must; ought to; to need to</option>
+<option name=c48 value="et cetera; and so on; et al. (and other authors); after; as soon as; once">et cetera; and so on; et al. (and other authors); after; as soon as; once</option>
+<option name=c49 value="a drop; to drip">a drop; to drip</option>
+<option name=c50 value="background; bottom; base; the end of a period of time; towards the end of (last month)">background; bottom; base; the end of a period of time; towards the end of (last month)</option>
+<option name=c51 value="to hand over; to pass on sth; to gradually increase or decrease; progressively">to hand over; to pass on sth; to gradually increase or decrease; progressively</option>
+<option name=c52 value="to fall; to drop; to lag behind; to lose; to go missing; to reduce; fall (in prices); to lose (value, weight etc); to wag; to swing; to turn; to change; to exchange; to swap; to show off; to shed (hair)">to fall; to drop; to lag behind; to lose; to go missing; to reduce; fall (in prices); to lose (value, weight etc); to wag; to swing; to turn; to change; to exchange; to swap; to show off; to shed (hair)</option>
+<option name=c53 value="to fish with a hook and bait">to fish with a hook and bait</option>
+<option name=c54 value="cubes of meat and vegetables; man;   members of a family; population; fourth of 10 heavenly stems 十天干; ">cubes of meat and vegetables; man;   members of a family; population; fourth of 10 heavenly stems 十天干; </option>
+<option name=c55 value="apex; crown of the head; top; roof; to carry on the head; to push to the top; to go against; most; to replace; to substitute; classifier for headwear, hats, veils etc; to agree or support (internet slang, similar to digg)">apex; crown of the head; top; roof; to carry on the head; to push to the top; to go against; most; to replace; to substitute; classifier for headwear, hats, veils etc; to agree or support (internet slang, similar to digg)</option>
+<option name=c56 value="to lose; to put aside; to throw">to lose; to put aside; to throw</option>
+<option name=c57 value="to freeze; to feel very cold; aspic or jelly">to freeze; to feel very cold; aspic or jelly</option>
+<option name=c58 value="cave; hole; zero (unambiguous spoken form when spelling out numbers); CL:個|个[ge4]">cave; hole; zero (unambiguous spoken form when spelling out numbers); CL:個|个[ge4]</option>
+<option name=c59 value="to stay; to stop; to pause (while reading); to tease (play with)">to stay; to stop; to pause (while reading); to tease (play with)</option>
+<option name=c60 value="to break; to snap; to cut off; to give up or abstain from sth; to judge; (usu. used in the negative) absolutely, definitely,decidedly">to break; to snap; to cut off; to give up or abstain from sth; to judge; (usu. used in the negative) absolutely, definitely,decidedly</option>
+<option name=c61 value="a pile; a mass; heap; stack">a pile; a mass; heap; stack</option>
+<option name=c62 value="ton; Taiwan pr. dun4">ton; Taiwan pr. dun4</option>
+<option name=c63 value="to crouch; to squat">to crouch; to squat</option>
+<option name=c64 value="stop; pause; to arrange; to lay out; to kowtow; to stamp; at once; classifier for meals, beating, tellings off etc: time, bout, spell, meal">stop; pause; to arrange; to lay out; to kowtow; to stamp; at once; classifier for meals, beating, tellings off etc: time, bout, spell, meal</option>
+<option name=c65 value="flower; earlobe; fig. item on both sides; classifier for flowers, clouds etc">flower; earlobe; fig. item on both sides; classifier for flowers, clouds etc</option>
+<option name=c66 value="and; as well as; and so; but (not); yet (not); (indicates causal relation); (indicates change of state); (indicates contrast)">and; as well as; and so; but (not); yet (not); (indicates causal relation); (indicates change of state); (indicates contrast)</option>
+<option name=c67 value="to send out; to show (one's feeling); to issue; to develop; classifier for gunshots (rounds)">to send out; to show (one's feeling); to issue; to develop; classifier for gunshots (rounds)</option>
+<option name=c68 value="square; power or involution (mathematics); upright; honest; fair and square; direction; side; party (to a contract, dispute etc); place; method; prescription (medicine); upright or honest; just when; only or just; classifier for square things; abbr. for square or cubic meter">square; power or involution (mathematics); upright; honest; fair and square; direction; side; party (to a contract, dispute etc); place; method; prescription (medicine); upright or honest; just when; only or just; classifier for square things; abbr. for square or cubic meter</option>
+<option name=c69 value="non-; not-; un-; abbr. for Africa 非洲; wrong; evil-doing; insist on; simply must">non-; not-; un-; abbr. for Africa 非洲; wrong; evil-doing; insist on; simply must</option>
+<option name=c70 value="lung; CL:個|个[ge4]">lung; CL:個|个[ge4]</option>
+<option name=c71 value="part; share; portion; copy; classifier for gifts, newspaper, magazine, papers, reports, contracts etc">part; share; portion; copy; classifier for gifts, newspaper, magazine, papers, reports, contracts etc</option>
+<option name=c72 value="width; roll; classifier for textiles or pictures">width; roll; classifier for textiles or pictures</option>
+<option name=c73 value="to support with hand; to help sb up; to help">to support with hand; to help sb up; to help</option>
+<option name=c74 value="rich; surname Fu">rich; surname Fu</option>
+<option name=c75 value="lid; top; cover; canopy; to build">lid; top; cover; canopy; to build</option>
+<option name=c76 value="to work; to do; to manage">to work; to do; to manage</option>
+<option name=c77 value="to do; to make; to go in for; to set up; to get hold of; to take care of">to do; to make; to go in for; to set up; to get hold of; to take care of</option>
+<option name=c78 value="each; every">each; every</option>
+<option name=c79 value="root; basis; classifier for long slender objects, e.g. cigarettes, guitar strings; CL:條|条[tiao2]; radical (chemistry)">root; basis; classifier for long slender objects, e.g. cigarettes, guitar strings; CL:條|条[tiao2]; radical (chemistry)</option>
+<option name=c80 value="even more; furthermore">even more; furthermore</option>
+<option name=c81 value="to reach; to be enough">to reach; to be enough</option>
+<option name=c82 value="to hang or suspend (from a hook etc); (of a telephone call) to hang up; to be worried or concerned; to make a phone call (topolect); to register or record; to hitch; classifier for sets or clusters of objects">to hang or suspend (from a hook etc); (of a telephone call) to hang up; to be worried or concerned; to make a phone call (topolect); to register or record; to hitch; classifier for sets or clusters of objects</option>
+<option name=c83 value="(of a child) obedient, well-behaved; clever; shrewd; alert; perverse; contrary to reason; irregular; abnormal">(of a child) obedient, well-behaved; clever; shrewd; alert; perverse; contrary to reason; irregular; abnormal</option>
+<option name=c84 value="official; government; organ of body; CL:個|个[ge4]">official; government; organ of body; CL:個|个[ge4]</option>
+<option name=c85 value="light; ray; CL:道[dao4]; bright; only; merely; to use up">light; ray; CL:道[dao4]; bright; only; merely; to use up</option>
+<option name=c86 value="to stroll; to visit">to stroll; to visit</option>
+<option name=c87 value="to boil; to roll; get lost (imperative); take a hike">to boil; to roll; get lost (imperative); take a hike</option>
+<option name=c88 value="pot; pan; boiler; CL:口[kou3],隻|只[zhi1]">pot; pan; boiler; CL:口[kou3],隻|只[zhi1]</option>
+<option name=c89 value="(experienced action marker); to cross; to go over">(experienced action marker); to cross; to go over</option>
+<option name=c90 value="laughter; yawn; abbr. for Kazakhstan">laughter; yawn; abbr. for Kazakhstan</option>
+<option name=c91 value="call; cry; to shout">call; cry; to shout</option>
+<option name=c92 value="perspiration; sweat; CL:滴[di1],頭|头[tou2],身[shen1]; Khan (Persian or Mongol king or emperor); Khan (name); to be speechless (out of helplessness, embarrassment etc) (Internet slang used as an interjection)">perspiration; sweat; CL:滴[di1],頭|头[tou2],身[shen1]; Khan (Persian or Mongol king or emperor); Khan (name); to be speechless (out of helplessness, embarrassment etc) (Internet slang used as an interjection)</option>
+<option name=c93 value="to hate; to regret">to hate; to regret</option>
+<option name=c94 value="horizontal; across; (horizontal character stroke)">horizontal; across; (horizontal character stroke)</option>
+<option name=c95 value="thick; deep or profound; kind; generous; rich or strong in flavor; to favor; to stress">thick; deep or profound; kind; generous; rich or strong in flavor; to favor; to stress</option>
+<option name=c96 value="pot; classifier for bottled liquid">pot; classifier for bottled liquid</option>
+<option name=c97 value="to pay back; to return; surname Huan">to pay back; to return; surname Huan</option>
+<option name=c98 value="to wave; to brandish; to wipe away; to command; to conduct; to scatter; to disperse">to wave; to brandish; to wipe away; to command; to conduct; to scatter; to disperse</option>
+<option name=c99 value="ash; dust; lime; gray; discouraged; dejected">ash; dust; lime; gray; discouraged; dejected</option>
+<option name=c100 value="fire; CL:把[ba3]">fire; CL:把[ba3]</option>
+<option name=c101 value="to live (in a house); to lodge; to mail; to send; to entrust; to depend">to live (in a house); to lodge; to mail; to send; to entrust; to depend</option>
+<option name=c102 value="fake; false; artificial; to borrow; if; suppose">fake; false; artificial; to borrow; if; suppose</option>
+<option name=c103 value="first of the ten heavenly stems 十天干|十天干[shi2 tian1 gan1]; (used for an unspecified person or thing); first (in a list, as a party to a contract etc); armor plating; shell or carapace; (of the fingers or toes) nail; bladed leather or metal armor (old); ranking system used in the Imperial examinations (old); civil administration unit (old)">first of the ten heavenly stems 十天干|十天干[shi2 tian1 gan1]; (used for an unspecified person or thing); first (in a list, as a party to a contract etc); armor plating; shell or carapace; (of the fingers or toes) nail; bladed leather or metal armor (old); ranking system used in the Imperial examinations (old); civil administration unit (old)</option>
+<option name=c104 value="(of a woman) to marry; to marry off a daughter; to shift (blame etc)">(of a woman) to marry; to marry off a daughter; to shift (blame etc)</option>
+<option name=c105 value="to pan fry; to sauté">to pan fry; to sauté</option>
+<option name=c106 value="to pick up; to collect; to gather">to pick up; to collect; to gather</option>
+<option name=c107 value="to hand over; to deliver; to pay (money); to turn over; to make friends; to intersect (lines)">to hand over; to deliver; to pay (money); to turn over; to make friends; to intersect (lines)</option>
+<option name=c108 value="to pour liquid; to irrigate (using waterwheel); to water; to cast (molten metal); to mold">to pour liquid; to irrigate (using waterwheel); to water; to cast (molten metal); to mold</option>
+<option name=c109 value="festival; holiday; node; joint; section; segment; part; to economize; to save; to abridge; moral integrity; classifier for segments, e.g. lessons, train wagons, biblical verses; CL:個|个[ge4]">festival; holiday; node; joint; section; segment; part; to economize; to save; to abridge; moral integrity; classifier for segments, e.g. lessons, train wagons, biblical verses; CL:個|个[ge4]</option>
+<option name=c110 value="to arrive at (place or time); period; to become due; classifier for events, meetings, elections, sporting fixtures etc">to arrive at (place or time); period; to become due; classifier for events, meetings, elections, sporting fixtures etc</option>
+<option name=c111 value="tight; strict; close at hand; near; urgent; tense; hard up; short of money; to tighten">tight; strict; close at hand; near; urgent; tense; hard up; short of money; to tighten</option>
+<option name=c112 value="to save; to assist; to rescue">to save; to assist; to rescue</option>
+<option name=c113 value="to lift; to hold up; to cite; to enumerate; to act; to raise; to choose; to elect">to lift; to hold up; to cite; to enumerate; to act; to raise; to choose; to elect</option>
+<option name=c114 value="to contribute; to donate; contribution; tax; to abandon">to contribute; to donate; contribution; tax; to abandon</option>
+<option name=c115 value="to roll up">to roll up</option>
+<option name=c116 value="to chop; to cut down; to throw sth at sb">to chop; to cut down; to throw sth at sb</option>
+<option name=c117 value="classifier for trees, cabbages, plants etc">classifier for trees, cabbages, plants etc</option>
+<option name=c118 value="classifier for small spheres, pearls, corn grains, teeth, hearts, satellites etc">classifier for small spheres, pearls, corn grains, teeth, hearts, satellites etc</option>
+<option name=c119 value="to be able to; to subdue; to restrain; to overcome; gram">to be able to; to subdue; to restrain; to overcome; gram</option>
+<option name=c120 value="bitter; hardship; pain; to suffer; painstaking">bitter; hardship; pain; to suffer; painstaking</option>
+<option name=c121 value="to boast; to exaggerate; to praise">to boast; to exaggerate; to praise</option>
+<option name=c122 value="lenient; wide; broad">lenient; wide; broad</option>
+<option name=c123 value="to trap; to surround; hard-pressed; stranded; destitute">to trap; to surround; hard-pressed; stranded; destitute</option>
+<option name=c124 value="to pull; to play (string instruments); to drag; to draw">to pull; to play (string instruments); to drag; to draw</option>
+<option name=c125 value="hot (spicy); pungent">hot (spicy); pungent</option>
+<option name=c126 value="cut off; hinder">cut off; hinder</option>
+<option name=c127 value="lazy">lazy</option>
+<option name=c128 value="soft; mushy; well-cooked and soft; to rot; to decompose; rotten; worn out; chaotic; messy; utterly; thoroughly">soft; mushy; well-cooked and soft; to rot; to decompose; rotten; worn out; chaotic; messy; utterly; thoroughly</option>
+<option name=c129 value="wolf; CL:匹[pi3],隻|只[zhi1],條|条[tiao2]">wolf; CL:匹[pi3],隻|只[zhi1],條|条[tiao2]</option>
+<option name=c130 value="thunder; (internet slang) terrifying; terrific">thunder; (internet slang) terrifying; terrific</option>
+<option name=c131 value="tired; weary; to strain; to wear out; to work hard">tired; weary; to strain; to wear out; to work hard</option>
+<option name=c132 value="kind; type; class; category; similar; like; to resemble">kind; type; class; category; similar; like; to resemble</option>
+<option name=c133 value="pear; CL:個|个[ge4]">pear; CL:個|个[ge4]</option>
+<option name=c134 value="grain; granule; classifier for small round things (peas, bullets, peanuts, pills, grains etc)">grain; granule; classifier for small round things (peas, bullets, peanuts, pills, grains etc)</option>
+<option name=c135 value="two (colloquial equivalent of 兩個|两个); both; some">two (colloquial equivalent of 兩個|两个); both; some</option>
+<option name=c136 value="to link; to join; to connect; continuously; in succession; including; (used with 也, 都 etc) even; company (military)">to link; to join; to connect; continuously; in succession; including; (used with 也, 都 etc) even; company (military)</option>
+<option name=c137 value="bright; clear; resonant; to shine; to show; to reveal">bright; clear; resonant; to shine; to show; to reveal</option>
+<option name=c138 value="(small) bell; CL:隻|只[zhi1]">(small) bell; CL:隻|只[zhi1]</option>
+<option name=c139 value="to leave (eg a message); to retain; to stay; to remain; to keep; to preserve">to leave (eg a message); to retain; to stay; to remain; to keep; to preserve</option>
+<option name=c140 value="dragon; CL:條|条[tiao2]; imperial">dragon; CL:條|条[tiao2]; imperial</option>
+<option name=c141 value="to leak; to divulge; to leave out by mistake; waterclock or hourglass (old)">to leak; to divulge; to leave out by mistake; waterclock or hourglass (old)</option>
+<option name=c142 value="dew; syrup; nectar; outdoors (not under cover); to show; to reveal; to betray; to expose">dew; syrup; nectar; outdoors (not under cover); to show; to reveal; to betray; to expose</option>
+<option name=c143 value="in confusion or disorder; in a confused state of mind; disorder; upheaval; riot; illicit sexual relations; to throw into disorder; to mix up; indiscriminate; random; arbitrary">in confusion or disorder; in a confused state of mind; disorder; upheaval; riot; illicit sexual relations; to throw into disorder; to mix up; indiscriminate; random; arbitrary</option>
+<option name=c144 value="to scold; abuse; CL:通[tong4],頓|顿[dun4]">to scold; abuse; CL:通[tong4],頓|顿[dun4]</option>
+<option name=c145 value="full; filled; packed; fully; completely; quite; to reach the limit; to satisfy; satisfied; contented; to fill; abbr. for Manchurian">full; filled; packed; fully; completely; quite; to reach the limit; to satisfy; satisfied; contented; to fill; abbr. for Manchurian</option>
+<option name=c146 value="hair; feather; down">hair; feather; down</option>
+<option name=c147 value="dream; CL:場|场[chang2],個|个[ge4]">dream; CL:場|场[chang2],個|个[ge4]</option>
+<option name=c148 value="second (of time); unit of angle or arc equivalent to one sixtieth of a degree">second (of time); unit of angle or arc equivalent to one sixtieth of a degree</option>
+<option name=c149 value="to feel with the hand; to touch; to stroke; to grope; to feel (one's pulse)">to feel with the hand; to touch; to stroke; to grope; to feel (one's pulse)</option>
+<option name=c150 value="some; a certain; sb or sth indefinite; such-and-such">some; a certain; sb or sth indefinite; such-and-such</option>
+<option name=c151 value="inside; inner; internal; within; interior">inside; inner; internal; within; interior</option>
+<option name=c152 value="tender; soft; delicate; light (color); inexperienced; unskilled">tender; soft; delicate; light (color); inexperienced; unskilled</option>
+<option name=c153 value="to read; to study (a degree course); to read aloud; to miss (sb); idea; remembrance; twenty (banker's anti-fraud numeral corresponding to 廿, 20)">to read; to study (a degree course); to read aloud; to miss (sb); idea; remembrance; twenty (banker's anti-fraud numeral corresponding to 廿, 20)</option>
+<option name=c154 value="concentrated; dense">concentrated; dense</option>
+<option name=c155 value="to do; to manage; to handle; to play with; to fool with; to mess with; to fix; to toy with">to do; to manage; to handle; to play with; to fool with; to mess with; to fix; to toy with</option>
+<option name=c156 value="to pat; to clap; to slap; fly-swatter; racket; to take (a photograph)">to pat; to clap; to slap; fly-swatter; racket; to take (a photograph)</option>
+<option name=c157 value="clique; school; group; faction; to dispatch; to send; to assign; to appoint; pi (Greek letter Ππ); the circular ratio pi = 3.1415926">clique; school; group; faction; to dispatch; to send; to assign; to appoint; pi (Greek letter Ππ); the circular ratio pi = 3.1415926</option>
+<option name=c158 value="to accompany; to keep sb company">to accompany; to keep sb company</option>
+<option name=c159 value="basin; flower pot; unit of volume equal to 12 斗 and 8 升, approx 128 liters; CL:個|个[ge4]">basin; flower pot; unit of volume equal to 12 斗 and 8 升, approx 128 liters; CL:個|个[ge4]</option>
+<option name=c160 value="to ascertain; to act on; to criticize; to pass on; classifier for batches, lots, military flights; tier (for the ranking of universities and colleges)">to ascertain; to act on; to criticize; to pass on; classifier for batches, lots, military flights; tier (for the ranking of universities and colleges)</option>
+<option name=c161 value="to drape over one's shoulders; to open; to unroll; to split open; to spread out">to drape over one's shoulders; to open; to unroll; to split open; to spread out</option>
+<option name=c162 value="ordinary person; classifier for horses, mules etc; classifier for cloth: bolt">ordinary person; classifier for horses, mules etc; classifier for cloth: bolt</option>
+<option name=c163 value="sheet; piece of writing; bound set of bamboo slips used for record keeping (old); classifier for written items: chapter, article">sheet; piece of writing; bound set of bamboo slips used for record keeping (old); classifier for written items: chapter, article</option>
+<option name=c164 value="thin piece; flake; a slice; film; TV play; to slice; to carve thin; partial; incomplete; one-sided; classifier for slices, tablets, tract of land, area of water; classifier for CDs, movies, DVDs etc; used with numeral 一[yi1]: classifier for scenario, scene, feeling, atmosphere, sound etc">thin piece; flake; a slice; film; TV play; to slice; to carve thin; partial; incomplete; one-sided; classifier for slices, tablets, tract of land, area of water; classifier for CDs, movies, DVDs etc; used with numeral 一[yi1]: classifier for scenario, scene, feeling, atmosphere, sound etc</option>
+<option name=c165 value="to cheat; to swindle; to deceive; to fool; to hoodwink; to trick">to cheat; to swindle; to deceive; to fool; to hoodwink; to trick</option>
+<option name=c166 value="to float">to float</option>
+<option name=c167 value="to lean against; to rely on; on the basis of; no matter (how, what etc); proof">to lean against; to rely on; on the basis of; no matter (how, what etc); proof</option>
+<option name=c168 value="flat; level; equal; to tie (make the same score); to draw (score); calm; peaceful; see also 平聲|平声[ping2 sheng1]">flat; level; equal; to tie (make the same score); to draw (score); calm; peaceful; see also 平聲|平声[ping2 sheng1]</option>
+<option name=c169 value="broken; damaged; worn out; to break, split or cleave; to get rid of; to destroy; to break with; to defeat; to capture (a city etc); to expose the truth of">broken; damaged; worn out; to break, split or cleave; to get rid of; to destroy; to break with; to defeat; to capture (a city etc); to expose the truth of</option>
+<option name=c170 value="to pull (an animal on a tether); to lead along; to hold hands">to pull (an animal on a tether); to lead along; to hold hands</option>
+<option name=c171 value="shallow, not deep; superficial">shallow, not deep; superficial</option>
+<option name=c172 value="deficient; owe; to lack; yawn">deficient; owe; to lack; yawn</option>
+<option name=c173 value="gun; firearm; rifle; spear; CL:支[zhi1],把[ba3]">gun; firearm; rifle; spear; CL:支[zhi1],把[ba3]</option>
+<option name=c174 value="wall; CL:面[mian4],堵[du3]">wall; CL:面[mian4],堵[du3]</option>
+<option name=c175 value="fight over; to rush; to scramble; to grab; to rob; to snatch">fight over; to rush; to scramble; to grab; to rob; to snatch</option>
+<option name=c176 value="extort; knock; to strike; to knock (at a door); to hit">extort; knock; to strike; to knock (at a door); to hit</option>
+<option name=c177 value="bridge; CL:座[zuo4]">bridge; CL:座[zuo4]</option>
+<option name=c178 value="look at">look at</option>
+<option name=c179 value="to cut; to slice; tangent (math)">to cut; to slice; tangent (math)</option>
+<option name=c180 value="nature's color; green or blue; greenish black; youth; young (of people); abbr. for Qinghai province 青海">nature's color; green or blue; greenish black; youth; young (of people); abbr. for Qinghai province 青海</option>
+<option name=c181 value="light; easy; gentle; soft; reckless; unimportant; frivolous; small in number; unstressed; neutral">light; easy; gentle; soft; reckless; unimportant; frivolous; small in number; unstressed; neutral</option>
+<option name=c182 value="exhausted; poor">exhausted; poor</option>
+<option name=c183 value="to take; to get; to choose; to fetch">to take; to get; to choose; to fetch</option>
+<option name=c184 value="take a wife; to marry (a woman)">take a wife; to marry (a woman)</option>
+<option name=c185 value="circle; ring; loop; classifier for loops, orbits, laps of race etc; CL:個|个[ge4]">circle; ring; loop; classifier for loops, orbits, laps of race etc; CL:個|个[ge4]</option>
+<option name=c186 value="to advise; to urge; to try to persuade; exhort">to advise; to urge; to try to persuade; exhort</option>
+<option name=c187 value="but; yet; however; while; to go back; to decline; to retreat; nevertheless; even though">but; yet; however; while; to go back; to decline; to retreat; nevertheless; even though</option>
+<option name=c188 value="group; crowd; flock, herd, pack etc">group; crowd; flock, herd, pack etc</option>
+<option name=c189 value="blurt out; to shout">blurt out; to shout</option>
+<option name=c190 value="to wind; to coil (thread); to rotate around; to spiral; to move around; to go round (an obstacle); to by-pass; to make a detour; to confuse; to perplex">to wind; to coil (thread); to rotate around; to spiral; to move around; to go round (an obstacle); to by-pass; to make a detour; to confuse; to perplex</option>
+<option name=c191 value="to throw; to throw away">to throw; to throw away</option>
+<option name=c192 value="soft; flexible">soft; flexible</option>
+<option name=c193 value="weak; feeble; young; inferior; (following a decimal or fraction) slightly less than">weak; feeble; young; inferior; (following a decimal or fraction) slightly less than</option>
+<option name=c194 value="to sprinkle; to spray; to spill; to shed">to sprinkle; to spray; to spill; to shed</option>
+<option name=c195 value="to kill; to murder; to fight; to weaken or reduce; to smart (topolect); to counteract; (used after a verb) extremely">to kill; to murder; to fight; to weaken or reduce; to smart (topolect); to counteract; (used after a verb) extremely</option>
+<option name=c196 value="foolish">foolish</option>
+<option name=c197 value="to dry in the sun; to sunbathe; to share files (loan from "share")">to dry in the sun; to sunbathe; to share files (loan from "share")</option>
+<option name=c198 value="on; on top; upon; first (of multiple parts); previous; last; upper; higher; above; to climb; to go into; to go up; to attend (class or university)">on; on top; upon; first (of multiple parts); previous; last; upper; higher; above; to climb; to go into; to go up; to attend (class or university)</option>
+<option name=c199 value="snake; serpent; CL:條|条[tiao2]">snake; serpent; CL:條|条[tiao2]</option>
+<option name=c200 value="to stretch; to extend">to stretch; to extend</option>
+<option name=c201 value="close; deep; late; profound; dark (of color, water etc)">close; deep; late; profound; dark (of color, water etc)</option>
+<option name=c202 value="to raise; to hoist; to promote; metric liter (also written 公升); measure for dry grain equal to one-tenth dou 斗">to raise; to hoist; to promote; metric liter (also written 公升); measure for dry grain equal to one-tenth dou 斗</option>
+<option name=c203 value="to save; to economize; to do without; to omit; to leave out; province; CL:個|个[ge4]">to save; to economize; to do without; to omit; to leave out; province; CL:個|个[ge4]</option>
+<option name=c204 value="to remain; to be left; to have as remainder">to remain; to be left; to have as remainder</option>
+<option name=c205 value="poem; CL: 首[shou3]; poetry; verse; abbr. for Book of Songs 詩經|诗经[shi1 jing1]">poem; CL: 首[shou3]; poetry; verse; abbr. for Book of Songs 詩經|诗经[shi1 jing1]</option>
+<option name=c206 value="to test; to try; experiment; examination; test">to test; to try; experiment; examination; test</option>
+<option name=c207 value="to receive; to accept; to collect; in care of (used on address line after name)">to receive; to accept; to collect; in care of (used on address line after name)</option>
+<option name=c208 value="to lose; to transport; to donate; to enter (a password)">to lose; to transport; to donate; to enter (a password)</option>
+<option name=c209 value="to throw down; to fall; to drop and break">to throw down; to fall; to drop and break</option>
+<option name=c210 value="to throw; to fling; to swing; to leave behind; to throw off">to throw; to fling; to swing; to leave behind; to throw off</option>
+<option name=c211 value="handsome; graceful; smart; commander in chief">handsome; graceful; smart; commander in chief</option>
+<option name=c212 value="taxes; duties">taxes; duties</option>
+<option name=c213 value="to tear">to tear</option>
+<option name=c214 value="to die; impassable; uncrossable; inflexible; rigid; extremely">to die; impassable; uncrossable; inflexible; rigid; extremely</option>
+<option name=c215 value="sour; sore; ache; acid">sour; sore; ache; acid</option>
+<option name=c216 value="regard as; to figure; to calculate; to compute">regard as; to figure; to calculate; to compute</option>
+<option name=c217 value="to break down; to break into pieces; fragmentary">to break down; to break into pieces; fragmentary</option>
+<option name=c218 value="actually; place; classifier for houses, small buildings, institutions etc; that which; particle introducing a relative clause or passive; CL:個|个[ge4]">actually; place; classifier for houses, small buildings, institutions etc; that which; particle introducing a relative clause or passive; CL:個|个[ge4]</option>
+<option name=c219 value="to lock up; to lock; CL:把[ba3]">to lock up; to lock; CL:把[ba3]</option>
+<option name=c220 value="pagoda; tower; minaret; stupa (abbr. loanword from Sanskrit tapo); CL:座[zuo4]">pagoda; tower; minaret; stupa (abbr. loanword from Sanskrit tapo); CL:座[zuo4]</option>
+<option name=c221 value="desk; platform; stage; terrace; stand; support; desk; station; broadcasting station; classifier for vehicles or machines; Taiwan (abbr.)">desk; platform; stage; terrace; stand; support; desk; station; broadcasting station; classifier for vehicles or machines; Taiwan (abbr.)</option>
+<option name=c222 value="to lift; to raise; (of two or more persons) to carry">to lift; to raise; (of two or more persons) to carry</option>
+<option name=c223 value="to talk">to talk</option>
+<option name=c224 value="soup; broth; hot water">soup; broth; hot water</option>
+<option name=c225 value="to recline; to lie down">to recline; to lie down</option>
+<option name=c226 value="quantifier for the number of trips or runs made">quantifier for the number of trips or runs made</option>
+<option name=c227 value="to scald; to burn; to iron; hot">to scald; to burn; to iron; hot</option>
+<option name=c228 value="peach">peach</option>
+<option name=c229 value="to escape; to run away; to flee">to escape; to run away; to flee</option>
+<option name=c230 value="cover; sheath; to encase; a case; to overlap; to interleave; bend (of a river or mountain range, in place names); harness; classifier for sets, collections; tau (Greek letter Ττ)">cover; sheath; to encase; a case; to overlap; to interleave; bend (of a river or mountain range, in place names); harness; classifier for sets, collections; tau (Greek letter Ττ)</option>
+<option name=c231 value="to carry; to lift; to raise">to carry; to lift; to raise</option>
+<option name=c232 value="to stick out; to (physically) straighten up; to endure or hold out; straight; stiff; outstanding; extraordinary; rather; quite; very; classifier for machine guns">to stick out; to (physically) straighten up; to endure or hold out; straight; stiff; outstanding; extraordinary; rather; quite; very; classifier for machine guns</option>
+<option name=c233 value="copper (chemistry); see also 紅銅|红铜[hong2 tong2]; CL:塊|块[kuai4]">copper (chemistry); see also 紅銅|红铜[hong2 tong2]; CL:塊|块[kuai4]</option>
+<option name=c234 value="to vomit; to throw up">to vomit; to throw up</option>
+<option name=c235 value="regiment; round; circular; group; society">regiment; round; circular; group; society</option>
+<option name=c236 value="to push; to cut; to refuse; to reject; to decline; to shirk (responsibility); to put off; to delay; to push forward; to nominate; to elect">to push; to cut; to refuse; to reject; to decline; to shirk (responsibility); to put off; to delay; to push forward; to nominate; to elect</option>
+<option name=c237 value="retreat; to decline; to move back; to withdraw">retreat; to decline; to move back; to withdraw</option>
+<option name=c238 value="to shed; to take off; to escape; to get away from">to shed; to take off; to escape; to get away from</option>
+<option name=c239 value="askew; at a crooked angle; devious; noxious">askew; at a crooked angle; devious; noxious</option>
+<option name=c240 value="bend; bent; CL:道[dao4]">bend; bent; CL:道[dao4]</option>
+<option name=c241 value="to go (in a direction); to; towards; (of a train) bound for; past; previous">to go (in a direction); to; towards; (of a train) bound for; past; previous</option>
+<option name=c242 value="to fear">to fear</option>
+<option name=c243 value="stomach; CL:個|个[ge4]">stomach; CL:個|个[ge4]</option>
+<option name=c244 value="to hear; news; well-known; famous; reputation; fame; to smell; to sniff at; surname Wen">to hear; news; well-known; famous; reputation; fame; to smell; to sniff at; surname Wen</option>
+<option name=c245 value="kiss; mouth">kiss; mouth</option>
+<option name=c246 value="-less; not to have; no; none; not; to lack; un-">-less; not to have; no; none; not; to lack; un-</option>
+<option name=c247 value="fog; mist; CL:場|场[chang2],陣|阵[zhen4]">fog; mist; CL:場|场[chang2],陣|阵[zhen4]</option>
+<option name=c248 value="to connect; to relate to; to tie up; to bind; to be (literary)">to connect; to relate to; to tie up; to bind; to be (literary)</option>
+<option name=c249 value="blind; groundlessly; foolishly; to no purpose">blind; groundlessly; foolishly; to no purpose</option>
+<option name=c250 value="to frighten; to scare; to intimidate; to threaten">to frighten; to scare; to intimidate; to threaten</option>
+<option name=c251 value="salty">salty</option>
+<option name=c252 value="county, PRC administrative division below prefecture 地區|地区[di4 qu4]; CL:個|个[ge4]">county, PRC administrative division below prefecture 地區|地区[di4 qu4]; CL:個|个[ge4]</option>
+<option name=c253 value="fragrant; sweet smelling; aromatic; savory or appetizing; (to eat) with relish; (of sleep) sound; perfume or spice; joss or incense stick; CL:根[gen1]">fragrant; sweet smelling; aromatic; savory or appetizing; (to eat) with relish; (of sleep) sound; perfume or spice; joss or incense stick; CL:根[gen1]</option>
+<option name=c254 value="to make a sound; to sound; to ring; loud; classifier for noises">to make a sound; to sound; to ring; loud; classifier for noises</option>
+<option name=c255 value="(look) like; similar (to); appearance; to appear; to seem; image; portrait; resemble; seem">(look) like; similar (to); appearance; to appear; to seem; image; portrait; resemble; seem</option>
+<option name=c256 value="to rest">to rest</option>
+<option name=c257 value="inclined; slanting; oblique; tilting">inclined; slanting; oblique; tilting</option>
+<option name=c258 value="to walk; to go; to travel; a visit; temporary; makeshift; current; in circulation; to do; to perform; capable; competent; effective; all right; OK!; will do">to walk; to go; to travel; a visit; temporary; makeshift; current; in circulation; to do; to perform; capable; competent; effective; all right; OK!; will do</option>
+<option name=c259 value="to wake up; to awaken; to be awake">to wake up; to awaken; to be awake</option>
+<option name=c260 value="chest; bosom; heart; mind; thorax">chest; bosom; heart; mind; thorax</option>
+<option name=c261 value="to mend; to repair; to build; to embellish; to study">to mend; to repair; to build; to embellish; to study</option>
+<option name=c262 value="blood; informal colloquial and Taiwan pr. xie3; also pr. xue3; CL:滴[di1],片[pian4]">blood; informal colloquial and Taiwan pr. xie3; also pr. xue3; CL:滴[di1],片[pian4]</option>
+<option name=c263 value="(particle equivalent to 啊 after a vowel, expressing surprise or doubt)">(particle equivalent to 啊 after a vowel, expressing surprise or doubt)</option>
+<option name=c264 value="salt; CL:粒[li4]">salt; CL:粒[li4]</option>
+<option name=c265 value="to itch; to tickle">to itch; to tickle</option>
+<option name=c266 value="waist; lower back; pocket; middle; loins">waist; lower back; pocket; middle; loins</option>
+<option name=c267 value="shake; to rock">shake; to rock</option>
+<option name=c268 value="to bite; to nip">to bite; to nip</option>
+<option name=c269 value="night">night</option>
+<option name=c270 value="page; leaf">page; leaf</option>
+<option name=c271 value="second of 10 heavenly stems 十天干; second in order; letter "B" or roman "II" in list "A, B, C", or "I, II, III" etc; second party (in legal contract, usually 乙方|乙方[yi3 fang1], as opposed to 甲方|甲方[jia3 fang1]); ethyl; bent; winding; radical in Chinese characters (Kangxi radical 5)">second of 10 heavenly stems 十天干; second in order; letter "B" or roman "II" in list "A, B, C", or "I, II, III" etc; second party (in legal contract, usually 乙方|乙方[yi3 fang1], as opposed to 甲方|甲方[jia3 fang1]); ethyl; bent; winding; radical in Chinese characters (Kangxi radical 5)</option>
+<option name=c272 value="to use as; according to; because of">to use as; according to; because of</option>
+<option name=c273 value="a hundred million; calculate">a hundred million; calculate</option>
+<option name=c274 value="silver; silver-colored; relating to money or currency">silver; silver-colored; relating to money or currency</option>
+<option name=c275 value="to beat; to win; to profit">to beat; to win; to profit</option>
+<option name=c276 value="hard; stiff; strong; firm; to manage to do sth with difficulty; good (quality); able (person)">hard; stiff; strong; firm; to manage to do sth with difficulty; good (quality); able (person)</option>
+<option name=c277 value="to follow; from; it is for...to; reason; cause; because of; due to; to; to leave it (to sb); by (introduces passive verb)">to follow; from; it is for...to; reason; cause; because of; due to; to; to leave it (to sb); by (introduces passive verb)</option>
+<option name=c278 value="to give; to help; to get along with; and; with">to give; to help; to get along with; and; with</option>
+<option name=c279 value="first; primary; basic">first; primary; basic</option>
+<option name=c280 value="confused; dizzy; giddy; faint; swoon; lose consciousness; pass out">confused; dizzy; giddy; faint; swoon; lose consciousness; pass out</option>
+<option name=c281 value="dirty">dirty</option>
+<option name=c282 value="conjunction used to express contrast with a previous sentence or clause; standard; norm; rule; to imitate; to follow; then; principle; classifier for written items (such as an official statement)">conjunction used to express contrast with a previous sentence or clause; standard; norm; rule; to imitate; to follow; then; principle; classifier for written items (such as an official statement)</option>
+<option name=c283 value="to take; to borrow; to pick (flowers, fruit etc); to pluck; to select; to remove; to take off (glasses, hat etc)">to take; to borrow; to pick (flowers, fruit etc); to pluck; to select; to remove; to take off (glasses, hat etc)</option>
+<option name=c284 value="narrow; narrow-minded; badly off">narrow; narrow-minded; badly off</option>
+<option name=c285 value="to rise (of prices, rivers)">to rise (of prices, rivers)</option>
+<option name=c286 value="disposition of troops; wave; spate; burst; spell; short period of time; classifier for events or states of short duration">disposition of troops; wave; spate; burst; spell; short period of time; classifier for events or states of short duration</option>
+<option name=c287 value="to open (eye)">to open (eye)</option>
+<option name=c288 value="upright; centrally located; (of time or figure) exactly; correct; (of taste) pure">upright; centrally located; (of time or figure) exactly; correct; (of taste) pure</option>
+<option name=c289 value="(possessive particle, literary equivalent of 的); him; her; it">(possessive particle, literary equivalent of 的); him; her; it</option>
+<option name=c290 value="to support; to sustain; to erect; to raise; branch; division; to draw money; surname Zhi; classifier for rods such as pens and guns, for army divisions and for songs or compositions; watt, classifier for power of light bulbs">to support; to sustain; to erect; to raise; branch; division; to draw money; surname Zhi; classifier for rods such as pens and guns, for army divisions and for songs or compositions; watt, classifier for power of light bulbs</option>
+<option name=c291 value="classifier for birds and certain animals, one of a pair, some utensils, vessels etc">classifier for birds and certain animals, one of a pair, some utensils, vessels etc</option>
+<option name=c292 value="straight; to straighten; fair and reasonable; frank; straightforward; (indicates continuing motion or action); vertical; vertical downward stroke in Chinese characters">straight; to straighten; fair and reasonable; frank; straightforward; (indicates continuing motion or action); vertical; vertical downward stroke in Chinese characters</option>
+<option name=c293 value="finger; to point at or to; to indicate or refer to; to depend on; to count on; (of hair) to stand on end">finger; to point at or to; to indicate or refer to; to depend on; to count on; (of hair) to stand on end</option>
+<option name=c294 value="clock; o'clock; time as measured in hours and minutes; bell; CL:架[jia4],座[zuo4]">clock; o'clock; time as measured in hours and minutes; bell; CL:架[jia4],座[zuo4]</option>
+<option name=c295 value="heavy; serious">heavy; serious</option>
+<option name=c296 value="hog; pig; swine; CL:口[kou3],頭|头[tou2]">hog; pig; swine; CL:口[kou3],頭|头[tou2]</option>
+<option name=c297 value="to cook; to boil">to cook; to boil</option>
+<option name=c298 value="earn; make a profit">earn; make a profit</option>
+<option name=c299 value="adornment; to adorn; dress; clothing; costume (of an actor in a play); to play a role; to pretend; to install; to fix; to wrap (sth in a bag); to load; to pack">adornment; to adorn; dress; clothing; costume (of an actor in a play); to play a role; to pretend; to install; to fix; to wrap (sth in a bag); to load; to pack</option>
+<option name=c300 value="to hit; to strike; to meet by accident; to run into; to bump against; to bump into">to hit; to strike; to meet by accident; to run into; to bump against; to bump into</option>
+<option name=c301 value="purple; violet; amethyst; Lithospermum erythrorhizon (flowering plant whose root provides red purple dye); Japanese: murasaki">purple; violet; amethyst; Lithospermum erythrorhizon (flowering plant whose root provides red purple dye); Japanese: murasaki</option>
+<option name=c302 value="to hire; to rent; to charter; to rent out; to lease out; rent; land tax">to hire; to rent; to charter; to rent out; to lease out; rent; land tax</option>
+<option name=c303 value="mouth; beak; spout (of teapot etc); CL:張|张[zhang1],個|个[ge4]">mouth; beak; spout (of teapot etc); CL:張|张[zhang1],個|个[ge4]</option>
+<option name=c304 value="intoxicated">intoxicated</option>
+<option name=c305 value="seat; base; stand; CL:個|个[ge4]; classifier for buildings, mountains and similar immovable objects">seat; base; stand; CL:個|个[ge4]; classifier for buildings, mountains and similar immovable objects</option>
+
+
+</select>	
+<button id=text onclick="test()" >Try</button>
+<P>
+	<Table id=hide0 border=0 style="display:none">	
+	<TR>
+<TD>Number of Correct Attempts : <span id=count style="display:none"></span><span id=countNum></span>
+<TR>
+<TD>Number of Wrong Attempts : <span id=count2 style="display:none"></span><span id=countNum2></span>
+</Table>		
+		<P>
+		<span id=answer></span>
+		</P>
+		<P>
+		<span id=message></span>
+		</P>
+		
+		
+	
+	<button id=text2 onclick="listen()" style="display:none"><img src=listen.png height=100pt width=100pt></button>
+	<P>
+	<Table id=hide border=0 width=85% height=50 cellspacing=10 style="display:none">
+	
+	<TR>
+	<TD  colspan=3 height=100 align=center  ><span id="a1" >word : <span id="a2" ></TD>
+	
+	
+	
+	<TR>
+	<TD bgcolor=yellow width=350 height=100 align=center onclick="myFunction('q1')" ><span id="q1" ></TD>
+	<TD bgcolor=yellow width=350 height=100 align=center onclick="myFunction('q2')"><span id="q2" ></TD>
+	<TD bgcolor=yellow width=350 height=100 align=center onclick="myFunction('q3')"><span id="q3" ></TD>
+	
+
+	</Table>
+    
+
+</div>
+</body>
+</html>
+<script>
+
+	
+function listen() {
+ 
+ var msg1 = document.getElementById("char").value;
+  var msg = new SpeechSynthesisUtterance(msg1);
+  var voices = window.speechSynthesis.getVoices();
+  msg.voice = voices[49];
+  var platform = navigator.platform ;
+	if ( platform == "Win32") {
+	 msg.voice = voices[18];
+	}
+  	
+  window.speechSynthesis.speak(msg);
+
+}
+	
+function speak(msg1) {
+ 
+ 
+  var msg = new SpeechSynthesisUtterance(msg1);
+  var voices = window.speechSynthesis.getVoices();
+  msg.voice = voices[17];
+  var platform = navigator.platform ;
+	if ( platform == "Win32") {
+	 msg.voice = voices[0];
+	}
+  window.speechSynthesis.speak(msg);
+
+}
+
+
+
+function myFunction(q) {
+  
+  if (document.getElementById("explain").value ==  document.getElementById(q).innerHTML)
+  {
+     document.getElementById("message").innerHTML =  "correct" ;
+	  speak("Correct");
+	document.getElementById("count").innerHTML = document.getElementById("count").innerHTML + 1;
+	document.getElementById("countNum").innerHTML = document.getElementById("count").innerHTML.length;
+	test();
+
+	}
+     else
+     {
+     document.getElementById("message").innerHTML =  "Wrong! Try again`" ;
+	 document.getElementById("count2").innerHTML = document.getElementById("count2").innerHTML + 1;
+	 	document.getElementById("countNum2").innerHTML = document.getElementById("count2").innerHTML.length;
+	  speak("wrong");
+  }
+}
+
+
+function test() {
+
+document.getElementById("text").innerHTML = "Next";
+
+
+var ranNum;
+var x = document.getElementById("char").childElementCount;
+
+ranNum = Math.floor(Math.random() * x); 
+
+document.getElementById("char").selectedIndex = ranNum;
+
+document.getElementById("explain").selectedIndex = ranNum;
+
+
+
+ document.getElementById("a2").innerHTML = document.getElementById("char").value;
+
+answer =  document.getElementById("explain")[ranNum].value ; 
+
+listen();
+ranNum = Math.floor(Math.random() * x); 
+
+document.getElementById("q1").innerHTML = document.getElementById("explain")[ranNum].value;
+
+
+ranNum = Math.floor(Math.random() * x); 
+
+document.getElementById("q2").innerHTML = document.getElementById("explain")[ranNum].value;
+
+
+ranNum = Math.floor(Math.random() * x); 
+
+document.getElementById("q3").innerHTML = document.getElementById("explain")[ranNum].value;
+
+
+ranNum = Math.floor(Math.random() * 3); 
+
+
+
+  var fruits = ranNum;
+  
+
+  
+  switch(fruits) {
+    case 0:
+      document.getElementById("q1").innerHTML = answer;
+    break;
+    case 1:
+      document.getElementById("q2").innerHTML = answer;
+    break;
+    case 2:
+      document.getElementById("q3").innerHTML = answer;
+    break;
+    default:
+      document.getElementById("q1").innerHTML = answer;
+  }
+
+  
+
+ document.getElementById("hide").style.display = "inline";  
+document.getElementById("hide0").style.display = "inline";  
+document.getElementById("text2").style.display = "inline";  
+
+
+
+}
+
+
+
+</script>
