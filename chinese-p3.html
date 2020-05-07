@@ -1020,7 +1020,11 @@ document.getElementById("text").innerHTML = "Next";
 
 
 var ranNum;
-ranNum = Math.floor(Math.random() * 450); 
+
+var ranNum;
+var x = document.getElementById("char").childElementCount;
+
+ranNum = Math.floor(Math.random() * x); 
 
 document.getElementById("char").selectedIndex = ranNum;
 
@@ -1033,12 +1037,12 @@ document.getElementById("explain").selectedIndex = ranNum;
 answer =  document.getElementById("char")[ranNum].value ; 
 
 listen();
-ranNum = Math.floor(Math.random() * 450); 
+ranNum = Math.floor(Math.random() * x); 
 
 document.getElementById("q1").innerHTML = document.getElementById("char")[ranNum].value;
 
 
-ranNum = Math.floor(Math.random() * 450); 
+ranNum = Math.floor(Math.random() * x); 
 
 document.getElementById("q2").innerHTML = document.getElementById("char")[ranNum].value;
 
