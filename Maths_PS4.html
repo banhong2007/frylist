@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+</script>
+<style>
+
+
+
+div.drop{
+display: inline-block; background-color: #FFF3CC; border: #DFBC6A 1px solid; width: 100px; height: 50px;  margin: 5px; padding: 5px; font-size: 35px;  text-align: center; box-shadow: 2px 2px 2px #999;  cursor: move;
+}
+
+
+
+div.operator{
+display: inline-block; background-color: #FFF3CC; border: #DFBC6A 1px solid; width: 60px; height: 50px;  margin: 5px; padding: 5px; font-size: 35px;  text-align: center; box-shadow: 2px 2px 2px #999;  cursor: move;
+}
+
+span.t1{
+display: inline-block; background-color: aqua; border: #DFBC6A 1px solid; width: 80px; height: 30px;  margin: 5px; padding: 4px; font-size: 25px;  text-align: center; box-shadow: 1px 1px 1px #999;  cursor: move;
+}
+
+span.t2{
+display: inline-block; background-color: aqua; border: #DFBC6A 1px solid; width: 40px; height: 30px;  margin: 5px; padding: 4px; font-size: 25px;  text-align: center; box-shadow: 1px 1px 1px #999;  cursor: move;
+}
+
+
+P{
+ font-size: 25px;  
+}
+
+</style>
+<head>
+<title>Maths Model - Comparison Model</title>
+<body>
+<center>
+
+<P>
+John has 400 stickers.
+<BR>Mary has 300 stickers.
+<BR>How many stickers do they have altogether?
+</P>
+
+
+
+<table height=300 width=600 >
+
+<TD width=150><center><div class=drop id="drop_zone1" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<TD width=100><center><div class=operator id="drop_zone2" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<TD width=150><center><div class=drop id="drop_zone3" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<TD width=100><center>=
+<TD width=150><center><div class=drop id="drop_zone4" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+</Table>
+
+<P>
+
+
+<span id="drag1" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">300</span>
+<span id="drag2" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">700</span>
+<span id="drag3" class=t2 draggable="true" ondragstart="drag(event)" width="60" height="20">+</span>
+<span id="drag4" class=t2 draggable="true" ondragstart="drag(event)" width="60" height="20">-</span>
+<span id="drag5" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">400</span>
+<span id="drag6" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">100</span>
+
+<HR>
+<center>
+<table width=70%>
+<TD align=left><A href=index.html><strong>HOME</strong></A>
+<TD align=center><button onclick="myFunction()">Submit Answer</button>
+<TD align=right><A href=Maths_PS4.html><strong>NEXT</strong></A>
+</table>
+<HR>
+<p id="demo"></p>
+
+<script>
+
+
+
+function myFunction() {
+
+if (document.getElementById("drop_zone1").textContent  == document.getElementById("drag5").innerHTML
+&&  document.getElementById("drop_zone2").textContent  == document.getElementById("drag3").innerHTML
+&&  document.getElementById("drop_zone3").textContent  == document.getElementById("drag1").innerHTML
+&&  document.getElementById("drop_zone4").textContent  == document.getElementById("drag2").innerHTML
+||
+
+document.getElementById("drop_zone1").textContent  == document.getElementById("drag1").innerHTML
+&&  document.getElementById("drop_zone2").textContent  == document.getElementById("drag3").innerHTML
+&&  document.getElementById("drop_zone3").textContent  == document.getElementById("drag5").innerHTML
+&&  document.getElementById("drop_zone4").textContent  == document.getElementById("drag2").innerHTML
+
+)
+
+{
+  document.getElementById("demo").innerHTML = "Correct!";
+  }
+ else {
+document.getElementById("demo").innerHTML = "WRONG!";
+  } 
+
+ 
+}
+</script>
+
+</body>
+
+</html>

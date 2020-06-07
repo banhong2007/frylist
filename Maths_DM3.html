@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+</script>
+<style>
+
+
+
+div{
+display: inline-block; background-color: #FFF3CC; border: #DFBC6A 1px solid; width: 100px; height: 50px;  margin: 5px; padding: 5px; font-size: 35px;  text-align: center; box-shadow: 2px 2px 2px #999;  cursor: move;
+}
+
+span{
+display: inline-block; background-color: aqua; border: #DFBC6A 1px solid; width: 80px; height: 40px;  margin: 5px; padding: 4px; font-size: 25px;  text-align: center; box-shadow: 1px 1px 1px #999;  cursor: move;
+}
+
+
+P{
+ font-size: 25px;  
+}
+</style>
+<head>
+<title>Maths Model - Comparison Model</title>
+<body>
+<center>
+<P>
+John has 400 stickers.
+<BR>John has 50 fewer stickers than Mary.
+<BR>How many stickers does Mary have?
+</P>
+
+<table height=300 width=600 >
+<TR><TD width=200><TD colspan=2 width=400>
+<center><table border=0 width=80 height=30  ><TD><div id="drop_zone1" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div></Table>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 40">
+  <defs>
+    <marker id="startarrow" markerWidth="5" markerHeight="2" refX="5" refY="1" orient="auto">
+      <polygon points="5 0, 5 2, 0 1" />
+    </marker>
+    <marker id="endarrow" markerWidth="5" markerHeight="2" refX="0" refY="1" orient="auto" markerUnits="strokeWidth">
+        <polygon points="0 0, 5 1, 0 2" />
+    </marker>
+  </defs>
+  <line x1="25" y1="20" x2="275" y2="20" stroke="#000" stroke-width="5"  marker-end="url(#endarrow)" marker-start="url(#startarrow)" />
+</svg>
+
+<TR><TD width=200><table border=0 width=80 height=30 ><TD><div id="drop_zone2" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></Table>
+<TD><table  width=400 height=50  border=3 style="border-collapse:collapse;">
+<TD width=250 bgcolor=blue><TD width=150 bgcolor=yellow></Table>
+
+
+
+<TR><TD width=200><table border=0 width=80 height=30  ><TD><div id="drop_zone3" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div></Table>
+<TD><table  width=250 height=50 border=3 style="border-collapse:collapse;">
+<TD bgcolor=blue></Table>
+
+
+
+<TR><TD width=200>
+<TD><table  width=400 height=50 >
+<TD width=250 ><center>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 40">
+  <defs>
+    <marker id="startarrow" markerWidth="5" markerHeight="2" refX="5" refY="1" >
+      <polygon points="5 0, 5 2, 0 1" />
+    </marker>
+    <marker id="endarrow" markerWidth="5" markerHeight="2" refX="0" refY="1" markerUnits="strokeWidth">
+        <polygon points="0 0, 5 1, 0 2" />
+    </marker>
+  </defs>
+  <line x1="25" y1="20" x2="225" y2="20" stroke="#000" stroke-width="5"  marker-end="url(#endarrow)" marker-start="url(#startarrow)" />
+</svg>
+
+<table border=0 width=80 height=40 ><TD><div id="drop_zone4" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></table>
+<TD width=150 ><center>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40">
+  <defs>
+    <marker id="startarrow" markerWidth="5" markerHeight="2" refX="5" refY="1" >
+      <polygon points="5 0, 5 2, 0 1" />
+    </marker>
+    <marker id="endarrow" markerWidth="5" markerHeight="2" refX="0" refY="1" markerUnits="strokeWidth">
+        <polygon points="0 0, 5 1, 0 2" />
+    </marker>
+  </defs>
+  <line x1="25" y1="20" x2="125" y2="20" stroke="#000" stroke-width="5"  marker-end="url(#endarrow)" marker-start="url(#startarrow)" />
+</svg>
+
+<table border=0 width=80 height=40 ><TD><div id="drop_zone5" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></table>
+</Table>
+</Table>
+<P>
+
+
+<span id="drag1" draggable="true" ondragstart="drag(event)" width="60" height="20">Mary</span>
+<span id="drag2" draggable="true" ondragstart="drag(event)" width="60" height="20">John</span>
+<span id="drag3" draggable="true" ondragstart="drag(event)" width="60" height="20">50</span>
+<span id="drag4" draggable="true" ondragstart="drag(event)" width="60" height="20">400</span>
+<span id="drag5" draggable="true" ondragstart="drag(event)" width="60" height="20">?</span>
+
+
+<HR>
+<center>
+<table width=70%>
+<TD align=left><A href=index.html><strong>HOME</strong></A>
+<TD align=center><button onclick="myFunction()">Submit Answer</button>
+<TD align=right><A href=Maths_DM4.html><strong>NEXT</strong></A>
+</table>
+<HR>
+<p id="demo"></p>
+>
+
+<script>
+function myFunction() {
+
+if (document.getElementById("drop_zone1").textContent  == document.getElementById("drag5").innerHTML
+&&  document.getElementById("drop_zone2").textContent  == document.getElementById("drag1").innerHTML
+&&  document.getElementById("drop_zone3").textContent  == document.getElementById("drag2").innerHTML
+&&  document.getElementById("drop_zone4").textContent  == document.getElementById("drag4").innerHTML
+&&  document.getElementById("drop_zone5").textContent  == document.getElementById("drag3").innerHTML
+
+)
+
+{
+  document.getElementById("demo").innerHTML = "Correct!";
+  }
+ else {
+document.getElementById("demo").innerHTML = "WRONG!";
+  } 
+
+ 
+}
+</script>
+
+</body>
+
+</html>

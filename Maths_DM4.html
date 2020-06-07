@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+</script>
+<style>
+
+
+
+div{
+display: inline-block; background-color: #FFF3CC; border: #DFBC6A 1px solid; width: 100px; height: 50px;  margin: 5px; padding: 5px; font-size: 35px;  text-align: center; box-shadow: 2px 2px 2px #999;  cursor: move;
+}
+
+span{
+display: inline-block; background-color: aqua; border: #DFBC6A 1px solid; width: 80px; height: 40px;  margin: 5px; padding: 4px; font-size: 25px;  text-align: center; box-shadow: 1px 1px 1px #999;  cursor: move;
+}
+
+
+P{
+ font-size: 25px;  
+}
+</style>
+<head>
+<title>Maths Model - Comparison Model</title>
+<body>
+<center>
+<P>
+John has 400 stickers.
+<BR>Mary has 250.
+<BR>How many stickers do they have altogether?
+</P>
+
+<table height=300 width=600 >
+<TR>
+<TD colspan=2 >
+<center><div id="drop_zone1" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 40">
+  <defs>
+    <marker id="startarrow" markerWidth="5" markerHeight="2" refX="5"  orient="auto"  refY="1" >
+      <polygon points="5 0, 5 2, 0 1" />
+    </marker>
+    <marker id="endarrow" markerWidth="5" markerHeight="2" refX="0"   orient="auto" refY="1" markerUnits="strokeWidth">
+        <polygon points="0 0, 5 1, 0 2" />
+    </marker>
+  </defs>
+  <line x1="25" y1="20" x2="375" y2="20" stroke="#000" stroke-width="5"  marker-end="url(#endarrow)" marker-start="url(#startarrow)" />
+</svg>
+
+<TR>
+<TD colspan=2>
+<table  width=600 height=100  border=3 style="border-collapse:collapse;">
+	<TD width=400 bgcolor=blue><center><div id="drop_zone2" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<TD width=200 bgcolor=yellow><center><div id="drop_zone3" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</Table>
+
+
+
+
+<TR>
+<TD width=400>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 40">
+  <defs>
+    <marker id="startarrow" markerWidth="5" markerHeight="2" refX="5"  orient="auto"  refY="1" >
+      <polygon points="5 0, 5 2, 0 1" />
+    </marker>
+    <marker id="endarrow" markerWidth="5" markerHeight="2" refX="0"   orient="auto" refY="1" markerUnits="strokeWidth">
+        <polygon points="0 0, 5 1, 0 2" />
+    </marker>
+  </defs>
+  <line x1="25" y1="20" x2="375" y2="20" stroke="#000" stroke-width="5"  marker-end="url(#endarrow)" marker-start="url(#startarrow)" />
+</svg>
+
+<center><div id="drop_zone4" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+
+<TD width=200>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40">
+  <defs>
+    <marker id="startarrow" markerWidth="5" markerHeight="2" refX="5" refY="1" >
+      <polygon points="5 0, 5 2, 0 1" />
+    </marker>
+    <marker id="endarrow" markerWidth="5" markerHeight="2" refX="0" refY="1" markerUnits="strokeWidth">
+        <polygon points="0 0, 5 1, 0 2" />
+    </marker>
+  </defs>
+  <line x1="25" y1="20" x2="175" y2="20" stroke="#000" stroke-width="5"  marker-end="url(#endarrow)" marker-start="url(#startarrow)" />
+</svg>
+
+<center><div id="drop_zone5" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</Table>
+
+<HR>
+
+<span id="drag1" draggable="true" ondragstart="drag(event)" width="60" height="20">Mary</span>
+<span id="drag2" draggable="true" ondragstart="drag(event)" width="60" height="20">John</span>
+<span id="drag3" draggable="true" ondragstart="drag(event)" width="60" height="20">250</span>
+<span id="drag4" draggable="true" ondragstart="drag(event)" width="60" height="20">400</span>
+<span id="drag5" draggable="true" ondragstart="drag(event)" width="60" height="20">?</span>
+
+
+<HR>
+<center>
+<table width=70%>
+<TD align=left><A href=index.html><strong>HOME</strong></A>
+<TD align=center><button onclick="myFunction()">Submit Answer</button>
+<TD align=right><A href=index.html><strong>NEXT</strong></A>
+</table>
+<HR>
+<p id="demo"></p>
+
+
+
+<script>
+function myFunction() {
+
+if (document.getElementById("drop_zone1").textContent  == document.getElementById("drag5").innerHTML
+&&  document.getElementById("drop_zone2").textContent  == document.getElementById("drag2").innerHTML
+&&  document.getElementById("drop_zone3").textContent  == document.getElementById("drag1").innerHTML
+&&  document.getElementById("drop_zone4").textContent  == document.getElementById("drag4").innerHTML
+&&  document.getElementById("drop_zone5").textContent  == document.getElementById("drag3").innerHTML
+
+
+)
+
+{
+  document.getElementById("demo").innerHTML = "Correct!";
+  }
+ else {
+document.getElementById("demo").innerHTML = "WRONG!" ;
+
+  } 
+
+ 
+}
+</script>
+
+</body>
+
+</html>
