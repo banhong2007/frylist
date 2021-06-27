@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+</script>
+<style>
+
+div.drop{
+display: inline-block; background-color: #FFF3CC; border: #DFBC6A 1px solid; width: 100px; height: 50px;  margin: 5px; padding: 5px; font-size: 35px;  text-align: center; box-shadow: 2px 2px 2px #999;  cursor: move;
+}
+
+
+div.operator{
+display: inline-block; background-color: #FFF3CC; border: #DFBC6A 1px solid; width: 60px; height: 50px;  margin: 5px; padding: 5px; font-size: 35px;  text-align: center; box-shadow: 2px 2px 2px #999;  cursor: move;
+}
+table {
+  border-collapse: collapse;
+}
+
+div svg path {
+  stroke: #000000;
+  stroke-width: 1px;
+}
+
+div.b {
+display: inline-block; background-color: #FFF3CC; border: #DFBC6A 1px solid; width: 100px; height: 50px;  margin: 3px; padding: 3px; font-size: 35px;  text-align: center; box-shadow: 2px 2px 2px #999;  cursor: move;
+}
+
+span{
+display: inline-block; background-color: aqua; border: #DFBC6A 1px solid; width: 80px; height: 40px;  margin: 5px; padding: 4px; font-size: 25px;  text-align: center; box-shadow: 1px 1px 1px #999;  cursor: move;
+}
+
+
+P, TD{
+ font-size: 25px;  
+}
+
+span.t1{
+display: inline-block; background-color: aqua; border: #DFBC6A 1px solid; width: 80px; height: 30px;  margin: 5px; padding: 4px; font-size: 25px;  text-align: center; box-shadow: 1px 1px 1px #999;  cursor: move;
+}
+
+span.t2{
+display: inline-block; background-color: aqua; border: #DFBC6A 1px solid; width: 40px; height: 30px;  margin: 5px; padding: 4px; font-size: 25px;  text-align: center; box-shadow: 1px 1px 1px #999;  cursor: move;
+}
+
+
+div.a {
+  font-stretch: extra-expanded;
+   width: 50px;
+  height: 50px;
+  font-size: 30pt;
+  transform: scale(1, 4);
+
+}
+
+
+
+P, TD{
+ font-size: 25px;  
+}
+</style>
+<head>
+<title>Maths Model - Comparison Model</title>
+<body>
+<center>
+
+<Table width=80%>
+<TD width=30% valign=top>
+<P>Siti had $487.
+<BR>John had $175 less than Siti.
+<BR>a) How much did John have?
+<BR>b) How much did they have altogether?
+
+
+<TD width=70%>
+
+<table height=300 width=600 ><TR><TD>
+<table height=300 width=600 >
+<TR><TD width=200><TD colspan=2 width=400>
+<center><table border=0 width=80 height=30  ><TD><div  class=b id="drop_zone1" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div></Table>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 30">
+  <defs>
+    <marker id="startarrow" markerWidth="5" markerHeight="2" refX="5" refY="1" orient="auto">
+      <polygon points="5 0, 5 2, 0 1" />
+    </marker>
+    <marker id="endarrow" markerWidth="5" markerHeight="2" refX="0" refY="1" orient="auto" markerUnits="strokeWidth">
+        <polygon points="0 0, 5 1, 0 2" />
+    </marker>
+  </defs>
+  <line x1="25" y1="20" x2="275" y2="20" stroke="#000" stroke-width="5"  marker-end="url(#endarrow)" marker-start="url(#startarrow)" />
+</svg>
+
+<TR><TD width=200><table border=0 width=80 height=30 ><TD><div  class=b id="drop_zone2" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></Table>
+<TD><table  width=400 height=50  border=3 style="border-collapse:collapse;">
+<TD width=250 bgcolor=blue><TD width=150 bgcolor=yellow></Table>
+
+
+
+<TR><TD width=200><table border=0 width=80 height=30  ><TD><div  class=b id="drop_zone3" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div></Table>
+<TD><table  width=250 height=50 border=3 style="border-collapse:collapse;">
+<TD bgcolor=blue></Table>
+
+
+
+<TR><TD width=200>
+<TD><table  width=400 height=50 >
+<TD width=250 ><center>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 30">
+  <defs>
+    <marker id="startarrow" markerWidth="5" markerHeight="2" refX="5" refY="1" >
+      <polygon points="5 0, 5 2, 0 1" />
+    </marker>
+    <marker id="endarrow" markerWidth="5" markerHeight="2" refX="0" refY="1" markerUnits="strokeWidth">
+        <polygon points="0 0, 5 1, 0 2" />
+    </marker>
+  </defs>
+  <line x1="25" y1="20" x2="225" y2="20" stroke="#000" stroke-width="5"  marker-end="url(#endarrow)" marker-start="url(#startarrow)" />
+</svg>
+
+<table border=0 width=80 height=40 ><TD><div  class=b id="drop_zone4" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></table>
+<TD width=150 ><center>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 30">
+  <defs>
+    <marker id="startarrow" markerWidth="5" markerHeight="2" refX="5" refY="1" >
+      <polygon points="5 0, 5 2, 0 1" />
+    </marker>
+    <marker id="endarrow" markerWidth="5" markerHeight="2" refX="0" refY="1" markerUnits="strokeWidth">
+        <polygon points="0 0, 5 1, 0 2" />
+    </marker>
+  </defs>
+  <line x1="25" y1="20" x2="125" y2="20" stroke="#000" stroke-width="5"  marker-end="url(#endarrow)" marker-start="url(#startarrow)" />
+</svg>
+
+<table border=0 width=80 height=40 ><TD><div  class=b id="drop_zone5" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></table>
+</Table>
+</Table>
+
+<TD>
+<table border=0 width=80 height=40 >
+<TR><TD><center>
+
+
+<div class=a><b>}</b></div>
+<TD><div class=b id="drop_zone6" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></table>
+
+</table>
+
+<BR>
+
+
+
+
+<span id="drag1" draggable="true" ondragstart="drag(event)" width="60" height="20">Siti</span>
+<span id="drag2" draggable="true" ondragstart="drag(event)" width="60" height="20">John</span>
+<span id="drag3" draggable="true" ondragstart="drag(event)" width="60" height="20">$487</span>
+<span id="drag4" draggable="true" ondragstart="drag(event)" width="60" height="20">$175</span>
+<span id="drag5" draggable="true" ondragstart="drag(event)" width="60" height="20">(a)?</span>
+<span id="drag6" draggable="true" ondragstart="drag(event)" width="60" height="20">(b)?</span>
+</table>
+<HR>
+
+<table height=90 width=800 >
+<TD valign=top><b>a)</b>
+<TD width=150><center><div class=drop id="drop_zone11" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<TD width=100><center><div class=operator id="drop_zone12" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<TD width=150><center><div class=drop id="drop_zone13" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<TD width=100><center>=
+<TD width=150><center><div class=drop id="drop_zone14" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+</Table>
+
+<BR>
+
+
+<span id="drag11" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">175</span>
+<span id="drag12" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">487</span>
+<span id="drag13" class=t2 draggable="true" ondragstart="drag(event)" width="60" height="20">+</span>
+<span id="drag14" class=t2 draggable="true" ondragstart="drag(event)" width="60" height="20">-</span>
+<span id="drag15" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">312</span>
+<span id="drag16" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">662</span>
+
+
+<HR>
+<table height=90 width=800 >
+<TD valign=top><b>b)</b>
+
+<TD width=150><center><div class=drop id="drop_zone21" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<TD width=100><center><div class=operator id="drop_zone22" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<TD width=150><center><div class=drop id="drop_zone23" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<TD width=100><center>=
+<TD width=150><center><div class=drop id="drop_zone24" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+</Table>
+
+<BR>
+
+
+<span id="drag21" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">1149</span>
+<span id="drag22" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">487</span>
+<span id="drag23" class=t2 draggable="true" ondragstart="drag(event)" width="60" height="20">+</span>
+<span id="drag24" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">799</span>
+<span id="drag25" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">312</span>
+<span id="drag26" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">662</span>
+
+
+<HR>
+<center>
+<table width=50%>
+<TD align=left><A href=index.html><strong>HOME</strong></A>
+<TD align=center><button onclick="myFunction()">Submit Answer</button>
+<TD align=right><A href=Maths_DM6.html><strong>NEXT</strong></A>
+</table>
+<HR>
+<p id="demo"></p>
+
+<script>
+
+
+
+function myFunction() {
+
+if (document.getElementById("drop_zone1").textContent  == document.getElementById("drag3").innerHTML
+&&  document.getElementById("drop_zone2").textContent  == document.getElementById("drag1").innerHTML
+&&  document.getElementById("drop_zone3").textContent  == document.getElementById("drag2").innerHTML
+&&  document.getElementById("drop_zone4").textContent  == document.getElementById("drag5").innerHTML
+&&  document.getElementById("drop_zone5").textContent  == document.getElementById("drag4").innerHTML
+&&  document.getElementById("drop_zone6").textContent  == document.getElementById("drag6").innerHTML
+
+
+&&  document.getElementById("drop_zone14").textContent  == document.getElementById("drag15").innerHTML
+&&  document.getElementById("drop_zone12").textContent  == document.getElementById("drag14").innerHTML
+
+&&  document.getElementById("drop_zone24").textContent  == document.getElementById("drag24").innerHTML
+
+
+)
+
+{
+  document.getElementById("demo").innerHTML = "Correct!";
+  }
+ else {
+document.getElementById("demo").innerHTML = "WRONG!";
+  } 
+
+ 
+}
+</script>
+
+</body>
+
+</html>

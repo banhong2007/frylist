@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+</script>
+<style>
+
+div svg path {
+  stroke: #000000;
+  stroke-width: 1px;
+}
+
+div.drop{
+display: inline-block; background-color: #FFF3CC; border: #DFBC6A 1px solid; width: 100px; height: 50px;  margin: 5px; padding: 5px; font-size: 35px;  text-align: center; box-shadow: 2px 2px 2px #999;  cursor: move;
+}
+
+
+div.operator{
+display: inline-block; background-color: #FFF3CC; border: #DFBC6A 1px solid; width: 60px; height: 50px;  margin: 5px; padding: 5px; font-size: 35px;  text-align: center; box-shadow: 2px 2px 2px #999;  cursor: move;
+}
+table {
+  border-collapse: collapse;
+}
+
+div.b{
+display: inline-block; background-color: #FFF3CC; border: #DFBC6A 1px solid; width: 100px; height: 50px;  margin: 5px; padding: 5px; font-size: 35px;  text-align: center; box-shadow: 2px 2px 2px #999;  cursor: move;
+}
+
+
+span{
+display: inline-block; background-color: aqua; border: #DFBC6A 1px solid; width: 80px; height: 40px;  margin: 5px; padding: 4px; font-size: 25px;  text-align: center; box-shadow: 1px 1px 1px #999;  cursor: move;
+}
+
+div.a {
+  width: 50px;
+  height: 50px;
+  font-size: 30pt;
+  transform: rotate(90deg);
+}
+
+div.c {
+  font-stretch: extra-expanded;
+   width: 100px;
+  height: 180px;
+  bgcolor: yellow;
+  font-size: 100pt;
+  transform: rotate(90deg)  scale(1, 4);
+
+}
+
+
+P, TD{
+ font-size: 25px;  
+}
+
+span.t1{
+display: inline-block; background-color: aqua; border: #DFBC6A 1px solid; width: 80px; height: 30px;  margin: 5px; padding: 4px; font-size: 25px;  text-align: center; box-shadow: 1px 1px 1px #999;  cursor: move;
+}
+
+span.t2{
+display: inline-block; background-color: aqua; border: #DFBC6A 1px solid; width: 40px; height: 30px;  margin: 5px; padding: 4px; font-size: 25px;  text-align: center; box-shadow: 1px 1px 1px #999;  cursor: move;
+}
+
+
+</style>
+<head>
+<title>Maths Model - Comparison Model</title>
+<body>
+<center>
+
+<table border=0 width=700>
+<TR>
+<TD> 
+Mother bought 200 eggs.
+<BR>She needs 20 eggs to bake a cake.
+<BR>How many cakes can she made with the eggs she bought?
+
+<HR>
+
+
+<table height=200 width=800 >
+<TR>
+<TD width=150><center><b>1 
+<TD width=150><center>UNIT
+<TD width=50><center> = 
+<TD width=150><center><div class=drop id="drop_zone1" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<TR>
+<TD width=150><center><div class=drop id="drop_zone2" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<TD width=150><center>UNITS
+<TD width=50><center> = 
+<TD width=150><center><div class=drop id="drop_zone3" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<TD><TD>
+
+</table>
+
+<span id="drag1" draggable="true" ondragstart="drag(event)" width="60" height="20">20</span>
+<span id="drag2" draggable="true" ondragstart="drag(event)" width="60" height="20">200</span>
+<span id="drag3" draggable="true" ondragstart="drag(event)" width="60" height="20">?</span>
+
+<HR>
+
+<table height=100 width=600 >
+
+<TD width=150><center><div class=drop id="drop_zone11" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<TD width=100><center><div class=operator id="drop_zone12" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<TD width=150><center><div class=drop id="drop_zone13" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<TD width=100><center>=
+<TD width=150><center><div class=drop id="drop_zone14" ondragover="return false" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+</Table>
+
+<P>
+
+
+<span id="drag11" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">20</span>
+<span id="drag12" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">200</span>
+<span id="drag13" class=t2 draggable="true" ondragstart="drag(event)" width="60" height="20">&#247;</span>
+<span id="drag14" class=t2 draggable="true" ondragstart="drag(event)" width="60" height="20">x</span>
+<span id="drag15" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">4000</span>
+<span id="drag16" class=t1 draggable="true" ondragstart="drag(event)" width="60" height="20">10</span>
+
+
+
+<HR>
+<center>
+<table width=50%>
+<TD align=left><A href=index.html><strong>HOME</strong></A>
+<TD align=center><button onclick="myFunction()">Submit Answer</button>
+<TD align=right><A href=Maths_DM7.html><strong>NEXT</strong></A>
+</table>
+<HR>
+<p id="demo"></p>
+
+<script>
+
+
+
+function myFunction() {
+
+if (document.getElementById("drop_zone1").textContent  == document.getElementById("drag1").innerHTML
+&&  document.getElementById("drop_zone2").textContent  == document.getElementById("drag3").innerHTML
+&&  document.getElementById("drop_zone3").textContent  == document.getElementById("drag2").innerHTML
+
+&&  document.getElementById("drop_zone12").textContent  == document.getElementById("drag13").innerHTML
+&&  document.getElementById("drop_zone14").textContent  == document.getElementById("drag16").innerHTML
+
+)
+
+{
+  document.getElementById("demo").innerHTML = "Correct!";
+  }
+ else {
+document.getElementById("demo").innerHTML = "WRONG!";
+  } 
+
+ 
+}
+</script>
+
+</body>
+
+</html>
+
+
+
