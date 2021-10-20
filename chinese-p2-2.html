@@ -336,13 +336,14 @@ font-size:25pt;
 function listen() {
  
  var msg1 = document.getElementById("char").value;
-  var msg = new SpeechSynthesisUtterance(msg1);
-  var voices = window.speechSynthesis.getVoices();
-  msg.voice = voices[49];
-  var platform = navigator.platform ;
-	if ( platform == "Win32") {
-	 msg.voice = voices[18];
-	}
+var msg = new SpeechSynthesisUtterance(msg1);
+ 
+
+
+   msg.lang = 'zh-CN';	
+
+	
+
   	
   window.speechSynthesis.speak(msg);
 
@@ -351,13 +352,12 @@ function listen() {
 function speak(msg1) {
  
  
+
+
   var msg = new SpeechSynthesisUtterance(msg1);
-  var voices = window.speechSynthesis.getVoices();
-  msg.voice = voices[17];
-  var platform = navigator.platform ;
-	if ( platform == "Win32") {
-	 msg.voice = voices[0];
-	}
+
+	
+
   window.speechSynthesis.speak(msg);
 
 }
