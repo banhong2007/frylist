@@ -1,0 +1,549 @@
+<html>
+<style>
+
+body , BR{
+  width: 80%;
+  padding: 20px 0;
+  text-align: left;
+  background-color: white;
+  margin: 30px;
+  font-size:18;
+}
+</style>
+<body>
+
+<ol>
+<li> <p>An administrator has saved the file shown below as logstash.conf to the default directory.&nbsp; Which Logstash switch will launch the application using this configuration file?</p><p><code>input {<br />&nbsp; file {<br />&nbsp;&nbsp;&nbsp; path =&gt; "/var/log/messages"<br />&nbsp;&nbsp;&nbsp; type =&gt; "syslog"<br />&nbsp; }<br />}</code></p><p><code>filter {<br />&nbsp; if [path] =~ "access" {<br />&nbsp;&nbsp;&nbsp; mutate { replace =&gt; { type =&gt; "apache_access" } }<br />&nbsp;&nbsp;&nbsp; grok {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; match =&gt; { "message" =&gt; "%{COMBINEDAPACHELOG}" }<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; date {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; match =&gt; [ "timestamp" , "dd/MMM/yyyy:HH:mm:ss Z" ]<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp; } else if [path] =~ "error" {<br />&nbsp;&nbsp;&nbsp; mutate { replace =&gt; { type =&gt; "apache_error" } }<br />&nbsp; } else {<br />&nbsp;&nbsp;&nbsp; mutate { replace =&gt; { type =&gt; "random_logs" } }<br />&nbsp; }<br />}</code></p><p><code>output {<br />&nbsp; elasticsearch { hosts =&gt; ["localhost:9200"] }<br />&nbsp; stdout { codec =&gt; rubydebug }<br />}</code></p> 
+<input type=radio name=Q1 value=0>-r<BR>
+<input type=radio name=Q1 value=1>-f<BR>
+<input type=radio name=Q1 value=2>-e<BR>
+<input type=radio name=Q1 value=3>-i<BR>  <P><button onclick=javascript:showAnswer('A1')>Show Answer</button> <P><div id=A1 stype=display:none></div>
+<li> <p>A firm wants to purchase a SIEM solution that is sized to handle the projected growth for their environment at the end of year 3 in the timeline graph shown below.&nbsp; What is the projected EPS at the end of year 3 rounded up to the next integer?</p>
+ 
+<input type=radio name=Q7 value=0>489<BR>
+<input type=radio name=Q7 value=1>636<BR>
+<input type=radio name=Q7 value=2>544<BR>
+<input type=radio name=Q7 value=3>827<BR> <img src=images/25210.png > <P><button onclick=javascript:showAnswer('A7')>Show Answer</button> <P><div id=A7 stype=display:none></div>
+<li> <p>Which component of SIEM architecture has the capability to add context to a log?</p>
+ 
+<input type=radio name=Q12 value=0>Alert Engine<BR>
+<input type=radio name=Q12 value=1>Log Broker<BR>
+<input type=radio name=Q12 value=2>Log Aggregator<BR>
+<input type=radio name=Q12 value=3>Network sensor<BR>  <P><button onclick=javascript:showAnswer('A12')>Show Answer</button> <P><div id=A12 stype=display:none></div>
+<li> <p>Which of the following sources must generate their network logs directly on the endpoint rather than by means of network extraction?</p> 
+<input type=radio name=Q20 value=0>Cloud servers<BR>
+<input type=radio name=Q20 value=1>On-premise workstations<BR>
+<input type=radio name=Q20 value=2>Threat intelligence feeds<BR>
+<input type=radio name=Q20 value=3>Unauthorized devices<BR>  <P><button onclick=javascript:showAnswer('A20')>Show Answer</button> <P><div id=A20 stype=display:none></div>
+<li> <p>In what way does a SIEM provide improved data sharing to analysts?</p>
+ 
+<input type=radio name=Q35 value=0>Provides elevated privileges to multiple data sources<BR>
+<input type=radio name=Q35 value=1>Improves data requisitioning communications<BR>
+<input type=radio name=Q35 value=2>Allows authorized analysts access to monitor logs<BR>
+<input type=radio name=Q35 value=3>Manages specific systems for various teams<BR>  <P><button onclick=javascript:showAnswer('A35')>Show Answer</button> <P><div id=A35 stype=display:none></div>
+<li> <p>Which field in an enriched authentication failure log will identify an adversary using password spraying to gain system access?</p>
+ 
+<input type=radio name=Q39 value=0>Source IP address<BR>
+<input type=radio name=Q39 value=1>User<BR>
+<input type=radio name=Q39 value=2>Remote login session ID<BR>
+<input type=radio name=Q39 value=3>Geolocation<BR>  <P><button onclick=javascript:showAnswer('A39')>Show Answer</button> <P><div id=A39 stype=display:none></div>
+<li> <p>Which of the following indicates suspicious activity that should be investigated further?</p>
+ 
+<input type=radio name=Q40 value=0>An SMB challenge response from a network file server to an internal client<BR>
+<input type=radio name=Q40 value=1>An internal client using source ports over 49000 for regular web browsing activity<BR>
+<input type=radio name=Q40 value=2>A DNS server sending multiple UDP packets per day to external IP addresses<BR>
+<input type=radio name=Q40 value=3>A failed client attempt to connect over TCP port 4444 followed by a successful connection<BR>  <P><button onclick=javascript:showAnswer('A40')>Show Answer</button> <P><div id=A40 stype=display:none></div>
+<li> <p>Given a Windows system has 250,000 events per day with 80% of those events occurring during a&nbsp;10 hour period, what is the EPS during the peak period rounded up to the next integer?</p>
+ 
+<input type=radio name=Q48 value=0>10<BR>
+<input type=radio name=Q48 value=1>6<BR>
+<input type=radio name=Q48 value=2>4<BR>
+<input type=radio name=Q48 value=3>8<BR>  <P><button onclick=javascript:showAnswer('A48')>Show Answer</button> <P><div id=A48 stype=display:none></div>
+<li> <p>Which of the following describes the practice of directing DNS traffic for bad domains to 0.0.0.0?</p>
+ 
+<input type=radio name=Q53 value=0>Sinkholing<BR>
+<input type=radio name=Q53 value=1>Enumeration<BR>
+<input type=radio name=Q53 value=2>Frequency analysis<BR>
+<input type=radio name=Q53 value=3>Augmentation<BR>  <P><button onclick=javascript:showAnswer('A53')>Show Answer</button> <P><div id=A53 stype=display:none></div>
+<li> <p>Which of the following Windows tools can provide information, such as multiple hash types and software publisher, for use in long tail analysis?</p>
+ 
+<input type=radio name=Q68 value=0>Tasklist<BR>
+<input type=radio name=Q68 value=1>Procexp<BR>
+<input type=radio name=Q68 value=2>Autorunsc<BR>
+<input type=radio name=Q68 value=3>Procmon<BR>  <P><button onclick=javascript:showAnswer('A68')>Show Answer</button> <P><div id=A68 stype=display:none></div>
+<li> <p>What do the following commands do?</p>
+
+<p><code>Windows PowerShell<br />
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.</code></p>
+
+<p><code>PS C:\Windows\System32\WindowsPowerShell\v1.0&gt; $a = &#39;Microsoft-Windows-DNS-Client/Operational&#39;<br />
+PS C:\Windows\System32\WindowsPowerShell\v1.0&gt; $b = New-Object System.Diagnostics.Eventing.Reader.EventLogConfiguration $a<br />
+PS C:\Windows\System32\WindowsPowerShell\v1.0&gt; $b.IsEnabled=$true<br />
+PS C:\Windows\System32\WindowsPowerShell\v1.0&gt; $b.SaveChanges()</code></p>
+ 
+<input type=radio name=Q69 value=0>Check whether DNS Client Event Logging is enabled<BR>
+<input type=radio name=Q69 value=1>Send DNS Client warning and error events to a central system<BR>
+<input type=radio name=Q69 value=2>Start logging DNS Client events on a Windows system<BR>
+<input type=radio name=Q69 value=3>Permit user-level accounts to configure event logging<BR>  <P><button onclick=javascript:showAnswer('A69')>Show Answer</button> <P><div id=A69 stype=display:none></div>
+<li> <p>Which of the following is a drawback to incorporating a message broker?</p>
+ 
+<input type=radio name=Q2 value=0>Presents additional chokepoint<BR>
+<input type=radio name=Q2 value=1>Adds architectural complexity<BR>
+<input type=radio name=Q2 value=2>Creates a large time delay in log processing<BR>
+<input type=radio name=Q2 value=3>Decreases ability to handle traffic bursts<BR>  <P><button onclick=javascript:showAnswer('A2')>Show Answer</button> <P><div id=A2 stype=display:none></div>
+<li> <p>Which of the following is a requirement for a log storage system?</p>
+ 
+<input type=radio name=Q3 value=0>Indexing<BR>
+<input type=radio name=Q3 value=1>Tagging<BR>
+<input type=radio name=Q3 value=2>Parsing<BR>
+<input type=radio name=Q3 value=3>Enriching<BR>  <P><button onclick=javascript:showAnswer('A3')>Show Answer</button> <P><div id=A3 stype=display:none></div>
+<li> <p>Which type of search is the analyst employing in the screenshot shown below?</p>
+ 
+<input type=radio name=Q4 value=0>Tree<BR>
+<input type=radio name=Q4 value=1>Fuzzy<BR>
+<input type=radio name=Q4 value=2>Linear<BR>
+<input type=radio name=Q4 value=3>Binary<BR> <img src=images/21910.png > <P><button onclick=javascript:showAnswer('A4')>Show Answer</button> <P><div id=A4 stype=display:none></div>
+<li> <p>A log analyst enables auditing for Windows endpoints on registry key HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run. What type of threat is he most likely looking for?</p>
+ 
+<input type=radio name=Q5 value=0>Privilege Escalation<BR>
+<input type=radio name=Q5 value=1>Data exfiltration through an external drive<BR>
+<input type=radio name=Q5 value=2>Malware persistence<BR>
+<input type=radio name=Q5 value=3>Rootkit replacement of system files<BR>  <P><button onclick=javascript:showAnswer('A5')>Show Answer</button> <P><div id=A5 stype=display:none></div>
+<li> <p>Which login alert is most characteristic of a Windows pass-the-hash attack?</p>
+ 
+<input type=radio name=Q6 value=0>Successful login where the account's domain is not the organization's  local domain
+<input type=radio name=Q6 value=1>Multiple failed logins on the same account over a short period of time<BR>
+<input type=radio name=Q6 value=2>Successful interactive login to a remote computer with an administrative  account<BR>
+<input type=radio name=Q6 value=3>A user account begins running services that require administrative access<BR>  <P><button onclick=javascript:showAnswer('A6')>Show Answer</button> <P><div id=A6 stype=display:none></div>
+<li> <p>The SIEM team is looking over their DNS log data and are overwhelmed with the number of entries to process each day. Which of the following logs should be filtered out to reduce the daily volume?</p>
+ 
+<input type=radio name=Q8 value=0>Replies from the primary external name server<BR>
+<input type=radio name=Q8 value=1>Requests for external zone transfers <BR>
+<input type=radio name=Q8 value=2>Requests to internal domains<BR>
+<input type=radio name=Q8 value=3>Replies from authoritative name servers<BR>  <P><button onclick=javascript:showAnswer('A8')>Show Answer</button> <P><div id=A8 stype=display:none></div>
+<li> <p>Which of the following is a framework for collecting data and logs?</p> 
+<input type=radio name=Q9 value=0>Beats<BR>
+<input type=radio name=Q9 value=1>Grok<BR>
+<input type=radio name=Q9 value=2>WMIC<BR>
+<input type=radio name=Q9 value=3>Kibana<BR>  <P><button onclick=javascript:showAnswer('A9')>Show Answer</button> <P><div id=A9 stype=display:none></div>
+<li> <p>Which of the following is the purpose of a Cyber Kill Chain&reg;?</p>
+ 
+<input type=radio name=Q10 value=0>Provides pivoting strategy<BR>
+<input type=radio name=Q10 value=1>Acts as a run book for forensic investigators<BR>
+<input type=radio name=Q10 value=2>Serves as a report card for Advanced Persistent Threats<BR>
+<input type=radio name=Q10 value=3>Maps anomalies to the various stages of an attack<BR>  <P><button onclick=javascript:showAnswer('A10')>Show Answer</button> <P><div id=A10 stype=display:none></div>
+<li> <p>According to the Gartner definition, which of the following is an input-driven log collection strategy?</p>
+ 
+<input type=radio name=Q11 value=0>Enabling success, failure, and informational logs for all event types, and collecting all logs on each host<BR>
+<input type=radio name=Q11 value=1>Collecting logs in a central repository from servers that are required to be monitored by regulatory agencies<BR>
+<input type=radio name=Q11 value=2>Filtering successful events from workstations and sending the remaining logs to the aggregator<BR>
+<input type=radio name=Q11 value=3>Allocating bandwidth according to the average number of logs collected over the last 24 hours<BR>  <P><button onclick=javascript:showAnswer('A11')>Show Answer</button> <P><div id=A11 stype=display:none></div>
+<li> <p>Which of the following is a benefit of collecting network extraction logs?</p>
+ 
+<input type=radio name=Q13 value=0>Can be accomplished without new hardware<BR>
+<input type=radio name=Q13 value=1>Discovers unknown hosts<BR>
+<input type=radio name=Q13 value=2>Ships logs directly from source of the service<BR>
+<input type=radio name=Q13 value=3>Eliminates log duplication<BR>  <P><button onclick=javascript:showAnswer('A13')>Show Answer</button> <P><div id=A13 stype=display:none></div>
+<li> <p>Which tool can pre-process logged DNS data and compare the domains to a list of most commonly seen domains?</p>
+ 
+<input type=radio name=Q14 value=0>Kopf<BR>
+<input type=radio name=Q14 value=1>Elasticsearch<BR>
+<input type=radio name=Q14 value=2>Logstash<BR>
+<input type=radio name=Q14 value=3>Kibana<BR>  <P><button onclick=javascript:showAnswer('A14')>Show Answer</button> <P><div id=A14 stype=display:none></div>
+<li> <p>Following an incident involving a malicious file downloaded from a website, an investigator wants to know if any other clients on the network downloaded the file. Which of the following historical data could be re-analyzed to find records that match the SHA256 hash of the malicious file?</p>
+ 
+<input type=radio name=Q15 value=0>SNMP logs<BR>
+<input type=radio name=Q15 value=1>Firewall logs and alerts<BR>
+<input type=radio name=Q15 value=2>Zeek logs<BR>
+<input type=radio name=Q15 value=3>Windows object access events<BR>  <P><button onclick=javascript:showAnswer('A15')>Show Answer</button> <P><div id=A15 stype=display:none></div>
+<li> <p>Which of the following events should be classified as a security alert?</p>
+ 
+<input type=radio name=Q16 value=0>User giac_admin logs on to multiple workstations at the same time<BR>
+<input type=radio name=Q16 value=1>DNS server reboots after patching operating system<BR>
+<input type=radio name=Q16 value=2>Email service is down due to a power outage<BR>
+<input type=radio name=Q16 value=3>Workstation velvet-pc loses network connection<BR>  <P><button onclick=javascript:showAnswer('A16')>Show Answer</button> <P><div id=A16 stype=display:none></div>
+<li> <p>Which command allows an attacker to perform user enumeration to determine Windows accounts with domain level administrative privileges?</p>
+ 
+<input type=radio name=Q17 value=0>AccessEnum<BR>
+<input type=radio name=Q17 value=1>Get-TSLSASecret<BR>
+<input type=radio name=Q17 value=2>net<BR>
+<input type=radio name=Q17 value=3>whois<BR>  <P><button onclick=javascript:showAnswer('A17')>Show Answer</button> <P><div id=A17 stype=display:none></div>
+<li> <p>Which of the following can be mitigated by configuring outbound HTTP firewall rules?</p>
+ 
+<input type=radio name=Q18 value=0>Command and control<BR>
+<input type=radio name=Q18 value=1>Brute force password attack<BR>
+<input type=radio name=Q18 value=2>Large downloads<BR>
+<input type=radio name=Q18 value=3>XSS attack<BR>  <P><button onclick=javascript:showAnswer('A18')>Show Answer</button> <P><div id=A18 stype=display:none></div>
+<li> <p>What is the benefit of implementing log collection agents, rather than agentless collection?</p>
+ 
+<input type=radio name=Q19 value=0>Faster initial setup<BR>
+<input type=radio name=Q19 value=1>Lower maintenance requirements<BR>
+<input type=radio name=Q19 value=2>Smaller log file payloads crossing the network<BR>
+<input type=radio name=Q19 value=3>Pre-filtering can be distributed across a network<BR>  <P><button onclick=javascript:showAnswer('A19')>Show Answer</button> <P><div id=A19 stype=display:none></div>
+<li> <p>Which of the following settings in the tcp input plugin shown below is required?</p><p><code>input {<br />&nbsp; tcp {<br />&nbsp;&nbsp;&nbsp; codec =&gt;&nbsp; json { charset =&gt; CP1252 }<br />&nbsp;&nbsp;&nbsp; tags =&gt; [&#39;xp&#39;, &#39;7&#39;]<br />&nbsp;&nbsp;&nbsp; port =&gt; &#39;9563&#39;<br />&nbsp;&nbsp;&nbsp; type =&gt; &#39;windows&#39;<br />&nbsp; }<br />}</code></p> 
+<input type=radio name=Q21 value=0>port<BR>
+<input type=radio name=Q21 value=1>tags<BR>
+<input type=radio name=Q21 value=2>type<BR>
+<input type=radio name=Q21 value=3>codec<BR>  <P><button onclick=javascript:showAnswer('A21')>Show Answer</button> <P><div id=A21 stype=display:none></div>
+<li> <p>"Audit Security Group Management" is enabled in an analyst&#39;s Windows environment. Which of the following events would be captured by this log?</p>
+ 
+<input type=radio name=Q22 value=0>The attacker adds a new account as a Domain Admin<BR>
+<input type=radio name=Q22 value=1>The attacker adds access to a sensitive folder to his department's AD group
+<input type=radio name=Q22 value=2>The attacker logs on to a server as a local administrator<BR>
+<input type=radio name=Q22 value=3>The attacker captures a password hash for a dictionary attack<BR>  <P><button onclick=javascript:showAnswer('A22')>Show Answer</button> <P><div id=A22 stype=display:none></div>
+<li> <p>An administrator is installing a new Linux external DNS server where performance and security are both important.&nbsp; Which of the following daemons takes advantage of the liblognorm library to sustain high EPS?</p>
+ 
+<input type=radio name=Q23 value=0>Syslog<BR>
+<input type=radio name=Q23 value=1>Syslog-ng<BR>
+<input type=radio name=Q23 value=2>Rsyslog<BR>
+<input type=radio name=Q23 value=3>Fluentd<BR>  <P><button onclick=javascript:showAnswer('A23')>Show Answer</button> <P><div id=A23 stype=display:none></div>
+<li> <p>Which of the following scenarios would be detected by long tail analysis?</p>
+ 
+<input type=radio name=Q24 value=0>The group of IP addresses creating 80% of HTTPS post requests within a dataset<BR>
+<input type=radio name=Q24 value=1>A single set of power shell events creating a service then deleting the service<BR>
+<input type=radio name=Q24 value=2>Large data spike for clients download data from update.microsoft.com<BR>
+<input type=radio name=Q24 value=3>Established connections to the human resources page on a company intranet<BR>  <P><button onclick=javascript:showAnswer('A24')>Show Answer</button> <P><div id=A24 stype=display:none></div>
+<li> <p>Which of the following files is used to configure and enable a Bind DNS server on a Linux host?</p>
+ 
+<input type=radio name=Q25 value=0>named.conf<BR>
+<input type=radio name=Q25 value=1>resolv.conf<BR>
+<input type=radio name=Q25 value=2>bind9.conf<BR>
+<input type=radio name=Q25 value=3>default.conf<BR>  <P><button onclick=javascript:showAnswer('A25')>Show Answer</button> <P><div id=A25 stype=display:none></div>
+<li> <p>Which kind of internet based attack would New Domain Monitoring and Direct IP Monitoring be ineffective against?</p>
+ 
+<input type=radio name=Q26 value=0>Malware bypassing the use of DNS for C2<BR>
+<input type=radio name=Q26 value=1>Adversary using domain generation algorithms (DGA) in DNS tunneling<BR>
+<input type=radio name=Q26 value=2>Adversary using domain generation algorithms (DGA) in a double fast flux<BR>
+<input type=radio name=Q26 value=3>Malware using an authorized domain for C2<BR>  <P><button onclick=javascript:showAnswer('A26')>Show Answer</button> <P><div id=A26 stype=display:none></div>
+<li> <p>Which of the following Python scripts was used with the IDS to generate the logs that produced the graph shown below?</p>
+ 
+<input type=radio name=Q27 value=0>freq<BR>
+<input type=radio name=Q27 value=1>flare<BR>
+<input type=radio name=Q27 value=2>domain_stats<BR>
+<input type=radio name=Q27 value=3>freq_server<BR> <img src=images/19885.png > <P><button onclick=javascript:showAnswer('A27')>Show Answer</button> <P><div id=A27 stype=display:none></div>
+<li> <p>A security administrator adds a small image file hosted on www.example.com/security/tiny.jpg to a word document that is for INTERNAL use only with the organization. &nbsp;They then create an alert to notify them when tiny.jpg is accessed from an IP address outside of their organization. &nbsp;In addition to the IP address of the host that opened the file, what information can they collect from the logs?</p>
+ 
+<input type=radio name=Q28 value=0>Browser privacy settings<BR>
+<input type=radio name=Q28 value=1>MAC address<BR>
+<input type=radio name=Q28 value=2>User name<BR>
+<input type=radio name=Q28 value=3>User agent<BR>  <P><button onclick=javascript:showAnswer('A28')>Show Answer</button> <P><div id=A28 stype=display:none></div>
+<li> <p>An analyst is examining 2 sets of DNS records shown below, taken 30 minutes apart, of a domain used in a recent attack.&nbsp; Which method was used to bypass filters?</p>
+ 
+<input type=radio name=Q29 value=0>DNS Cache Poisoning<BR>
+<input type=radio name=Q29 value=1>Fast Flux<BR>
+<input type=radio name=Q29 value=2>Domain Generation Algorithms<BR>
+<input type=radio name=Q29 value=3>DNS Tunneling<BR> <img src=images/19555.png > <P><button onclick=javascript:showAnswer('A29')>Show Answer</button> <P><div id=A29 stype=display:none></div>
+<li> <p>Which of the following discovery techniques identifies normal events that occur infrequently?</p>
+ 
+<input type=radio name=Q30 value=0>Poisson distribution<BR>
+<input type=radio name=Q30 value=1>Long tail analysis<BR>
+<input type=radio name=Q30 value=2>Regression analysis<BR>
+<input type=radio name=Q30 value=3>Anomaly detection<BR>  <P><button onclick=javascript:showAnswer('A30')>Show Answer</button> <P><div id=A30 stype=display:none></div>
+<li> <p>Which of the following is an example of passive network detection?</p> 
+<input type=radio name=Q31 value=0>Finding a host by performing a DNS lookup in Zeek logs<BR>
+<input type=radio name=Q31 value=1>Performing a TCP ACK scan that does not send SYN packets<BR>
+<input type=radio name=Q31 value=2>Performing an unauthenticated vulnerability scan<BR>  <P><button onclick=javascript:showAnswer('A31')>Show Answer</button> <P><div id=A31 stype=display:none></div>
+<li> <p>A network pass-the-token exploit would use which type of Windows token to access remote resources?</p>
+ 
+<input type=radio name=Q32 value=0>Delegation<BR>
+<input type=radio name=Q32 value=1>Anonymous<BR>
+<input type=radio name=Q32 value=2>Impersonation<BR>
+<input type=radio name=Q32 value=3>Identification<BR>  <P><button onclick=javascript:showAnswer('A32')>Show Answer</button> <P><div id=A32 stype=display:none></div>
+<li> <p>Which of the following is an effective means of detecting unauthorized network scans?</p> 
+<input type=radio name=Q33 value=0>Sinkhole<BR>
+<input type=radio name=Q33 value=1>Sandbox<BR>
+<input type=radio name=Q33 value=2>Canary<BR>
+<input type=radio name=Q33 value=3>Honeypot<BR>  <P><button onclick=javascript:showAnswer('A33')>Show Answer</button> <P><div id=A33 stype=display:none></div>
+<li> <p>What does the filter in the image accomplish?</p>
+ 
+<input type=radio name=Q34 value=0>Sets the output path to .bro_dhcp_sincedb<BR>
+<input type=radio name=Q34 value=1>Sets the output path to dhcp.log<BR>
+<input type=radio name=Q34 value=2>Monitors the dhcp.log file<BR>
+<input type=radio name=Q34 value=3>Monitors the .bro_dhcp_sincedb file<BR> <img src=images/19415.png > <P><button onclick=javascript:showAnswer('A34')>Show Answer</button> <P><div id=A34 stype=display:none></div>
+<li> <p>Which of the following is an example of long tail analysis being used with software monitoring in a domain of thousands of workstations?</p>
+ 
+<input type=radio name=Q36 value=0>Setting a maximum number of open ports allowed on workstations <BR>
+<input type=radio name=Q36 value=1>Identifying the single workstation in the group running a FTP server<BR>
+<input type=radio name=Q36 value=2>Counting the devices in the group that run SMB as a reachable service<BR>
+<input type=radio name=Q36 value=3>Classifying the applications used by the top talker within the group<BR>  <P><button onclick=javascript:showAnswer('A36')>Show Answer</button> <P><div id=A36 stype=display:none></div>
+<li> <p>What will the following filter accomplish when it executes on the log entries in the image below?</p><p><code>filter {<br />&nbsp; if [level] == "debug" {<br />&nbsp;&nbsp;&nbsp; drop{}<br />&nbsp; }<br />}</code></p> 
+<input type=radio name=Q37 value=0>Drop the debug field from the log entry<BR>
+<input type=radio name=Q37 value=1>Drop the entire log entry<BR>
+<input type=radio name=Q37 value=2>Drop the debug level to INFO<BR>
+<input type=radio name=Q37 value=3>Drop the debug level to ERROR<BR> <img src=images/19845.png > <P><button onclick=javascript:showAnswer('A37')>Show Answer</button> <P><div id=A37 stype=display:none></div>
+<li> <p>An analyst is following up on a blocked executable within the AppLocker logs. &nbsp;Why is the analyst running Sysinternal&#39;s sigcheck on the file?</p>
+ 
+<input type=radio name=Q38 value=0>Identifying the workstation<BR>
+<input type=radio name=Q38 value=1>Confirming the findings<BR>
+<input type=radio name=Q38 value=2>Testing the application<BR>
+<input type=radio name=Q38 value=3>Tracking down the user<BR>  <P><button onclick=javascript:showAnswer('A38')>Show Answer</button> <P><div id=A38 stype=display:none></div>
+<li> <p>What is meant by the term passive detection when creating a hardware asset list?</p>
+ 
+<input type=radio name=Q41 value=0>Gathering information without interacting with the hosts<BR>
+<input type=radio name=Q41 value=1>Sending crafted packets to devices to elicit fingerprint responses<BR>
+<input type=radio name=Q41 value=2>Profiling activity on firewalled ports<BR>
+<input type=radio name=Q41 value=3>Monitoring localhost network traffic for broadcast messages<BR>  <P><button onclick=javascript:showAnswer('A41')>Show Answer</button> <P><div id=A41 stype=display:none></div>
+<li> <p>What service do Redis, RabbitMQ, and Kafka provide?</p>
+ 
+<input type=radio name=Q42 value=0>Log aggregation<BR>
+<input type=radio name=Q42 value=1>Message brokering<BR>
+<input type=radio name=Q42 value=2>High-performance file compression<BR>
+<input type=radio name=Q42 value=3>Endpoint log collection<BR>  <P><button onclick=javascript:showAnswer('A42')>Show Answer</button> <P><div id=A42 stype=display:none></div>
+<li> <p>What does the output "Pipeline main started" indicate when using Logstash?</p> 
+<input type=radio name=Q43 value=0>Logstash has entered interactive input mode for debugging<BR>
+<input type=radio name=Q43 value=1>The stdout filter is being used<BR>
+<input type=radio name=Q43 value=2>Logstash is ready to receive logs<BR>
+<input type=radio name=Q43 value=3>The stdin filter is being used<BR>  <P><button onclick=javascript:showAnswer('A43')>Show Answer</button> <P><div id=A43 stype=display:none></div>
+<li> <p>Which of the following is a best practice for effective SIEM management and analysis?</p>
+ 
+<input type=radio name=Q44 value=0>SIEMs should be tuned to capture all possible logs and default alerts from devices for later analysis<BR>
+<input type=radio name=Q44 value=1>Focus analysis on IP addresses that are external to the network being monitored<BR>
+<input type=radio name=Q44 value=2>Alerts are viewed as a starting point for analysis and require further parsing and correlation<BR>
+<input type=radio name=Q44 value=3>Incorporate full packet captures of network file uploads and downloads into the SIEM<BR>  <P><button onclick=javascript:showAnswer('A44')>Show Answer</button> <P><div id=A44 stype=display:none></div>
+<li> <p>Which of the following will track commands executed by a&nbsp;Linux logon even if the user executes an su&nbsp;or sudo command?</p>
+ 
+<input type=radio name=Q45 value=0>PID<BR>
+<input type=radio name=Q45 value=1>AUID<BR>
+<input type=radio name=Q45 value=2>PPID<BR>
+<input type=radio name=Q45 value=3>UID<BR>  <P><button onclick=javascript:showAnswer('A45')>Show Answer</button> <P><div id=A45 stype=display:none></div>
+<li> <p>A SIEM analyst compiles a list of known unauthorized IP addresses, and writes a query to look for events generated by those IPs. Which search technique has the analyst implemented?</p> 
+<input type=radio name=Q46 value=0>Anomaly detection<BR>
+<input type=radio name=Q46 value=1>Allow list<BR>
+<input type=radio name=Q46 value=2>Long tail analysis<BR>
+<input type=radio name=Q46 value=3>Deny list<BR>  <P><button onclick=javascript:showAnswer('A46')>Show Answer</button> <P><div id=A46 stype=display:none></div>
+<li> <p>Which of the following PowerShell execution policies will allow a locally created script to execute?</p>
+ 
+<input type=radio name=Q47 value=0>RemoteSigned<BR>
+<input type=radio name=Q47 value=1>AllSigned<BR>
+<input type=radio name=Q47 value=2>LocalSigned<BR>
+<input type=radio name=Q47 value=3>Restricted<BR>  <P><button onclick=javascript:showAnswer('A47')>Show Answer</button> <P><div id=A47 stype=display:none></div>
+<li> <p>An administrator installing a new Linux DNS server is configuring the system&#39;s default firewall for additional security. Based on the logged traffic shown below, which firewall is being used?</p>
+ 
+<input type=radio name=Q49 value=0>IPFire<BR>
+<input type=radio name=Q49 value=1>Shorewall<BR>
+<input type=radio name=Q49 value=2>Endian<BR>
+<input type=radio name=Q49 value=3>Iptables<BR> <img src=images/19570.png > <P><button onclick=javascript:showAnswer('A49')>Show Answer</button> <P><div id=A49 stype=display:none></div>
+<li> <p>Which of the following events will create an alert using the ElastAlert filter shown below?</p><p><code>name: New Login Locale<br />es_host: elasticsearch.darnantes.org<br />es_port: 9200<br />index: logstash-* &nbsp;<br />filter: &nbsp;<br />&nbsp; - query:&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; query_string:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; query: "document_type: login"<br />type: change&nbsp; &nbsp;<br />compare_key: country_name&nbsp; &nbsp;<br />ignore_null: true&nbsp; &nbsp;<br />query_key: username&nbsp; &nbsp;<br />timeframe:&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp; days: 1&nbsp; &nbsp;<br />alert:&nbsp; &nbsp;<br />&nbsp; - "email"<br />email: CyberDefenseTeam@darnantes.org</code></p> 
+<input type=radio name=Q50 value=0>Match on a specific login type<BR>
+<input type=radio name=Q50 value=1>Change in country<BR>
+<input type=radio name=Q50 value=2>Repetitive country matches<BR>
+<input type=radio name=Q50 value=3>Match excluding a specific login type<BR>  <P><button onclick=javascript:showAnswer('A50')>Show Answer</button> <P><div id=A50 stype=display:none></div>
+<li> <p>An analyst configured an alert to trigger any time more than 50 unique user accounts have login failures on a single system within an hour. What attack will be detected by this alert?</p> 
+<input type=radio name=Q51 value=0>Pass-the-token<BR>
+<input type=radio name=Q51 value=1>Password spraying<BR>
+<input type=radio name=Q51 value=2>Pass-the-hash<BR>
+<input type=radio name=Q51 value=3>SMB relay<BR>  <P><button onclick=javascript:showAnswer('A51')>Show Answer</button> <P><div id=A51 stype=display:none></div>
+<li> <p>Which risk is introduced by enacting an output-driven collection strategy?</p> 
+<input type=radio name=Q52 value=0>Opening of additional firewall ports<BR>
+<input type=radio name=Q52 value=1>Resource exhaustion<BR>
+<input type=radio name=Q52 value=2>Gaps in situational awareness<BR>
+<input type=radio name=Q52 value=3>Large volume of unused data to parse<BR>  <P><button onclick=javascript:showAnswer('A52')>Show Answer</button> <P><div id=A52 stype=display:none></div>
+<li> <p>Which of the following can be used to convert logs using the format shown below to a specific SIEM product rule format?</p><p><code>title: PowerShell PSAttack<br />status: experimental<br />description: Detects the use of PSAttack PowerShell hack tool<br />tags:<br />&nbsp; - attack.execution<br />&nbsp; - attack.t1086<br />logsource:<br />&nbsp; product: windows<br />&nbsp; service: powershell<br />&nbsp; description: It is recommended to use the new "Script Block Logging" of PowerShell v5</code></p> 
+<input type=radio name=Q54 value=0>Logstash<BR>
+<input type=radio name=Q54 value=1>Barnyard2<BR>
+<input type=radio name=Q54 value=2>Uniconverter<BR>
+<input type=radio name=Q54 value=3>Sigma<BR>  <P><button onclick=javascript:showAnswer('A54')>Show Answer</button> <P><div id=A54 stype=display:none></div>
+<li> <p>A system analyst develops a list of indicators for the most common attacks. They then enable and collect logs for only those indicators. According to the Gartner definition, which log collection strategy are they using?</p> 
+<input type=radio name=Q55 value=0>Output-driven strategy<BR>
+<input type=radio name=Q55 value=1>Active-defense strategy<BR>
+<input type=radio name=Q55 value=2>Hybrid strategy<BR>
+<input type=radio name=Q55 value=3>Input-driven strategy<BR>  <P><button onclick=javascript:showAnswer('A55')>Show Answer</button> <P><div id=A55 stype=display:none></div>
+<li> <p>Which of the following tables&nbsp;shown below is the analyst preparing to use for lookups during the ingestion process of DHCP logs?</p>
+ 
+<input type=radio name=Q56 value=0>OUI table<BR>
+<input type=radio name=Q56 value=1>Switch CAM table<BR>
+<input type=radio name=Q56 value=2>DHCP database<BR>
+<input type=radio name=Q56 value=3>Firewall log<BR> <img src=images/19340.png > <P><button onclick=javascript:showAnswer('A56')>Show Answer</button> <P><div id=A56 stype=display:none></div>
+<li> <p>What does an NXDOMAIN&nbsp;indicate?</p>
+ 
+<input type=radio name=Q57 value=0>The domain's designated mailserver
+<input type=radio name=Q57 value=1>The domain's nameserver
+<input type=radio name=Q57 value=2>The domain name is registered with ICANN<BR>
+<input type=radio name=Q57 value=3>The domain does not exist<BR>  <P><button onclick=javascript:showAnswer('A57')>Show Answer</button> <P><div id=A57 stype=display:none></div>
+<li> <p>Which of the following is a Logstash input plugin?</p>
+ 
+<input type=radio name=Q58 value=0>csv<BR>
+<input type=radio name=Q58 value=1>dns<BR>
+<input type=radio name=Q58 value=2>tcp<BR>
+<input type=radio name=Q58 value=3>email<BR>  <P><button onclick=javascript:showAnswer('A58')>Show Answer</button> <P><div id=A58 stype=display:none></div>
+<li> <p>Which of the following ATA components will an administrator install directly onto a domain controller?</p>
+ 
+<input type=radio name=Q59 value=0>Log Broker<BR>
+<input type=radio name=Q59 value=1>Database<BR>
+<input type=radio name=Q59 value=2>Center<BR>
+<input type=radio name=Q59 value=3>Lightweight Gateway<BR>  <P><button onclick=javascript:showAnswer('A59')>Show Answer</button> <P><div id=A59 stype=display:none></div>
+<li> <p>An administrator is reviewing the configuration of a Linux server for log collection. &nbsp;What is the purpose of the code shown below?</p><p><code>source s_src {<br />&nbsp;&nbsp; system();<br />&nbsp;&nbsp; internal();<br />&nbsp;};<br />filter f_custom {<br />&nbsp;&nbsp; not match("ignore string" value(MESSAGE));<br />&nbsp;};<br />destination d_logstash {<br />&nbsp;&nbsp; tcp("logstash" port(1514));<br />&nbsp;};<br />log {<br />&nbsp;&nbsp; source(s_src);<br />&nbsp;&nbsp; filter(f_custom);<br />&nbsp;&nbsp; destination(d_logstash);<br />&nbsp;};</code></p> 
+<input type=radio name=Q60 value=0>Dmesg forwarding configuration<BR>
+<input type=radio name=Q60 value=1>Syslog-ng forwarding configuration<BR>
+<input type=radio name=Q60 value=2>Syslog forwarding configuration<BR>
+<input type=radio name=Q60 value=3>Rsyslog forwarding configuration<BR>  <P><button onclick=javascript:showAnswer('A60')>Show Answer</button> <P><div id=A60 stype=display:none></div>
+<li> <p>What filtering or enrichment technique can be used in combination with network flow data to identify internal pivoting?</p>
+ 
+<input type=radio name=Q61 value=0>Monitoring the broadcast traffic between subnets<BR>
+<input type=radio name=Q61 value=1>Tagging device types such as workstations and servers<BR>
+<input type=radio name=Q61 value=2>Performing ASN lookups for outbound domain requests<BR>
+<input type=radio name=Q61 value=3>Identifying the top talkers on the LAN<BR>  <P><button onclick=javascript:showAnswer('A61')>Show Answer</button> <P><div id=A61 stype=display:none></div>
+<li> <p>Which GROK filter&nbsp;will parse the following data correctly?</p><p><code>The server toothgnasher has a network address of 192.168.1.10<br />The server toothgrinder has a network address of 192.168.1.20<br />The desktop megingjord has a network address of 192.168.2.200<br />The laptop mjolnir has a network address of 192.168.5.53</code></p> 
+<input type=radio name=Q62 value=0>The %{WORD:machinetype} %{HOSTNAME} has a network address of %{IPV4}<BR>
+<input type=radio name=Q62 value=1>The @{WORD:machinetype} @{HOSTNAME} has a network address of @{IPV4}<BR>
+<input type=radio name=Q62 value=2>The" \\b\\w+\\b %{HOSTNAME} "has a network address of" %{IPV4}<BR>
+<input type=radio name=Q62 value=3>The %{WORD:machinetype} ?&lt;\\b\\w+\\b&gt; has a network address of %{IPV4}<BR>  <P><button onclick=javascript:showAnswer('A62')>Show Answer</button> <P><div id=A62 stype=display:none></div>
+<li> <p>A policy states that all authorized devices must use only internal resources for DNS and NTP. Based on the configuration below, which connections from the router log can an analyst alert on to find unauthorized devices?</p>
+ 
+<input type=radio name=Q63 value=0>Outbound NTP&nbsp;<BR>
+<input type=radio name=Q63 value=1>Inbound DNS<BR>
+<input type=radio name=Q63 value=2>Outbound DNS<BR>
+<input type=radio name=Q63 value=3>Inbound NTP<BR> <img src=images/19335.png > <P><button onclick=javascript:showAnswer('A63')>Show Answer</button> <P><div id=A63 stype=display:none></div>
+<li> <p>Which of the following describes the technique of creating a database of DNS records and comparing them to known bad domains hosting malware?</p>
+ 
+<input type=radio name=Q64 value=0>DNS zone transfers<BR>
+<input type=radio name=Q64 value=1>Split DNS<BR>
+<input type=radio name=Q64 value=2>Fast flux DNS<BR>
+<input type=radio name=Q64 value=3>Passive DNS<BR>  <P><button onclick=javascript:showAnswer('A64')>Show Answer</button> <P><div id=A64 stype=display:none></div>
+<li> <p>The command below is used for which of the following purposes?</p><code>use exploit/windows/smb/psexec</code> 
+<input type=radio name=Q65 value=0>Testing network share access with Powershell<BR>
+<input type=radio name=Q65 value=1>Stealing account credentials with Mimikatz<BR>
+<input type=radio name=Q65 value=2>Monitoring suspicious process activity with Sysinternals<BR>
+<input type=radio name=Q65 value=3>Logging onto a remote system with Metasploit<BR>  <P><button onclick=javascript:showAnswer('A65')>Show Answer</button> <P><div id=A65 stype=display:none></div>
+<li> <p>Which of the following attributes of repetitive DNS calls can be used to distinguish fast fluxing from load balancing?</p>
+ 
+<input type=radio name=Q66 value=0>A high TTL and high response rate<BR>
+<input type=radio name=Q66 value=1>A high TTL and low response rate<BR>
+<input type=radio name=Q66 value=2>A low TTL and low response rate<BR>
+<input type=radio name=Q66 value=3>A low TTL and high response rate<BR>  <P><button onclick=javascript:showAnswer('A66')>Show Answer</button> <P><div id=A66 stype=display:none></div>
+<li> <p>The log in the image was collected from an IIS server. What is the log&#39;s format?</p>
+ 
+<input type=radio name=Q67 value=0>W3C<BR>
+<input type=radio name=Q67 value=1>IIS<BR>
+<input type=radio name=Q67 value=2>NCSA<BR> <img src=images/19645.png > <P><button onclick=javascript:showAnswer('A67')>Show Answer</button> <P><div id=A67 stype=display:none></div>
+<li> <p>An administrator is limiting which external DNS servers can be used and restricting access to authorized internal DNS servers.&nbsp; What is he trying to eliminate?</p>
+ 
+<input type=radio name=Q70 value=0>DNS amplification <BR>
+<input type=radio name=Q70 value=1>Fast Flux<BR>
+<input type=radio name=Q70 value=2>Domain Generation Algorithms<BR>
+<input type=radio name=Q70 value=3>DNS tunneling<BR>  <P><button onclick=javascript:showAnswer('A70')>Show Answer</button> <P><div id=A70 stype=display:none></div>
+<li> <p>What is the result when the following command is run on a Windows 8.x host with standard logging configurations?</p><p><code>C:\&gt; auditpol /get /category:*</code></p> 
+<input type=radio name=Q71 value=0>User logons and logoffs are displayed from the event logs<BR>
+<input type=radio name=Q71 value=1>Local policy settings are printed to screen<BR>
+<input type=radio name=Q71 value=2>The Advanced Audit Policy is set to the preferred default<BR>
+<input type=radio name=Q71 value=3>Domain group policies are applied to the local host<BR>  <P><button onclick=javascript:showAnswer('A71')>Show Answer</button> <P><div id=A71 stype=display:none></div>
+<li> <p>Which field should be checked in an event ID 400 to determine if a Windows system is the victim of a PowerShell downgrade attack?</p>
+ 
+<input type=radio name=Q72 value=0>EngineVersion<BR>
+<input type=radio name=Q72 value=1>CommandName<BR>
+<input type=radio name=Q72 value=2>HostApplication<BR>
+<input type=radio name=Q72 value=3>CommandPath<BR>  <P><button onclick=javascript:showAnswer('A72')>Show Answer</button> <P><div id=A72 stype=display:none></div>
+<li> <p>Which of the following log files is the source of the grep output shown below?</p>
+ 
+<input type=radio name=Q73 value=0>dmesg<BR>
+<input type=radio name=Q73 value=1>auth.log<BR>
+<input type=radio name=Q73 value=2>kern.log<BR>
+<input type=radio name=Q73 value=3>utmp<BR> <img src=images/19520.png > <P><button onclick=javascript:showAnswer('A73')>Show Answer</button> <P><div id=A73 stype=display:none></div>
+<li> <p>What does the presence of the XFF field in an HTTP log indicate?</p>
+ 
+<input type=radio name=Q74 value=0>An application layer firewall is being used<BR>
+<input type=radio name=Q74 value=1>A proxy is being used in the environment<BR>
+<input type=radio name=Q74 value=2>A network failure caused by a misconfiguration<BR>
+<input type=radio name=Q74 value=3>A cross site scripting attack is underway<BR>
+<input type=radio name=Q74 value=4>A user has entered invalid credentials<BR>  <P><button onclick=javascript:showAnswer('A74')>Show Answer</button> <P><div id=A74 stype=display:none></div>
+<li> <p>How can passive detection be used to create a hardware inventory list?</p>
+ 
+<input type=radio name=Q75 value=0>Listen on specific ports for network activity<BR>
+<input type=radio name=Q75 value=1>Inject benign code into requests to a web server<BR>
+<input type=radio name=Q75 value=2>Analyze network traffic for device characteristics<BR>
+<input type=radio name=Q75 value=3>Profile system services to determine open ports<BR>  <P><button onclick=javascript:showAnswer('A75')>Show Answer</button> <P><div id=A75 stype=display:none></div>
+
+
+</ol>
+
+<span style="display:none" id=A1a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A2a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A3a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A4a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A5a><p><b>Answers:3</b> </p>
+<span style="display:none" id=A6a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A7a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A8a><p><b>Answers:3</b> </p>
+<span style="display:none" id=A9a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A10a><p><b>Answers:4</b> </p>
+<span style="display:none" id=A11a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A12a><p><b>Answers:3</b> </p>
+<span style="display:none" id=A13a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A14a><p><b>Answers:3</b> </p>
+<span style="display:none" id=A15a><p><b>Answers:3</b> </p>
+<span style="display:none" id=A16a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A17a><p><b>Answers:3</b> </p>
+<span style="display:none" id=A18a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A19a><p><b>Answers:4</b> </p>
+<span style="display:none" id=A20a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A21a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A22a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A23a><p><b>Answers:3</b> </p>
+<span style="display:none" id=A24a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A25a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A26a><p><b>Answers:4</b> </p>
+<span style="display:none" id=A27a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A28a><p><b>Answers:4</b> </p>
+<span style="display:none" id=A29a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A30a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A31a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A32a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A33a><p><b>Answers:4</b> </p>
+<span style="display:none" id=A34a><p><b>Answers:3</b> </p>
+<span style="display:none" id=A35a><p><b>Answers:3</b> </p>
+<span style="display:none" id=A36a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A37a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A38a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A39a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A40a><p><b>Answers:4</b> </p>
+<span style="display:none" id=A41a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A42a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A43a><p><b>Answers:3</b> </p>
+<span style="display:none" id=A44a><p><b>Answers:3</b> </p>
+<span style="display:none" id=A45a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A46a><p><b>Answers:4</b> </p>
+<span style="display:none" id=A47a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A48a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A49a><p><b>Answers:4</b> </p>
+<span style="display:none" id=A50a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A51a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A52a><p><b>Answers:3</b> </p>
+<span style="display:none" id=A53a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A54a><p><b>Answers:4</b> </p>
+<span style="display:none" id=A55a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A56a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A57a><p><b>Answers:4</b> </p>
+<span style="display:none" id=A58a><p><b>Answers:3</b> </p>
+<span style="display:none" id=A59a><p><b>Answers:4</b> </p>
+<span style="display:none" id=A60a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A61a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A62a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A63a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A64a><p><b>Answers:4</b> </p>
+<span style="display:none" id=A65a><p><b>Answers:4</b> </p>
+<span style="display:none" id=A66a><p><b>Answers:4</b> </p>
+<span style="display:none" id=A67a><p><b>Answers:3</b> </p>
+<span style="display:none" id=A68a><p><b>Answers:3</b> </p>
+<span style="display:none" id=A69a><p><b>Answers:3</b> </p>
+<span style="display:none" id=A70a><p><b>Answers:4</b> </p>
+<span style="display:none" id=A71a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A72a><p><b>Answers:1</b> </p>
+<span style="display:none" id=A73a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A74a><p><b>Answers:2</b> </p>
+<span style="display:none" id=A75a><p><b>Answers:3</b> </p>
+
+<script>
+
+function showAnswer(strID){
+  var x = document.getElementById(strID);
+  
+  x.innerHTML = document.getElementById(strID+"a").innerHTML;
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+</body>
+</html>
