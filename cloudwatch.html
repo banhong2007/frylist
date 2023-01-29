@@ -1,0 +1,271 @@
+
+<html>
+<style>
+
+    blockquote {
+        font-family: verdana;
+        font-size: 18px;
+        padding: 5px; 
+        background-color: silver;
+        line-height: 1.5;
+      }
+
+    li, p {
+        font-family: verdana;
+        font-size: 20px;
+        padding: 5px;
+      }
+    .header {
+      padding: 10px;
+      text-align: center;
+      background: navy;
+      color: white;
+      font-size: 25px;
+    }
+    pre {
+      padding: 2px;
+      width: 1000;
+      background: black;
+      color: white;
+      font-size: 14px;
+
+}
+
+</style>
+
+<title>Setting up AWS CloudWatch on OnPremise Ubuntu Server</title>
+
+<div class="header">
+    <strong>Step 1 : Setting up IAM user for CloudWatch agent at the AWS Console</strong>
+  </div>
+
+<ol>
+
+      
+    <li>Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/.
+    
+    <li>In the navigation pane, choose Users, and then choose Add user.
+    
+    <li>Enter the user name for the new user.
+    
+    <li>For Access type, select Programmatic access, and then choose Next: Permissions.
+    
+    <li>For Set permissions, choose Attach existing policies directly.
+    
+    <li>In the list of policies, select the check box next to CloudWatchAgentServerPolicy. If necessary, use the search box to find the policy.
+    
+    <li>Choose Next: Tags.
+    
+    <li>(Optional) Add one or more tag-key value pairs to organize, track, or control access for this role, and then choose Next: Review.
+    
+    <li>Confirm that the correct policies are listed, and then choose Create user.
+    
+    <li>In the row for the new user, choose Show. Copy the access key and secret key to a file so that you can use them when installing the agent. Choose Close.</li>
+
+    For more information, see <A href=https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent.html>Create IAM roles and users for use with the CloudWatch agent</A>
+    
+    </ol>
+<div class="header">
+    <strong>Step 2 : Setting up AWS CloudWatch on OnPremise Ubuntu Server</strong>
+  </div>
+
+<ol>
+<li>Login into your OnPremise server. </li>
+<li>Download and install awscli. </li>
+    For more information, see <A href=https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html>Installing AWS CLI.</A>
+<P>Run the command below</P>
+<blockquote>
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+<BR>unzip awscliv2.zip
+<BR>sudo ./aws/install
+</blockquote>
+
+
+<li>Download and install AWS CloudWatch Agent for <strong>ap-southeast-1</strong> region.</li> For more information, see <a href=https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/download-cloudwatch-agent-commandline.html>Installing CloudWatch Agent</a>
+<P>Run the command below</P>
+<blockquote>
+wget https://s3.ap-southeast-1.amazonaws.com/amazoncloudwatch-agent-ap-southeast-1/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb
+<BR>sudo dpkg -i -E ./amazon-cloudwatch-agent.deb
+</blockquote>
+
+
+<li>Configure Cloudwatch Agent configuration using the wizard</li>
+<P>Run the command below</P>
+<blockquote>
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard 
+</blockquote>
+
+<pre>
+    ================================================================
+    = Welcome to the Amazon CloudWatch Agent Configuration Manager =
+    =                                                              =
+    = CloudWatch Agent allows you to collect metrics and logs from =
+    = your host and send them to CloudWatch. Additional CloudWatch =
+    = charges may apply.                                           =
+    ================================================================
+    On which OS are you planning to use the agent?
+    1. linux
+    2. windows
+    3. darwin
+    default choice: [1]:
+    1
+</pre>
+<P>Press 1 and Enter</P>
+<pre>
+    Are you using EC2 or On-Premises hosts?
+    1. EC2
+    2. On-Premises
+    default choice: [2]: 
+</pre>
+<P>Press 2 and Enter</P>
+<pre>
+    Which user are you planning to run the agent?
+        1. root
+        2. cwagent
+        3. others
+        default choice: [1]:
+</pre>
+<P>Press Enter for default choice</P>
+<pre>
+    Do you want to turn on StatsD daemon?
+    1. yes
+    2. no
+    default choice: [1]:
+    2
+</pre>
+<P>Press 2 and Enter</P>
+<pre>
+    Do you want to monitor metrics from CollectD? WARNING: CollectD must be installed or the Agent will fail to start
+    1. yes
+    2. no
+    default choice: [1]:
+    2
+</pre>
+<P>Press 2 and Enter</P>
+<pre>
+    Do you want to monitor any host metrics? e.g. CPU, memory, etc.
+    1. yes
+    2. no
+    default choice: [1]:
+    2
+</pre>
+<P>Press 2 and Enter</P>
+</pre>
+<pre>
+    Do you have any existing CloudWatch Log Agent (http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html) configuration file to import for migration?
+    1. yes
+    2. no
+    default choice: [2]:
+    2
+</pre>
+<P>Press 2 and Enter </P>
+<pre>
+    Do you want to monitor any log files?
+    1. yes
+    2. no
+    default choice: [1]:
+    1
+</pre>     
+<P>Press 1 and Enter</P>
+<pre>
+    Log file path:    
+</pre>
+    <P>Key in <i><b>/var/log/auth.log</b></i> and press Enter</P>
+<pre>
+    Log group name:
+    default choice: [auth.log]
+</pre>
+    <P>Press Enter for default choice</P>
+<pre>
+    Log stream name:
+    default choice: [{hostname}]
+</pre>    
+    <P>Press Enter for default choice</P>
+<pre>
+    Log Group Retention in days
+    1. -1
+    2. 1
+    3. 3
+    4. 5
+    5. 7
+    6. 14
+    7. 30
+    8. 60
+    9. 90
+    10. 120
+    11. 150
+    12. 180
+    13. 365
+    14. 400
+    15. 545
+    16. 731
+    17. 1827
+    18. 2192
+    19. 2557
+    20. 2922
+    21. 3288
+    22. 3653
+    default choice: [1]:
+</pre>
+<P>Press Enter for default choice</P>
+<pre>
+    Do you want to specify any additional log files to monitor?
+    1. yes
+    2. no
+    default choice: [1]:
+    2
+</pre>    
+<P>Press 2 and enter</P>
+<pre>
+    Do you want to store the config in the SSM parameter store?
+    1. yes
+    2. no
+    default choice: [1]:
+    2
+</pre>
+
+<P>Press 2 and enter</P>
+<pre>
+   Program exits now.
+</pre>
+<P>The wizard ended and the config file was saved at /opt/aws/amazon-cloudwatch-agent/bin/config.json</P>
+
+
+<li>Configure AWS credentials on the onPremise server</li>
+<P>Run the command below</P>
+
+<blockquote>sudo aws configure --profile AmazonCloudWatchAgent</blockquote>
+
+<pre>
+    AWS Access Key ID [None]: xxxxxxxxxxxxxxxxxxxxxx
+</pre>
+<P>Key in your Access Key ID and enter</P>
+<pre>
+    AWS Secret Access Key [None]: xxxxxxxxxxxxxxxxx
+</pre>
+<P>Key in your Secret Access Key and enter</P>
+<pre>
+    Default region name [None]: ap-southeast-1
+</pre>
+<P>Key in <i><B>ap-southeast-1</B></i> and enter</P>
+<pre>
+    Default output format [None]: 
+</pre>
+<P>Press Enter for default choice</P>
+
+<li>Activate and start CloudWatch Agent with the Agent configuration</li>
+<P>Run the command below to activate the Cloudwatch agent configuration</P>
+<blockquote>
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m onPremise -s -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json
+</blockquote>
+<P>Run the command below to confirm the cloudwatch agent is started</P>
+<blockquote>
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a start
+</blockquote>
+<P>Run the command below to confirm the status</P>
+<blockquote>
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a status
+</blockquote>
+
+</ol>
+</html>
