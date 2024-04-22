@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Word Generator</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    
+    </style>
+</head>
+<body>
+    <button onclick="generateRandomWord()">Generate Random Word</button>
+    <table id="wordTable">
+        <tr>
+            <th>Word</th>
+            <th>Pinyin</th>
+            <th>Meaning</th>
+            <th>Sentence</th>
+        </tr>
+    </table>
+
+    <script>
+        // Replace this with your actual data
+        let words = [
+    {
+        "word": "模糊",
+        "pinyin": "mó hú",
+        "meaning": "blurry",
+        "sentence": "这张照片太模糊了，我看不清楚。"
+    },
+    {
+        "word": "伤害",
+        "pinyin": "shāng hài",
+        "meaning": "harm",
+        "sentence": "他的话深深地伤害了我。"
+    },
+    {
+        "word": "填写",
+        "pinyin": "tián xiě",
+        "meaning": "fill in",
+        "sentence": "请你填写这份申请表。"
+    },
+    {
+        "word": "痛苦",
+        "pinyin": "tòng kǔ",
+        "meaning": "pain",
+        "sentence": "他在痛苦中挣扎。"
+    },
+    {
+        "word": "头疼",
+        "pinyin": "tóu téng",
+        "meaning": "headache",
+        "sentence": "我有点头疼，我需要休息一下。"
+    },
+    {
+        "word": "问题",
+        "pinyin": "wèn tí",
+        "meaning": "question",
+        "sentence": "我有一个问题想问你。"
+    },
+    {
+        "word": "习惯",
+        "pinyin": "xí guàn",
+        "meaning": "habit",
+        "sentence": "我习惯早起。"
+    },
+    {
+        "word": "下降",
+        "pinyin": "xià jiàng",
+        "meaning": "decline",
+        "sentence": "这个月的销售额有所下降。"
+    },
+    {
+        "word": "诊所",
+        "pinyin": "zhěn suǒ",
+        "meaning": "clinic",
+        "sentence": "我需要去诊所看医生。"
+    },
+    {
+        "word": "正确",
+        "pinyin": "zhèng què",
+        "meaning": "correct",
+        "sentence": "你的答案是正确的。"
+    },
+    {
+        "word": "爱惜",
+        "pinyin": "ài xī",
+        "meaning": "cherish",
+        "sentence": "我们应该爱惜我们的环境。"
+    },
+    {
+        "word": "安慰",
+        "pinyin": "ān wèi",
+        "meaning": "comfort",
+        "sentence": "他试图安慰失去亲人的女孩。"
+    },
+    {
+        "word": "材料",
+        "pinyin": "cái liào",
+        "meaning": "material",
+        "sentence": "我们需要更多的材料来完成这个项目。"
+    },
+    {
+        "word": "错误",
+        "pinyin": "cuò wù",
+        "meaning": "mistake",
+        "sentence": "我在考试中犯了一个错误。"
+    },
+    {
+        "word": "懂事",
+        "pinyin": "dǒng shì",
+        "meaning": "sensible",
+        "sentence": "他是一个非常懂事的孩子。"
+    },
+    {
+        "word": "烦恼",
+        "pinyin": "fán nǎo",
+        "meaning": "worries",
+        "sentence": "他总是为小事烦恼。"
+    },
+    {
+        "word": "黄瓜",
+        "pinyin": "huáng guā",
+        "meaning": "cucumber",
+        "sentence": "我喜欢在沙拉里加黄瓜。"
+    },
+    {
+        "word": "回答",
+        "pinyin": "huí dá",
+        "meaning": "answer",
+        "sentence": "他没有回答我的问题。"
+    },
+    {
+        "word": "鸡蛋",
+        "pinyin": "jī dàn",
+        "meaning": "egg",
+        "sentence": "我早餐喜欢吃鸡蛋。"
+    },
+    {
+        "word": "搅拌",
+        "pinyin": "jiǎo bàn",
+        "meaning": "stir",
+        "sentence": "请把糖和牛奶搅拌在一起。"
+    },
+    {
+        "word": "聚会",
+        "pinyin": "jù huì",
+        "meaning": "party",
+        "sentence": "我们周末在我家有一个聚会。"
+    },
+    {
+        "word": "劳累",
+        "pinyin": "láo lèi",
+        "meaning": "tired",
+        "sentence": "一天工作下来，我感到非常劳累。"
+    },
+    {
+        "word": "似的",
+        "pinyin": "shì de",
+        "meaning": "like",
+        "sentence": "他笑得像个孩子似的。"
+    },
+    {
+        "word": "形状",
+        "pinyin": "xíng zhuàng",
+        "meaning": "shape",
+        "sentence": "这个盒子的形状是一个立方体。"
+    },
+    {
+        "word": "营养",
+        "pinyin": "yíng yǎng",
+        "meaning": "nutrition",
+        "sentence": "这种食物富含营养。"
+    },
+    {
+        "word": "紫菜",
+        "pinyin": "zǐ cài",
+        "meaning": "seaweed",
+        "sentence": "我喜欢在汤里加一些紫菜。"
+    },
+    {
+        "word": "嘴巴",
+        "pinyin": "zuǐ ba",
+        "meaning": "mouth",
+        "sentence": "他的嘴巴很大。"
+    },
+    {
+        "word": "包装",
+        "pinyin": "bāo zhuāng",
+        "meaning": "packaging",
+        "sentence": "这个产品的包装很精美。"
+    },
+    {
+        "word": "饼干",
+        "pinyin": "bǐng gān",
+        "meaning": "biscuit",
+        "sentence": "我喜欢吃巧克力饼干。"
+    },
+    {
+        "word": "村子",
+        "pinyin": "cūn zi",
+        "meaning": "village",
+        "sentence": "我出生在一个小村子里。"
+    },
+    {
+        "word": "存放",
+        "pinyin": "cún fàng",
+        "meaning": "store",
+        "sentence": "这个房间用来存放家具。"
+    },
+    {
+        "word": "蛋糕",
+        "pinyin": "dàn gāo",
+        "meaning": "cake",
+        "sentence": "我最喜欢的甜点是巧克力蛋糕。"
+    },
+    {
+        "word": "酒类",
+        "pinyin": "jiǔ lèi",
+        "meaning": "alcohol",
+        "sentence": "我不喝任何酒类。"
+    },
+    {
+        "word": "聊天",
+        "pinyin": "liáo tiān",
+        "meaning": "chat",
+        "sentence": "我们喜欢在咖啡馆聊天。"
+    },
+    {
+        "word": "奇怪",
+        "pinyin": "qí guài",
+        "meaning": "strange",
+        "sentence": "他的行为让我觉得很奇怪。"
+    },
+    {
+        "word": "缺少",
+        "pinyin": "quē shǎo",
+        "meaning": "lack",
+        "sentence": "我觉得我缺少自信。"
+    },
+    {
+        "word": "肉类",
+        "pinyin": "ròu lèi",
+        "meaning": "meat",
+        "sentence": "我不吃任何肉类。"
+    },
+    {
+        "word": "烧水",
+        "pinyin": "shāo shuǐ",
+        "meaning": "boil water",
+        "sentence": "我要烧水泡茶。"
+    },
+    {
+        "word": "适合",
+        "pinyin": "shì hé",
+        "meaning": "suitable",
+        "sentence": "这件衣服非常适合你。"
+    },
+    {
+        "word": "蔬菜",
+        "pinyin": "shū cài",
+        "meaning": "vegetables",
+        "sentence": "我每天都吃很多蔬菜。"
+    },
+    {
+        "word": "水饺",
+        "pinyin": "shuǐ jiǎo",
+        "meaning": "dumplings",
+        "sentence": "我喜欢吃韭菜猪肉水饺。"
+    },
+    {
+        "word": "新鲜",
+        "pinyin": "xīn xiān",
+        "meaning": "fresh",
+        "sentence": "这些水果都非常新鲜。"
+    },
+    {
+        "word": "愉快",
+        "pinyin": "yú kuài",
+        "meaning": "happy",
+        "sentence": "我希望你每天都过得愉快。"
+    },
+    {
+        "word": "转身",
+        "pinyin": "zhuǎn shēn",
+        "meaning": "turn around",
+        "sentence": "他转身离开了。"
+    },
+    {
+        "word": "自私",
+        "pinyin": "zì sī",
+        "meaning": "selfish",
+        "sentence": "他是一个非常自私的人。"
+    },
+    {
+        "word": "阿姨",
+        "pinyin": "ā yí",
+        "meaning": "aunt",
+        "sentence": "我的阿姨住在北京。"
+    },
+    {
+        "word": "钞票",
+        "pinyin": "chāo piào",
+        "meaning": "banknote",
+        "sentence": "我没有零钱，只有一张100元的钞票。"
+    },
+    {
+        "word": "诚实",
+        "pinyin": "chéng shí",
+        "meaning": "honest",
+        "sentence": "他是一个非常诚实的人。"
+    },
+    {
+        "word": "附近",
+        "pinyin": "fù jìn",
+        "meaning": "nearby",
+        "sentence": "我家附近有一个大超市。"
+    },
+    {
+        "word": "赶紧",
+        "pinyin": "gǎn jǐn",
+        "meaning": "hurry up",
+        "sentence": "你赶紧去医院看看。"
+    },
+    {
+        "word": "捡到",
+        "pinyin": "jiǎn dào",
+        "meaning": "pick up",
+        "sentence": "我在路上捡到了一个钱包。"
+    },
+    {
+        "word": "联系",
+        "pinyin": "lián xì",
+        "meaning": "contact",
+        "sentence": "如果你有任何问题，可以随时与我联系。"
+    },
+    {
+        "word": "麻烦",
+        "pinyin": "má fan",
+        "meaning": "trouble",
+        "sentence": "对不起，给你带来了麻烦。"
+    },
+    {
+        "word": "傻傻",
+        "pinyin": "shǎ shǎ",
+        "meaning": "silly",
+        "sentence": "他傻傻地站在那里，什么也没做。"
+    },
+    {
+        "word": "善良",
+        "pinyin": "shàn liáng",
+        "meaning": "kind",
+        "sentence": "她是一个非常善良的人。"
+    },
+    {
+        "word": "小贩",
+        "pinyin": "xiǎo fàn",
+        "meaning": "vendor",
+        "sentence": "那个小贩卖的烤红薯非常好吃。"
+    },
+    {
+        "word": "摇晃",
+        "pinyin": "yáo huàng",
+        "meaning": "shake",
+        "sentence": "风把树摇晃得很厉害。"
+    },
+    {
+        "word": "银色",
+        "pinyin": "yín sè",
+        "meaning": "silver",
+        "sentence": "我喜欢银色的首饰。"
+    },
+    {
+        "word": "硬币",
+        "pinyin": "yìng bì",
+        "meaning": "coin",
+        "sentence": "我没有零钱，只有一枚硬币。"
+    },
+    {
+        "word": "早晨",
+        "pinyin": "zǎo chén",
+        "meaning": "morning",
+        "sentence": "早晨的空气非常新鲜。"
+    },
+    {
+        "word": "撞到",
+        "pinyin": "zhuàng dào",
+        "meaning": "hit",
+        "sentence": "他不小心撞到了路边的石头。"
+    },
+    {
+        "word": "阻拦",
+        "pinyin": "zǔ lán",
+        "meaning": "stop",
+        "sentence": "警察试图阻拦那个小偷。"
+    },
+    {
+        "word": "鼻孔",
+        "pinyin": "bí kǒng",
+        "meaning": "nostril",
+        "sentence": "他的鼻孔很大。"
+    },
+    {
+        "word": "大概",
+        "pinyin": "dà gài",
+        "meaning": "probably",
+        "sentence": "他大概五点钟会到。"
+    },
+    {
+        "word": "浮出",
+        "pinyin": "fú chū",
+        "meaning": "emerge",
+        "sentence": "太阳从东方浮出。"
+    },
+    {
+        "word": "公斤",
+        "pinyin": "gōng jīn",
+        "meaning": "kilogram",
+        "sentence": "这个西瓜重5公斤。"
+    },
+    {
+        "word": "海洋",
+        "pinyin": "hǎi yáng",
+        "meaning": "ocean",
+        "sentence": "海洋是地球上最大的生态系统。"
+    },
+    {
+        "word": "厚厚",
+        "pinyin": "hòu hòu",
+        "meaning": "thick",
+        "sentence": "他穿着一件厚厚的外套。"
+    },
+    {
+        "word": "呼吸",
+        "pinyin": "hū xī",
+        "meaning": "breathe",
+        "sentence": "我们不能在水下呼吸。"
+    },
+    {
+        "word": "激动",
+        "pinyin": "jī dòng",
+        "meaning": "excited",
+        "sentence": "听到这个好消息，他非常激动。"
+    },
+    {
+        "word": "皮肤",
+        "pinyin": "pí fū",
+        "meaning": "skin",
+        "sentence": "她的皮肤非常光滑。"
+    },
+    {
+        "word": "浅海",
+        "pinyin": "qiǎn hǎi",
+        "meaning": "shallow sea",
+        "sentence": "这个海滩是一个浅海区域。"
+    },
+    {
+        "word": "深海",
+        "pinyin": "shēn hǎi",
+        "meaning": "deep sea",
+        "sentence": "深海中有许多我们未知的生物。"
+    },
+    {
+        "word": "湿透",
+        "pinyin": "shī tòu",
+        "meaning": "soaked",
+        "sentence": "下雨了，我的衣服都湿透了。"
+    },
+    {
+        "word": "死掉",
+        "pinyin": "sǐ diào",
+        "meaning": "die",
+        "sentence": "他的狗已经死掉了。"
+    },
+    {
+        "word": "头顶",
+        "pinyin": "tóu dǐng",
+        "meaning": "top of the head",
+        "sentence": "他头顶上有一只小鸟。"
+    },
+    {
+        "word": "涨潮",
+        "pinyin": "zhǎng cháo",
+        "meaning": "high tide",
+        "sentence": "涨潮时，海水会上升。"
+    },
+    {
+        "word": "曾经",
+        "pinyin": "céng jīng",
+        "meaning": "once",
+        "sentence": "我曾经在这里住过。"
+    },
+    {
+        "word": "此后",
+        "pinyin": "cǐ hòu",
+        "meaning": "after this",
+        "sentence": "此后，他再也没有回来过。"
+    },
+    {
+        "word": "登上",
+        "pinyin": "dēng shàng",
+        "meaning": "climb up",
+        "sentence": "他成功登上了珠穆朗玛峰。"
+    },
+    {
+        "word": "汉字",
+        "pinyin": "hàn zì",
+        "meaning": "Chinese characters",
+        "sentence": "汉字是世界上最早的文字之一。"
+    },
+    {
+        "word": "节省",
+        "pinyin": "jié shěng",
+        "meaning": "save",
+        "sentence": "我们应该节省用水。"
+    },
+    {
+        "word": "溜走",
+        "pinyin": "liū zǒu",
+        "meaning": "slip away",
+        "sentence": "他趁没人注意的时候溜走了。"
+    },
+    {
+        "word": "陆地",
+        "pinyin": "lù dì",
+        "meaning": "land",
+        "sentence": "陆地上的生物种类繁多。"
+    },
+    {
+        "word": "年龄",
+        "pinyin": "nián líng",
+        "meaning": "age",
+        "sentence": "他的年龄比我大两岁。"
+    },
+    {
+        "word": "瘦弱",
+        "pinyin": "shòu ruò",
+        "meaning": "thin and weak",
+        "sentence": "他病后变得很瘦弱。"
+    },
+    {
+        "word": "网络",
+        "pinyin": "wǎng luò",
+        "meaning": "network",
+        "sentence": "网络使我们的生活变得更加便捷。"
+    },
+    {
+        "word": "未来",
+        "pinyin": "wèi lái",
+        "meaning": "future",
+        "sentence": "我们应该为未来做好准备。"
+    },
+    {
+        "word": "永远",
+        "pinyin": "yǒng yuǎn",
+        "meaning": "forever",
+        "sentence": "我会永远记住这个地方。"
+    },
+    {
+        "word": "珍惜",
+        "pinyin": "zhēn xī",
+        "meaning": "cherish",
+        "sentence": "我们应该珍惜我们的友谊。"
+    },
+    {
+        "word": "制造",
+        "pinyin": "zhì zào",
+        "meaning": "manufacture",
+        "sentence": "这家公司制造电子产品。"
+    },
+    {
+        "word": "足迹",
+        "pinyin": "zú jì",
+        "meaning": "footprint",
+        "sentence": "他的足迹遍布全球。"
+    },
+    {
+        "word": "打败",
+        "pinyin": "dǎ bài",
+        "meaning": "defeat",
+        "sentence": "他在比赛中打败了所有对手。"
+    },
+    {
+        "word": "打仗",
+        "pinyin": "dǎ zhàng",
+        "meaning": "fight a battle",
+        "sentence": "他们正在打仗。"
+    },
+    {
+        "word": "代替",
+        "pinyin": "dài tì",
+        "meaning": "replace",
+        "sentence": "他被选为代替原来的队长。"
+    },
+    {
+        "word": "敌人",
+        "pinyin": "dí rén",
+        "meaning": "enemy",
+        "sentence": "他们正在与敌人战斗。"
+    },
+    {
+        "word": "电影",
+        "pinyin": "diàn yǐng",
+        "meaning": "movie",
+        "sentence": "我喜欢看电影。"
+    },
+    {
+        "word": "订票",
+        "pinyin": "dìng piào",
+        "meaning": "book tickets",
+        "sentence": "我已经订了去北京的机票。"
+    },
+    {
+        "word": "攻打",
+        "pinyin": "gōng dǎ",
+        "meaning": "attack",
+        "sentence": "他们正在攻打敌人的阵地。"
+    },
+    {
+        "word": "家乡",
+        "pinyin": "jiā xiāng",
+        "meaning": "hometown",
+        "sentence": "我很想念我的家乡。"
+    },
+    {
+        "word": "领取",
+        "pinyin": "lǐng qǔ",
+        "meaning": "receive",
+        "sentence": "我去邮局领取了一个包裹。"
+    },
+    {
+        "word": "免费",
+        "pinyin": "miǎn fèi",
+        "meaning": "free",
+        "sentence": "这个应用程序是免费的。"
+    },
+    {
+        "word": "年纪",
+        "pinyin": "nián jì",
+        "meaning": "age",
+        "sentence": "他的年纪比我大两岁。"
+    },
+    {
+        "word": "票价",
+        "pinyin": "piào jià",
+        "meaning": "ticket price",
+        "sentence": "这个音乐会的票价是多少？"
+    },
+    {
+        "word": "杀敌",
+        "pinyin": "shā dí",
+        "meaning": "kill the enemy",
+        "sentence": "他们正在战场上杀敌。"
+    },
+    {
+        "word": "胜仗",
+        "pinyin": "shèng zhàng",
+        "meaning": "win a battle",
+        "sentence": "他们在这场战争中胜仗了。"
+    },
+    {
+        "word": "士兵",
+        "pinyin": "shì bīng",
+        "meaning": "soldier",
+        "sentence": "他是一名勇敢的士兵。"
+    },
+    {
+        "word": "孝心",
+        "pinyin": "xiào xīn",
+        "meaning": "filial piety",
+        "sentence": "他对父母非常孝心。"
+    },
+    {
+        "word": "英雄",
+        "pinyin": "yīng xióng",
+        "meaning": "hero",
+        "sentence": "他是我们的英雄。"
+    },
+    {
+        "word": "增添",
+        "pinyin": "zēng tiān",
+        "meaning": "add",
+        "sentence": "新的家具增添了房间的美感。"
+    },
+    {
+        "word": "战场",
+        "pinyin": "zhàn chǎng",
+        "meaning": "battlefield",
+        "sentence": "他们在战场上英勇战斗。"
+    },
+    {
+        "word": "装扮",
+        "pinyin": "zhuāng bàn",
+        "meaning": "dress up",
+        "sentence": "她喜欢装扮自己。"
+    },
+    {
+        "word": "地址",
+        "pinyin": "dì zhǐ",
+        "meaning": "address",
+        "sentence": "请告诉我你的地址。"
+    },
+    {
+        "word": "痘痘",
+        "pinyin": "dòu dòu",
+        "meaning": "pimple",
+        "sentence": "他的脸上有几个痘痘。"
+    },
+    {
+        "word": "嘲笑",
+        "pinyin": "cháo xiào",
+        "meaning": "mock",
+        "sentence": "他被同学嘲笑。"
+    },
+    {
+        "word": "上瘾",
+        "pinyin": "shàng yǐn",
+        "meaning": "addicted",
+        "sentence": "他对打电子游戏上瘾了。"
+    },
+    {
+        "word": "控制",
+        "pinyin": "kòng zhì",
+        "meaning": "control",
+        "sentence": "他无法控制自己的情绪。"
+    },
+    {
+        "word": "唠叨",
+        "pinyin": "láo dao",
+        "meaning": "nag",
+        "sentence": "他总是唠叨我做这做那。"
+    },
+    {
+        "word": "遮住",
+        "pinyin": "zhē zhù",
+        "meaning": "cover",
+        "sentence": "他用手遮住了眼睛。"
+    },
+    {
+        "word": "夹起",
+        "pinyin": "jiá qǐ",
+        "meaning": "pick up",
+        "sentence": "他用筷子夹起了一块肉。"
+    },
+    {
+        "word": "农夫",
+        "pinyin": "nóng fū",
+        "meaning": "farmer",
+        "sentence": "他是一个勤劳的农夫。"
+    },
+    {
+        "word": "惭愧",
+        "pinyin": "cán kuì",
+        "meaning": "ashamed",
+        "sentence": "他为自己的错误感到惭愧。"
+    },
+    {
+        "word": "感恩",
+        "pinyin": "gǎn ēn",
+        "meaning": "grateful",
+        "sentence": "我们应该对生活充满感恩。"
+    },
+    {
+        "word": "拥有",
+        "pinyin": "yōng yǒu",
+        "meaning": "own",
+        "sentence": "他拥有一座美丽的房子。"
+    },
+    {
+        "word": "热线",
+        "pinyin": "rè xiàn",
+        "meaning": "hotline",
+        "sentence": "如果你有任何问题，可以拨打我们的热线。"
+    },
+    {
+        "word": "讨厌",
+        "pinyin": "tǎo yàn",
+        "meaning": "dislike",
+        "sentence": "我讨厌吃苦瓜。"
+    },
+    {
+        "word": "比较",
+        "pinyin": "bǐ jiào",
+        "meaning": "compare",
+        "sentence": "我们应该比较不同的选择，然后做决定。"
+    },
+    {
+        "word": "初级",
+        "pinyin": "chū jí",
+        "meaning": "elementary",
+        "sentence": "他正在学习初级的日语。"
+    },
+    {
+        "word": "课程",
+        "pinyin": "kè chéng",
+        "meaning": "course",
+        "sentence": "这个课程非常有趣。"
+    },
+    {
+        "word": "基本",
+        "pinyin": "jī běn",
+        "meaning": "basic",
+        "sentence": "他已经掌握了基本的英语语法。"
+    },
+    {
+        "word": "截止",
+        "pinyin": "jié zhǐ",
+        "meaning": "deadline",
+        "sentence": "申请的截止日期是下周一。"
+    },
+    {
+        "word": "有限",
+        "pinyin": "yǒu xiàn",
+        "meaning": "limited",
+        "sentence": "我们的资源是有限的。"
+    },
+    {
+        "word": "详细",
+        "pinyin": "xiáng xì",
+        "meaning": "detailed",
+        "sentence": "他给我一个详细的解释。"
+    },
+    {
+        "word": "胸口",
+        "pinyin": "xiōng kǒu",
+        "meaning": "chest",
+        "sentence": "他在胸口戴了一枚奖章。"
+    },
+    {
+        "word": "衬衫",
+        "pinyin": "chèn shān",
+        "meaning": "shirt",
+        "sentence": "他穿着一件白色的衬衫。"
+    },
+    {
+        "word": "扣子",
+        "pinyin": "kòu zi",
+        "meaning": "button",
+        "sentence": "他的衬衫上有一个扣子掉了。"
+    },
+    {
+        "word": "撕破",
+        "pinyin": "sī pò",
+        "meaning": "tear",
+        "sentence": "他不小心撕破了那张纸。"
+    },
+    {
+        "word": "肩膀",
+        "pinyin": "jiān bǎng",
+        "meaning": "shoulder",
+        "sentence": "他把手放在我的肩膀上。"
+    },
+    {
+        "word": "狠狠",
+        "pinyin": "hěn hěn",
+        "meaning": "fiercely",
+        "sentence": "他狠狠地关上了门。"
+    },
+    {
+        "word": "招生",
+        "pinyin": "zhāo shēng",
+        "meaning": "recruit students",
+        "sentence": "我们的学校正在招生。"
+    },
+    {
+        "word": "尽早",
+        "pinyin": "jǐn zǎo",
+        "meaning": "as soon as possible",
+        "sentence": "请你尽早回复我。"
+    },
+    {
+        "word": "聪明",
+        "pinyin": "cōng míng",
+        "meaning": "smart",
+        "sentence": "他是一个非常聪明的孩子。"
+    },
+    {
+        "word": "嘲笑",
+        "pinyin": "cháo xiào",
+        "meaning": "mock",
+        "sentence": "他被同学嘲笑。"
+    },
+    {
+        "word": "上瘾",
+        "pinyin": "shàng yǐn",
+        "meaning": "addicted",
+        "sentence": "他对打电子游戏上瘾了。"
+    },
+    {
+        "word": "控制",
+        "pinyin": "kòng zhì",
+        "meaning": "control",
+        "sentence": "他无法控制自己的情绪。"
+    },
+    {
+        "word": "唠叨",
+        "pinyin": "láo dao",
+        "meaning": "nag",
+        "sentence": "他总是唠叨我做这做那。"
+    },
+    {
+        "word": "遮住",
+        "pinyin": "zhē zhù",
+        "meaning": "cover",
+        "sentence": "他用手遮住了眼睛。"
+    },
+    {
+        "word": "夹起",
+        "pinyin": "jiá qǐ",
+        "meaning": "pick up",
+        "sentence": "他用筷子夹起了一块肉。"
+    },
+    {
+        "word": "农夫",
+        "pinyin": "nóng fū",
+        "meaning": "farmer",
+        "sentence": "他是一个勤劳的农夫。"
+    },
+    {
+        "word": "惭愧",
+        "pinyin": "cán kuì",
+        "meaning": "ashamed",
+        "sentence": "他为自己的错误感到惭愧。"
+    },
+    {
+        "word": "感恩",
+        "pinyin": "gǎn ēn",
+        "meaning": "grateful",
+        "sentence": "我们应该对生活充满感恩。"
+    },
+    {
+        "word": "拥有",
+        "pinyin": "yōng yǒu",
+        "meaning": "own",
+        "sentence": "他拥有一座美丽的房子。"
+    },
+    {
+        "word": "热线",
+        "pinyin": "rè xiàn",
+        "meaning": "hotline",
+        "sentence": "如果你有任何问题，可以拨打我们的热线。"
+    },
+    {
+        "word": "讨厌",
+        "pinyin": "tǎo yàn",
+        "meaning": "dislike",
+        "sentence": "我讨厌吃苦瓜。"
+    },
+    {
+        "word": "比较",
+        "pinyin": "bǐ jiào",
+        "meaning": "compare",
+        "sentence": "我们应该比较不同的选择，然后做决定。"
+    },
+    {
+        "word": "初级",
+        "pinyin": "chū jí",
+        "meaning": "elementary",
+        "sentence": "他正在学习初级的日语。"
+    },
+    {
+        "word": "课程",
+        "pinyin": "kè chéng",
+        "meaning": "course",
+        "sentence": "这个课程非常有趣。"
+    },
+    {
+        "word": "基本",
+        "pinyin": "jī běn",
+        "meaning": "basic",
+        "sentence": "他已经掌握了基本的英语语法。"
+    },
+    {
+        "word": "截止",
+        "pinyin": "jié zhǐ",
+        "meaning": "deadline",
+        "sentence": "申请的截止日期是下周一。"
+    },
+    {
+        "word": "有限",
+        "pinyin": "yǒu xiàn",
+        "meaning": "limited",
+        "sentence": "我们的资源是有限的。"
+    },
+    {
+        "word": "详细",
+        "pinyin": "xiáng xì",
+        "meaning": "detailed",
+        "sentence": "他给我一个详细的解释。"
+    },
+    {
+        "word": "胸口",
+        "pinyin": "xiōng kǒu",
+        "meaning": "chest",
+        "sentence": "他在胸口戴了一枚奖章。"
+    },
+    {
+        "word": "衬衫",
+        "pinyin": "chèn shān",
+        "meaning": "shirt",
+        "sentence": "他穿着一件白色的衬衫。"
+    },
+    {
+        "word": "扣子",
+        "pinyin": "kòu zi",
+        "meaning": "button",
+        "sentence": "他的衬衫上有一个扣子掉了。"
+    },
+    {
+        "word": "撕破",
+        "pinyin": "sī pò",
+        "meaning": "tear",
+        "sentence": "他不小心撕破了那张纸。"
+    },
+    {
+        "word": "肩膀",
+        "pinyin": "jiān bǎng",
+        "meaning": "shoulder",
+        "sentence": "他把手放在我的肩膀上。"
+    },
+    {
+        "word": "狠狠",
+        "pinyin": "hěn hěn",
+        "meaning": "fiercely",
+        "sentence": "他狠狠地关上了门。"
+    },
+    {
+        "word": "招生",
+        "pinyin": "zhāo shēng",
+        "meaning": "recruit students",
+        "sentence": "我们的学校正在招生。"
+    },
+    {
+        "word": "尽早",
+        "pinyin": "jǐn zǎo",
+        "meaning": "as soon as possible",
+        "sentence": "请你尽早回复我。"
+    },
+    {
+        "word": "聪明",
+        "pinyin": "cōng míng",
+        "meaning": "smart",
+        "sentence": "他是一个非常聪明的学生。"
+    },
+    {
+        "word": "跌倒",
+        "pinyin": "diē dǎo",
+        "meaning": "fall",
+        "sentence": "他在滑冰时跌倒了。"
+    },
+    {
+        "word": "最佳",
+        "pinyin": "zuì jiā",
+        "meaning": "best",
+        "sentence": "他是我们班上最佳的学生。"
+    },
+    {
+        "word": "著名",
+        "pinyin": "zhù míng",
+        "meaning": "famous",
+        "sentence": "他是一个著名的作家。"
+    },
+    {
+        "word": "手册",
+        "pinyin": "shǒu cè",
+        "meaning": "manual",
+        "sentence": "你应该阅读这个产品的手册。"
+    },
+    {
+        "word": "唯一",
+        "pinyin": "wéi yī",
+        "meaning": "only",
+        "sentence": "他是我唯一的朋友。"
+    },
+    {
+        "word": "骄傲",
+        "pinyin": "jiāo ào",
+        "meaning": "proud",
+        "sentence": "他为自己的成就感到骄傲。"
+    },
+    {
+        "word": "自豪",
+        "pinyin": "zì háo",
+        "meaning": "proud",
+        "sentence": "他为自己的国家感到自豪。"
+    },
+    {
+        "word": "盼望",
+        "pinyin": "pàn wàng",
+        "meaning": "look forward to",
+        "sentence": "我盼望着暑假的到来。"
+    },
+    {
+        "word": "宽阔",
+        "pinyin": "kuān kuò",
+        "meaning": "wide",
+        "sentence": "这条街道非常宽阔。"
+    },
+    {
+        "word": "队伍",
+        "pinyin": "duì wǔ",
+        "meaning": "team",
+        "sentence": "我们的队伍正在比赛中。"
+    },
+    {
+        "word": "渐渐",
+        "pinyin": "jiàn jiàn",
+        "meaning": "gradually",
+        "sentence": "天空渐渐变暗了。"
+    },
+    {
+        "word": "献上",
+        "pinyin": "xiàn shàng",
+        "meaning": "offer",
+        "sentence": "他献上了一束花。"
+    },
+    {
+        "word": "最棒",
+        "pinyin": "zuì bàng",
+        "meaning": "best",
+        "sentence": "你是最棒的！"
+    },
+    {
+        "word": "超过",
+        "pinyin": "chāo guò",
+        "meaning": "exceed",
+        "sentence": "他的成绩超过了所有人。"
+    },
+    {
+        "word": "夜间",
+        "pinyin": "yè jiān",
+        "meaning": "night",
+        "sentence": "夜间的街道非常安静。"
+    },
+    {
+        "word": "舞台",
+        "pinyin": "wǔ tái",
+        "meaning": "stage",
+        "sentence": "演员们在舞台上表演。"
+    },
+    {
+        "word": "排列",
+        "pinyin": "pái liè",
+        "meaning": "arrange",
+        "sentence": "请按照顺序排列。"
+    },
+    {
+        "word": "表演",
+        "pinyin": "biǎo yǎn",
+        "meaning": "perform",
+        "sentence": "他在舞台上表演了一首歌。"
+    },
+    {
+        "word": "整齐",
+        "pinyin": "zhěng qí",
+        "meaning": "neat",
+        "sentence": "他的房间总是非常整齐。"
+    },
+    {
+        "word": "记录",
+        "pinyin": "jì lù",
+        "meaning": "record",
+        "sentence": "他在日记中记录了他的生活。"
+    },
+    {
+        "word": "构成",
+        "pinyin": "gòu chéng",
+        "meaning": "constitute",
+        "sentence": "这些元素构成了一个完整的系统。"
+    },
+    {
+        "word": "历史",
+        "pinyin": "lì shǐ",
+        "meaning": "history",
+        "sentence": "我对历史非常感兴趣。"
+    },
+    {
+        "word": "产生",
+        "pinyin": "chǎn shēng",
+        "meaning": "produce",
+        "sentence": "这个机器可以产生大量的热量。"
+    },
+    {
+        "word": "包括",
+        "pinyin": "bāo kuò",
+        "meaning": "include",
+        "sentence": "这个价格包括所有的费用。"
+    },
+    {
+        "word": "根据",
+        "pinyin": "gēn jù",
+        "meaning": "according to",
+        "sentence": "根据规定，我们不能在这里停车。"
+    },
+    {
+        "word": "统计",
+        "pinyin": "tǒng jì",
+        "meaning": "statistics",
+        "sentence": "根据统计，我们的销售额增长了20%。"
+    },
+    {
+        "word": "不仅",
+        "pinyin": "bù jǐn",
+        "meaning": "not only",
+        "sentence": "他不仅聪明，而且非常努力。"
+    },
+    {
+        "word": "怀疑",
+        "pinyin": "huái yí",
+        "meaning": "doubt",
+        "sentence": "我怀疑他是否说的是真话。"
+    },
+    {
+        "word": "骨头",
+        "pinyin": "gǔ tóu",
+        "meaning": "bone",
+        "sentence": "他的骨头断了。"
+    },
+    {
+        "word": "优美",
+        "pinyin": "yōu měi",
+        "meaning": "beautiful",
+        "sentence": "这首歌的旋律非常优美。"
+    },
+    {
+        "word": "艺术",
+        "pinyin": "yì shù",
+        "meaning": "art",
+        "sentence": "他对艺术有深厚的热爱。"
+    },
+    {
+        "word": "官员",
+        "pinyin": "guān yuán",
+        "meaning": "official",
+        "sentence": "他是一个政府官员。"
+    },
+    {
+        "word": "肯定",
+        "pinyin": "kěn dìng",
+        "meaning": "sure",
+        "sentence": "我肯定他会来的。"
+    },
+    {
+        "word": "遇到",
+        "pinyin": "yù dào",
+        "meaning": "meet",
+        "sentence": "我在街上遇到了一个老朋友。"
+    },
+    {
+        "word": "顽皮",
+        "pinyin": "wán pí",
+        "meaning": "naughty",
+        "sentence": "他是一个顽皮的小男孩。"
+    },
+    {
+        "word": "偶像",
+        "pinyin": "ǒu xiàng",
+        "meaning": "idol",
+        "sentence": "他是我的偶像。"
+    },
+    {
+        "word": "培育",
+        "pinyin": "péi yù",
+        "meaning": "cultivate",
+        "sentence": "我们需要培育新的人才。"
+    },
+    {
+        "word": "宣布",
+        "pinyin": "xuān bù",
+        "meaning": "announce",
+        "sentence": "他宣布他将参加选举。"
+    },
+    {
+        "word": "积极",
+        "pinyin": "jī jí",
+        "meaning": "positive",
+        "sentence": "他对工作总是持积极态度。"
+    },
+    {
+        "word": "加倍",
+        "pinyin": "jiā bèi",
+        "meaning": "double",
+        "sentence": "我们必须加倍努力才能完成任务。"
+    },
+    {
+        "word": "如何",
+        "pinyin": "rú hé",
+        "meaning": "how",
+        "sentence": "你知道如何解决这个问题吗？"
+    },
+    {
+        "word": "偏偏",
+        "pinyin": "piān piān",
+        "meaning": "contrary to expectations",
+        "sentence": "我偏偏喜欢你。"
+    }
+]
+
+        window.onload = function() {
+            // Call the function once immediately
+            generateRandomWord();
+
+            // Then call the function every 5 seconds
+            setInterval(generateRandomWord, 15000);
+        };
+
+        function generateRandomWord() {
+            const randomIndex = Math.floor(Math.random() * words.length);
+            const wordData = words[randomIndex];
+
+            // Update the table with the new word data
+            const table = document.getElementById('wordTable');
+            table.innerHTML = `
+                <tr>
+                    <th>Word</th>
+                    <th>Pinyin</th>
+                    <th>Meaning</th>
+                    <th>Sentence</th>
+                </tr>
+                <tr>
+                    <td>${wordData.word}</td>
+                    <td>${wordData.pinyin}</td>
+                    <td>${wordData.meaning}</td>
+                    <td>${wordData.sentence}</td>
+                </tr>
+            `;
+
+            // Speak the word, meaning, and sentence
+            const utterance = new SpeechSynthesisUtterance();
+            utterance.lang = 'zh-CN';
+            utterance.text = wordData.word;
+            speechSynthesis.speak(utterance);
+
+            setTimeout(() => {
+                utterance.lang = 'en-US';
+                utterance.text = wordData.meaning;
+                speechSynthesis.speak(utterance);
+            }, 2000);
+
+            setTimeout(() => {
+                utterance.lang = 'zh-CN';
+                utterance.text = wordData.sentence;
+                speechSynthesis.speak(utterance);
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
