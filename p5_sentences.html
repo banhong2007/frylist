@@ -27,8 +27,15 @@
         th, td {
             text-align: left;
             padding: 8px;
+            font-size: 5vh; /* This will make the font size responsive to the viewport height */
+        }
+
+        h3{
+            text-align: left;
+            padding: 8px;
             font-size: 10vh; /* This will make the font size responsive to the viewport height */
         }
+
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
@@ -1343,17 +1350,24 @@
             const table = document.getElementById('wordTable');
             table.innerHTML = `
                 <tr>
-                    <th>Word</th>
-                    <th>Pinyin</th>
+                    <th width=30%>Word</th>
                     <th>Meaning</th>
                     <th>Sentence</th>
                 </tr>
                 <tr>
-                    <td>${wordData.word}</td>
-                    <td>${wordData.pinyin}</td>
+                    <td><h3>${wordData.word}</h3>
                     <td>${wordData.meaning}</td>
                     <td>${wordData.sentence}</td>
                 </tr>
+
+                <tr>
+                    <td>${wordData.pinyin}</td>
+                    <td></td>
+                    <td>
+                </tr>
+
+
+
             `;
 
             // Speak the word, meaning, and sentence
